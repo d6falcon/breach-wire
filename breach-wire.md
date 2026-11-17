@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-17 17:16 UTC** - last 14 days - 7 confirmed, 9 reported, 162 claimed
+Last run **2026-11-17 17:20 UTC** - last 14 days - 7 confirmed, 9 reported, 162 claimed
 
 | Status | Meaning |
 |---|---|
@@ -17,9 +17,9 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-17 | **CONFIRMED** | not disclosed | **Andover** | Stolen: not disclosed | via [DataBreaches.net](https://databreaches.net/2026/11/17/ma-andover-withholds-cyberattack-alerts-four-internal-reviews/)
 - 2026-11-17 | **CONFIRMED** | not disclosed | **Ipsos** | Stolen: not disclosed | via [SecurityWeek](https://www.securityweek.com/market-research-giant-ipsos-investigating-breach-of-internal-system/)
 - 2026-11-17 | **CONFIRMED** | not disclosed | **Monadnock Community Hospital** | Stolen: health data | via [DataBreaches.net](https://databreaches.net/2026/11/17/nh-monadnock-community-hospital-server-outage-due-to-cyber-incident-officials-say/)
-- 2026-11-17 | **REPORTED** | not disclosed | ? "Popular websites compromised in bid to steal crypto, target iPhone users - Reuters" | Stolen: funds/crypto | via [Reuters](https://news.google.com/rss/articles/CBMitwFBVV95cUxPTS1sYjJVSFJKSWN4SHY1S3g4aDJwdmd1SXp0YTY5aDJUNF9PS08zR29LWkVzVXk2d2tXZFh0dm9QRVNxc2xXYzczdWpXYmYwTmgwUDZfSFhBRE1XT3JHQnpNZERDdU5yMy16dDdVa1hYTVBqa0xGbTVPNkJBZTlIWmc4cldZaTI2QnpoaWo3NUxOb3FXQmZQck0yQzYzMVJ5MTROcFdTUGU4b0pmLUZ2Y3V3LVVJaEU?oc=5)
 - 2026-11-17 | **REPORTED** | not disclosed | ? "Suspected Cyberattack Keeps South Portland City Hall Closed for Second Day" | Stolen: not disclosed | via [DataBreaches.net](https://databreaches.net/2026/11/17/suspected-cyberattack-keeps-south-portland-city-hall-closed-for-second-day/)
 - 2026-11-17 | **REPORTED** | Exploited public-facing app \[T1190\] | ? "iPhone Users Targeted in Major Website Security Breach" | Stolen: funds/crypto | via [DataBreaches.net](https://databreaches.net/2026/11/17/iphone-users-targeted-in-major-website-security-breach/)
+- 2026-11-17 | **REPORTED** | not disclosed | ? "Popular websites compromised in bid to steal crypto, target iPhone users - Reuters" | Stolen: funds/crypto | via [Reuters](https://news.google.com/rss/articles/CBMitwFBVV95cUxPTS1sYjJVSFJKSWN4SHY1S3g4aDJwdmd1SXp0YTY5aDJUNF9PS08zR29LWkVzVXk2d2tXZFh0dm9QRVNxc2xXYzczdWpXYmYwTmgwUDZfSFhBRE1XT3JHQnpNZERDdU5yMy16dDdVa1hYTVBqa0xGbTVPNkJBZTlIWmc4cldZaTI2QnpoaWo3NUxOb3FXQmZQck0yQzYzMVJ5MTROcFdTUGU4b0pmLUZ2Y3V3LVVJaEU?oc=5)
 - 2026-11-17 | **REPORTED** | not disclosed | **Access Dental Management** | Stolen: health data | via [SecurityWeek](https://www.securityweek.com/access-dental-management-data-breach-impacts-over-340000/)
 - 2026-11-17 | **REPORTED** | not disclosed | **Japan’s Fugaku Supercomputer** | Stolen: personal data (PII) (4,597 users) | via [DataBreaches.net](https://databreaches.net/2026/11/17/cyberattack-on-japans-fugaku-supercomputer-puts-data-of-4597-users-at-risk/)
 
