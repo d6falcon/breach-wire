@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-17 16:13 UTC** - last 14 days - 7 confirmed, 9 reported, 156 claimed
+Last run **2026-11-17 17:16 UTC** - last 14 days - 7 confirmed, 9 reported, 162 claimed
 
 | Status | Meaning |
 |---|---|
@@ -18,12 +18,12 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-17 | **CONFIRMED** | not disclosed | **Ipsos** | Stolen: not disclosed | via [SecurityWeek](https://www.securityweek.com/market-research-giant-ipsos-investigating-breach-of-internal-system/)
 - 2026-11-17 | **CONFIRMED** | not disclosed | **Monadnock Community Hospital** | Stolen: health data | via [DataBreaches.net](https://databreaches.net/2026/11/17/nh-monadnock-community-hospital-server-outage-due-to-cyber-incident-officials-say/)
 - 2026-11-17 | **REPORTED** | not disclosed | ? "Popular websites compromised in bid to steal crypto, target iPhone users - Reuters" | Stolen: funds/crypto | via [Reuters](https://news.google.com/rss/articles/CBMitwFBVV95cUxPTS1sYjJVSFJKSWN4SHY1S3g4aDJwdmd1SXp0YTY5aDJUNF9PS08zR29LWkVzVXk2d2tXZFh0dm9QRVNxc2xXYzczdWpXYmYwTmgwUDZfSFhBRE1XT3JHQnpNZERDdU5yMy16dDdVa1hYTVBqa0xGbTVPNkJBZTlIWmc4cldZaTI2QnpoaWo3NUxOb3FXQmZQck0yQzYzMVJ5MTROcFdTUGU4b0pmLUZ2Y3V3LVVJaEU?oc=5)
-- 2026-11-17 | **REPORTED** | Exploited public-facing app \[T1190\] | ? "iPhone Users Targeted in Major Website Security Breach" | Stolen: funds/crypto | via [DataBreaches.net](https://databreaches.net/2026/11/17/iphone-users-targeted-in-major-website-security-breach/)
 - 2026-11-17 | **REPORTED** | not disclosed | ? "Suspected Cyberattack Keeps South Portland City Hall Closed for Second Day" | Stolen: not disclosed | via [DataBreaches.net](https://databreaches.net/2026/11/17/suspected-cyberattack-keeps-south-portland-city-hall-closed-for-second-day/)
+- 2026-11-17 | **REPORTED** | Exploited public-facing app \[T1190\] | ? "iPhone Users Targeted in Major Website Security Breach" | Stolen: funds/crypto | via [DataBreaches.net](https://databreaches.net/2026/11/17/iphone-users-targeted-in-major-website-security-breach/)
 - 2026-11-17 | **REPORTED** | not disclosed | **Access Dental Management** | Stolen: health data | via [SecurityWeek](https://www.securityweek.com/access-dental-management-data-breach-impacts-over-340000/)
 - 2026-11-17 | **REPORTED** | not disclosed | **Japan’s Fugaku Supercomputer** | Stolen: personal data (PII) (4,597 users) | via [DataBreaches.net](https://databreaches.net/2026/11/17/cyberattack-on-japans-fugaku-supercomputer-puts-data-of-4597-users-at-risk/)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (39)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (45)</summary>
 
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - Inception | **Advanced Micro Devices, Inc. (AMD)** (US, Technology) | Stolen: employee/HR data, mailboxes (57 GB) | via [ransomware.live](https://www.ransomware.live/id/QWR2YW5jZWQgTWljcm8gRGV2aWNlcywgSW5jLiAoQU1EKUBJbmNlcHRpb24=), [RansomLook](https://www.ransomlook.io/group/inception)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - Vortex | **Apellis Pharmaceuticals** (US, Healthcare) | Stolen: data (307.64 GB) | via [ransomware.live](https://www.ransomware.live/id/QXBlbGxpcyBQaGFybWFjZXV0aWNhbHNAVm9ydGV4), [RansomLook](https://www.ransomlook.io/group/vortex)
@@ -33,15 +33,19 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - Vortex | **Caris Life Sciences** (US, Healthcare) | Stolen: data (21,432,021 records) | via [ransomware.live](https://www.ransomware.live/id/Q2FyaXMgTGlmZSBTY2llbmNlcyAtIDIxLDQzMiwwMjEgcmVjb3Jkc0BWb3J0ZXg=), [RansomLook](https://www.ransomlook.io/group/vortex)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - Vortex | **Castle Biosciences** (US, Healthcare) | Stolen: data (2,018,234 records) | via [ransomware.live](https://www.ransomware.live/id/Q2FzdGxlIEJpb3NjaWVuY2VzIC0gMiwwMTgsMjM0IHJlY29yZHNAVm9ydGV4), [RansomLook](https://www.ransomlook.io/group/vortex)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Chin Fong Machine Industrial** | Stolen: customer data, contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
+- 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - aoqin leaks | **Christine London Ltd** | Stolen: customer data, employee/HR data, contracts/internal docs (50 GB) | via [RansomLook](https://www.ransomlook.io/group/aoqin%20leaks)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - Inception | **Cigna Healthcare** (US, Healthcare) | Stolen: customer data, employee/HR data (9 GB) | via [ransomware.live](https://www.ransomware.live/id/Q2lnbmEgSGVhbHRoY2FyZUBJbmNlcHRpb24=), [RansomLook](https://www.ransomlook.io/group/inception)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - booba team | **Clinton Assessors Board** | Stolen: data (7 GB) | via [RansomLook](https://www.ransomlook.io/group/booba%20team)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - N0n | **Coiling Technologies** (USA) | Stolen: not disclosed | via [TG RansomFeedNews](https://t.me/RansomFeedNews/17294)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - the gentlemen | **DIRECTV Latin America** | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/the%20gentlemen)
+- 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - brain cipher | **edi-uae.com** | Stolen: employee/HR data, financial data (460 GB) | via [RansomLook](https://www.ransomlook.io/group/brain%20cipher)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - N0n | **Eli Lilly & Company** (USA) | Stolen: not disclosed | via [TG RansomFeedNews](https://t.me/RansomFeedNews/17301)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - N0n | **Ferguson** (USA) | Stolen: not disclosed | via [TG RansomFeedNews](https://t.me/RansomFeedNews/17297)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - climax | **First Choice Seafood** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/climax)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - booba team | **Greater Elgin Family Care Center** | Stolen: health data (16 GB) | via [RansomLook](https://www.ransomlook.io/group/booba%20team)
+- 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - brain cipher | **havingbabies.com** | Stolen: data (270 GB) | via [RansomLook](https://www.ransomlook.io/group/brain%20cipher)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - inception | **Henry Schein, Inc** | Stolen: employee/HR data, health data (189 GB) | via [RansomLook](https://www.ransomlook.io/group/inception)
+- 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - brain cipher | **intelligentaudit.com** | Stolen: customer data (100 GB) | via [RansomLook](https://www.ransomlook.io/group/brain%20cipher)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - N0n | **Kanouse & Walker** (USA) | Stolen: not disclosed | via [TG RansomFeedNews](https://t.me/RansomFeedNews/17311)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **KK Technologies Inc** | Stolen: customer data, employee/HR data, government IDs, financial data (1.98 GB, 182 customers) | via [RansomLook](https://www.ransomlook.io/group/rhysida)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - N0n | **MediaMath** (USA) | Stolen: not disclosed | via [TG RansomFeedNews](https://t.me/RansomFeedNews/17310)
@@ -57,6 +61,8 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - climax | **Peerless Hospital** | Stolen: health data | via [RansomLook](https://www.ransomlook.io/group/climax)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - Inception | **PepsiCo** (US, Agriculture and Food Production) | Stolen: employee/HR data (72 MB) | via [ransomware.live](https://www.ransomware.live/id/UGVwc2lDb0BJbmNlcHRpb24=), [RansomLook](https://www.ransomlook.io/group/inception)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - panzer | **RE/MAX Germany** | Stolen: customer data, financial data, credentials (86 GB) | via [RansomLook](https://www.ransomlook.io/group/panzer)
+- 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - brain cipher | **roedentallab.com** | Stolen: customer data, health data, databases/backups (335 GB) | via [RansomLook](https://www.ransomlook.io/group/brain%20cipher)
+- 2026-11-17 | CLAIMED | Data theft, offered for sale/leak | **SCI Horizon** | Stolen: not disclosed | via [Dark Web Informer](https://darkwebinformer.com/sci-horizon-data-leak-claim-lists-450-372-email-records-and-166-198-addresses/)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - aurora | **Sice Previt S.p.A** (IT, Manufacturing) | Stolen: employee/HR data, financial data, contracts/internal docs, databases/backups (886 GB, 350 employees) | via [ransomware.live](https://www.ransomware.live/id/U2ljZSBQcmV2aXQgUy5wLkEuQGF1cm9yYQ==), [RansomLook](https://www.ransomlook.io/group/aurora)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - panzer | **SUNNIER HOMES** | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/panzer)
 - 2026-11-17 | CLAIMED | Exfiltration + extortion \[T1657\] - N0n | **Tailored Benefits** (USA) | Stolen: not disclosed | via [TG RansomFeedNews](https://t.me/RansomFeedNews/17298)
@@ -73,8 +79,8 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-16 | **CONFIRMED** | not disclosed | **Fandango** | Stolen: customer data, financial data | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/fandango-says-hackers-stole-payment-card-details-from-checkout-pages/), [SecurityWeek](https://www.securityweek.com/fandango-warns-ticket-buyers-of-payment-card-data-exposure/)
 - 2026-11-16 | **CONFIRMED** | Third-party/trusted relationship \[T1199\] | **Infoblox** | Stolen: customer data, employee/HR data | via [Security Affairs](https://securityaffairs.com/203309/data-breach/infoblox-confirms-supply-chain-breach-after-attackers-access-sensitive-data.html), [The Register](https://www.theregister.com/security/2026/11/16/infoblox-customer-and-staff-data-exposed-in-sharepoint-breach/5310280), [TechCrunch](https://techcrunch.com/2026/11/16/cyber-giant-infoblox-confirms-security-incident-after-hackers-access-company-information/)
 - 2026-11-16 | **CONFIRMED** | Third-party/trusted relationship \[T1199\] | **Uber** | Stolen: credentials, government IDs (150,000 people) | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/uber-notifies-drivers-of-data-breach-affecting-nearly-150-000-people/), [The Record](https://therecord.media/uber-says-150000-impacted-third-party-breach), [TechCrunch](https://techcrunch.com/2026/11/16/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/)
-- 2026-11-16 | **REPORTED** | not disclosed | ? "FBI says Artex AI open source hacking tool used to breach networks in ‘under three hours’" | Stolen: financial data | via [TechCrunch](https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/)
 - 2026-11-16 | **REPORTED** | not disclosed | ? "China-Nexus Actors Breach 10 Organizations in AI-Driven Attacks" | Stolen: not disclosed | via [Dark Reading](https://www.darkreading.com/cyberattacks-data-breaches/china-nexus-actors-breach-10-organizations-ai-driven-attacks)
+- 2026-11-16 | **REPORTED** | not disclosed | ? "FBI says Artex AI open source hacking tool used to breach networks in ‘under three hours’" | Stolen: financial data | via [TechCrunch](https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/)
 - 2026-11-16 | **REPORTED** | not disclosed | **Barracuda** | Stolen: not disclosed | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack/)
 
 <details><summary>Claimed on leak sites / dark web / Telegram (90)</summary>
