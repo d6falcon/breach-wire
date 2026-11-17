@@ -1,0 +1,28 @@
+{
+  "_comment": "Breach Wire sources. tier: leak (ransomware leak-site trackers), darkweb (dark-web forum monitors), telegram, press (security press), news (mainstream), filing (regulator). Disable a source with \"enabled\": false.",
+  "sources": [
+    { "name": "ransomware.live",   "tier": "leak",     "type": "ransomwarelive", "url": "https://api.ransomware.live/v2/recentvictims", "enabled": true },
+    { "name": "RansomLook",        "tier": "leak",     "type": "ransomlook",     "url": "https://www.ransomlook.io/api/recent",          "enabled": true },
+    { "name": "Dark Web Informer", "tier": "darkweb",  "type": "dwi",            "url": "https://darkwebinformer.com/rss/",              "enabled": true },
+
+    { "name": "TG RansomFeedNews", "tier": "telegram", "type": "tg-ransomfeed",  "url": "https://t.me/s/RansomFeedNews",                "enabled": true },
+    { "name": "TG cyber_security_channel", "tier": "telegram", "type": "tg-news", "url": "https://t.me/s/cyber_security_channel",      "enabled": true },
+
+    { "name": "BleepingComputer",  "tier": "press",    "type": "rss", "url": "https://www.bleepingcomputer.com/feed/",                    "enabled": true },
+    { "name": "The Hacker News",   "tier": "press",    "type": "rss", "url": "https://feeds.feedburner.com/TheHackersNews",               "enabled": true },
+    { "name": "The Record",        "tier": "press",    "type": "rss", "url": "https://therecord.media/feed",                              "enabled": true },
+    { "name": "SecurityWeek",      "tier": "press",    "type": "rss", "url": "https://www.securityweek.com/feed/",                        "enabled": true },
+    { "name": "DataBreaches.net",  "tier": "press",    "type": "rss", "url": "https://databreaches.net/feed/",                            "enabled": true },
+    { "name": "Security Affairs",  "tier": "press",    "type": "rss", "url": "https://securityaffairs.com/feed",                          "enabled": true },
+    { "name": "Dark Reading",      "tier": "press",    "type": "rss", "url": "https://www.darkreading.com/rss.xml",                       "enabled": true },
+    { "name": "The Register",      "tier": "press",    "type": "rss", "url": "https://www.theregister.com/security/headlines.atom",       "enabled": true },
+    { "name": "TechCrunch",        "tier": "press",    "type": "rss", "url": "https://techcrunch.com/category/security/feed/",            "enabled": true },
+
+    { "name": "Reuters",           "tier": "news",     "type": "rss", "url": "https://news.google.com/rss/search?q=cyberattack+OR+hackers+OR+%22data+breach%22+OR+ransomware+site:reuters.com+when:3d&hl=en-GB&gl=GB&ceid=GB:en", "enabled": true },
+    { "name": "AP",                "tier": "news",     "type": "rss", "url": "https://news.google.com/rss/search?q=cyberattack+OR+hackers+OR+%22data+breach%22+OR+ransomware+site:apnews.com+when:3d&hl=en-GB&gl=GB&ceid=GB:en",  "enabled": true },
+    { "name": "The Guardian",      "tier": "news",     "type": "rss", "url": "https://www.theguardian.com/technology/data-computer-security/rss", "enabled": true },
+    { "name": "BBC",               "tier": "news",     "type": "rss", "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",          "enabled": true },
+
+    { "name": "SEC 8-K Item 1.05", "tier": "filing",   "type": "sec",  "url": "https://efts.sec.gov/LATEST/search-index",                 "enabled": true }
+  ]
+}

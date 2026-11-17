@@ -1,0 +1,2 @@
+# run log stays local; state/wire.tsv is committed so the feed history survives a rebuild
+state/run.log
