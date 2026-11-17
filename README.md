@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/breach-wire-banner.svg" alt="Breach Wire" width="100%"></p>
 
-# breach-wire
+# Breach-Wire
 
 **One line per cyber attack, three times a day.** Breach Wire watches ransomware leak sites, dark-web forums, Telegram, the security press, mainstream news and SEC filings. It writes what it finds to [breach-wire.md](breach-wire.md) as short messages:
 
