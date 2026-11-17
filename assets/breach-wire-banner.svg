@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-labelledby="t d">
+  <title id="t">Breach Wire</title>
+  <desc id="d">A dark, neon control-room display: a radar sweeps for signals while one-line attack messages scroll on a terminal.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04060c"/>
+      <stop offset="1" stop-color="#0a1426"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7cf7ff"/>
+      <stop offset="0.55" stop-color="#3fa9ff"/>
+      <stop offset="1" stop-color="#b16cff"/>
+    </linearGradient>
+    <radialGradient id="sweep" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1080 205) scale(130)">
+      <stop offset="0" stop-color="#3cf2ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#3cf2ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3cf2ff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#3cf2ff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#3cf2ff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="panel"><rect x="60" y="268" width="860" height="128"/></clipPath>
+  </defs>
+
+  <!-- backdrop -->
+  <rect width="1280" height="440" fill="url(#bg)"/>
+
+  <!-- perspective grid floor -->
+  <g stroke="#2a6cff" stroke-opacity="0.22" stroke-width="1" fill="none">
+    <path d="M0 440 L640 250 L1280 440"/>
+    <path d="M160 440 L640 250 M320 440 L640 250 M480 440 L640 250 M800 440 L640 250 M960 440 L640 250 M1120 440 L640 250"/>
+    <path d="M0 425 H1280 M0 398 H1280 M0 368 H1280 M0 334 H1280 M0 300 H1280 M0 272 H1280"/>
+  </g>
+
+  <!-- data rain, left edge -->
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="11" fill="#3cf2ff" fill-opacity="0.18">
+    <text x="18" y="40">0x4F</text><text x="18" y="62">T1486</text><text x="18" y="84">0x9C</text>
+    <text x="18" y="106">T1190</text><text x="18" y="128">0x1E</text><text x="18" y="150">T1078</text>
+    <text x="18" y="172">0xA7</text><text x="18" y="194">T1657</text>
+  </g>
+
+  <!-- title -->
+  <g filter="url(#glow)">
+    <text x="60" y="118" font-family="ui-monospace, SFMono-Regular, Consolas, 'Courier New', monospace" font-size="84" font-weight="700" letter-spacing="10" fill="url(#title)">BREACH WIRE</text>
+  </g>
+  <text x="64" y="160" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="19" letter-spacing="2" fill="#9fb4d9">LEAK SITES · DARK WEB · TELEGRAM · PRESS · FILINGS</text>
+  <text x="64" y="192" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="19" letter-spacing="2" fill="#5f7aa6">→ ONE LINE PER ATTACK, THREE TIMES A DAY</text>
+
+  <!-- terminal panel -->
+  <rect x="60" y="232" width="860" height="168" rx="10" fill="#060b16" fill-opacity="0.88" stroke="#2f7dff" stroke-opacity="0.55"/>
+  <circle cx="82" cy="250" r="4.5" fill="#ff4d6d"/><circle cx="98" cy="250" r="4.5" fill="#ffb84d"/><circle cx="114" cy="250" r="4.5" fill="#3cf2a0"/>
+  <text x="134" y="254" font-family="ui-monospace, Consolas, monospace" font-size="12" fill="#5f7aa6">breach-wire.md — live</text>
+
+  <g clip-path="url(#panel)" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="17">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -34; 0 -34; 0 -68; 0 -68; 0 0" keyTimes="0; 0.15; 0.45; 0.6; 0.9; 1" dur="9s" repeatCount="indefinite"/>
+      <text x="84" y="290"><tspan fill="#5f7aa6">06:41Z</tspan><tspan dx="16" fill="#ff4d6d" font-weight="700">CONFIRMED</tspan><tspan dx="16" fill="#7cf7ff">T1199</tspan><tspan dx="16" fill="#e6eefc">ACME LOGISTICS</tspan><tspan dx="16" fill="#9fb4d9">customer data</tspan></text>
+      <text x="84" y="324"><tspan fill="#5f7aa6">13:12Z</tspan><tspan dx="16" fill="#ffb84d" font-weight="700">REPORTED </tspan><tspan dx="16" fill="#7cf7ff">T1486</tspan><tspan dx="16" fill="#e6eefc">NORTHWIND HEALTH</tspan><tspan dx="16" fill="#9fb4d9">patient records</tspan></text>
+      <text x="84" y="358"><tspan fill="#5f7aa6">20:37Z</tspan><tspan dx="16" fill="#8b9bb4" font-weight="700">CLAIMED  </tspan><tspan dx="16" fill="#7cf7ff">T1657</tspan><tspan dx="16" fill="#e6eefc">CONTOSO BANK</tspan><tspan dx="16" fill="#9fb4d9">1.2 TB, financial</tspan></text>
+      <text x="84" y="392"><tspan fill="#5f7aa6">06:58Z</tspan><tspan dx="16" fill="#ff4d6d" font-weight="700">CONFIRMED</tspan><tspan dx="16" fill="#7cf7ff">T1566.004</tspan><tspan dx="16" fill="#e6eefc">FABRIKAM RETAIL</tspan><tspan dx="16" fill="#9fb4d9">credentials</tspan></text>
+      <text x="84" y="426"><tspan fill="#5f7aa6">13:44Z</tspan><tspan dx="16" fill="#8b9bb4" font-weight="700">CLAIMED  </tspan><tspan dx="16" fill="#7cf7ff">T1190</tspan><tspan dx="16" fill="#e6eefc">ADVENTURE WORKS</tspan><tspan dx="16" fill="#9fb4d9">source code</tspan></text>
+      <text x="84" y="460"><tspan fill="#5f7aa6">20:09Z</tspan><tspan dx="16" fill="#ffb84d" font-weight="700">REPORTED </tspan><tspan dx="16" fill="#7cf7ff">T1078</tspan><tspan dx="16" fill="#e6eefc">TAILSPIN AIR</tspan><tspan dx="16" fill="#9fb4d9">personal data</tspan></text>
+    </g>
+  </g>
+  <line x1="60" y1="266" x2="920" y2="266" stroke="#2f7dff" stroke-opacity="0.35"/>
+  <rect x="296" y="243" width="7" height="13" fill="#3cf2ff">
+    <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- radar -->
+  <g transform="translate(1080 205)">
+    <circle r="130" fill="#050a14" stroke="#2f7dff" stroke-opacity="0.6"/>
+    <g fill="none" stroke="#3cf2ff" stroke-opacity="0.25">
+      <circle r="97"/><circle r="64"/><circle r="31"/>
+      <path d="M-130 0 H130 M0 -130 V130"/>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite"/>
+      <path d="M0 0 L130 0 A130 130 0 0 0 92 -92 Z" fill="url(#sweep)"/>
+      <path d="M0 0 L130 0" stroke="#7cf7ff" stroke-width="2" filter="url(#soft)"/>
+    </g>
+    <g filter="url(#soft)">
+      <circle cx="58" cy="-46" r="5" fill="#ff4d6d"><animate attributeName="opacity" values="0.2;1;0.2" dur="5s" begin="0.6s" repeatCount="indefinite"/></circle>
+      <circle cx="-72" cy="-28" r="4" fill="#ffb84d"><animate attributeName="opacity" values="0.2;1;0.2" dur="5s" begin="2.1s" repeatCount="indefinite"/></circle>
+      <circle cx="-38" cy="74" r="4" fill="#8b9bb4"><animate attributeName="opacity" values="0.2;1;0.2" dur="5s" begin="3.2s" repeatCount="indefinite"/></circle>
+      <circle cx="84" cy="52" r="3.5" fill="#3cf2ff"><animate attributeName="opacity" values="0.2;1;0.2" dur="5s" begin="4.3s" repeatCount="indefinite"/></circle>
+    </g>
+  </g>
+  <text x="1080" y="368" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="12" letter-spacing="3" fill="#5f7aa6">SIGNAL SWEEP</text>
+
+  <!-- moving scanline -->
+  <rect x="0" y="-60" width="1280" height="60" fill="url(#scan)">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 500" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- frame -->
+  <rect x="1" y="1" width="1278" height="438" fill="none" stroke="#2f7dff" stroke-opacity="0.35" rx="6"/>
+</svg>

@@ -1,6 +1,8 @@
+<p align="center"><img src="assets/breach-wire-banner.svg" alt="Breach Wire" width="100%"></p>
+
 # breach-wire
 
-A messaging-style OSINT feed of cyber attacks. One line per incident, written to [breach-wire.md](breach-wire.md):
+**One line per cyber attack, three times a day.** Breach Wire watches ransomware leak sites, dark-web forums, Telegram, the security press, mainstream news and SEC filings. It writes what it finds to [breach-wire.md](breach-wire.md) as short messages:
 
 ```
 DATE | STATUS | TTP [ATT&CK] | COMPANY (country, sector) | Stolen: what (volume) | via sources
@@ -8,55 +10,43 @@ DATE | STATUS | TTP [ATT&CK] | COMPANY (country, sector) | Stolen: what (volume)
 2026-11-17 | CLAIMED | Exfiltration + extortion [T1657] - Vortex | Apellis Pharmaceuticals (US, Healthcare) | Stolen: data (307.64 GB) | via ransomware.live, RansomLook
 ```
 
+## What's new
+
+- **Runs on GitHub Actions** three times a day, at a different time each day. No laptop needed.
+- **Stays inside the free tier:** about 360 Actions minutes a month, against 2,000 free.
+- **19 sources**, all confirmed working from GitHub's runners.
+
 ## Status
 
-| Status | Meaning |
+| | |
 |---|---|
-| CONFIRMED | The victim, a regulator or a filing (SEC 8-K Item 1.05) acknowledges it |
-| REPORTED | Credible press reports it; the victim has not confirmed yet. Upgraded in place once confirmed |
-| CLAIMED | A ransomware leak site, dark-web forum or Telegram post claims it. Unverified, and kept as its own line so you can see claim → confirmation |
+| **CONFIRMED** | The victim, a regulator or an SEC 8-K Item 1.05 filing acknowledges it |
+| **REPORTED** | Credible press reports it; the victim hasn't confirmed yet (upgraded once they do) |
+| CLAIMED | A leak site, dark-web forum or Telegram post claims it. Unverified |
 
 ## Sources
 
-Edit [sources.json](sources.json) to add or disable a source.
+[sources.json](sources.json) lists them all. Disable one with `"enabled": false`.
 
-| Tier | Sources |
-|---|---|
-| Dark web: leak sites | ransomware.live, RansomLook (clearnet trackers of ransomware leak sites; no `.onion` access needed) |
-| Dark web: forums | Dark Web Informer (breach and data-sale claims) |
-| Telegram | RansomFeedNews, cyber_security_channel (public channel previews, `t.me/s/...`) |
-| Security press | BleepingComputer, The Hacker News, The Record, SecurityWeek, DataBreaches.net, Security Affairs, Dark Reading, The Register, TechCrunch |
-| Mainstream news | Reuters, AP (via Google News), The Guardian, BBC |
-| Regulator | SEC EDGAR 8-K Item 1.05 (material cybersecurity incidents) |
-
-Telegram channels are researcher and aggregator channels only. Criminal channels are not scraped directly; their claims reach the feed through the leak-site trackers.
-
-## Run it
-
-```bash
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Get-BreachWire.ps1
-```
-
-Options: `-Days 7` (look-back), `-KeepDays 30` (days shown), `-NoClaims` (confirmed and reported only).
+- **Dark web:** ransomware.live, RansomLook (leak-site trackers), Dark Web Informer (forum claims)
+- **Telegram:** RansomFeedNews, cyber_security_channel
+- **Security press:** BleepingComputer, The Hacker News, The Record, SecurityWeek, DataBreaches.net, Security Affairs, Dark Reading, The Register, TechCrunch
+- **News:** Reuters, AP, The Guardian, BBC
+- **Filings:** SEC 8-K Item 1.05
 
 ## Schedule
 
-GitHub Actions ([.github/workflows/breach-wire.yml](.github/workflows/breach-wire.yml)) runs the feed three times a day, at a different time each day (UTC):
+The [workflow](.github/workflows/breach-wire.yml) runs in three UTC windows: **06:00–07:30, 13:00–14:30 and 20:00–21:30**. Each day it picks one start time per window. To run it now, go to **Actions → breach-wire → Run workflow**.
 
-| Run | Possible start times |
-|---|---|
-| Morning | 06:00, 06:30, 07:00, 07:30 |
-| Afternoon | 13:00, 13:30, 14:00, 14:30 |
-| Evening | 20:00, 20:30, 21:00, 21:30 |
+To run it locally:
 
-One start time per window is picked from the date, so it varies day to day; the others exit immediately. GitHub can delay scheduled runs by a few minutes. Each run refreshes the feed and commits `breach-wire.md` and `state/wire.tsv` as d6falcon. Run it on demand from **Actions → breach-wire → Run workflow**. Usage is roughly 400 Actions minutes a month.
-
-**Local fallback:** `scripts/Register-BreachWireSchedule.ps1` registers the same schedule as a Windows scheduled task that refreshes, commits and pushes (`scripts/Invoke-BreachWireRun.ps1`). Don't run both: they would push over each other.
+```bash
+pwsh scripts/Get-BreachWire.ps1 -Days 7 -NoClaims
+```
 
 ## Caveats
 
-- **TTP and "what was stolen" are keyword-derived** from headlines and claim text. Treat them as triage hints, not attribution. ATT&CK IDs are Enterprise v20.1.
-- **Only data categories and volumes are written.** Leaked values (IBANs, emails, passwords, file links) are never copied into the feed.
-- **`?` means the company could not be parsed** from the headline; the headline is shown and the source is linked.
-- **Leak-site claims are noisy.** Groups re-post old victims, inflate volumes and sometimes name the wrong entity.
-- State lives in `state/wire.tsv` (60 days). Per-source results are in each Actions run log (locally, `state/run.log`).
+- **The TTP and "stolen" columns are keyword-derived.** Use them for triage, not attribution.
+- **Only data types and volumes are recorded.** Leaked values are never copied into the feed.
+- **Leak-site claims are noisy.** Groups re-post old victims and inflate volumes.
+- **`?` means no company could be parsed** from the headline; follow the source link.
