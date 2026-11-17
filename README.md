@@ -41,17 +41,17 @@ Options: `-Days 7` (look-back), `-KeepDays 30` (days shown), `-NoClaims` (confir
 
 ## Schedule
 
-`scripts/Register-BreachWireSchedule.ps1` registers a Windows scheduled task, `BreachWire`, that runs three times a day at different times each day:
+GitHub Actions ([.github/workflows/breach-wire.yml](.github/workflows/breach-wire.yml)) runs the feed three times a day, at a different time each day (UTC):
 
-| Run | Window |
+| Run | Possible start times |
 |---|---|
-| Morning | 06:00-08:00 |
-| Afternoon | 13:00-15:00 |
-| Evening | 20:00-22:00 |
+| Morning | 06:00, 06:30, 07:00, 07:30 |
+| Afternoon | 13:00, 13:30, 14:00, 14:30 |
+| Evening | 20:00, 20:30, 21:00, 21:30 |
 
-Each run starts at a random time inside its window. Missed runs catch up when the machine wakes up.
+One start time per window is picked from the date, so it varies day to day; the others exit immediately. GitHub can delay scheduled runs by a few minutes. Each run refreshes the feed and commits `breach-wire.md` and `state/wire.tsv` as d6falcon. Run it on demand from **Actions → breach-wire → Run workflow**. Usage is roughly 400 Actions minutes a month.
 
-Each scheduled run goes through `scripts/Invoke-BreachWireRun.ps1`, which refreshes the feed, commits `breach-wire.md` and `state/wire.tsv`, and pushes to `origin`. It never prompts for credentials: a failed push stays committed locally and goes out on the next run. Use `-NoPush` to commit without pushing. Change it with `-Times 07:30,12:00,18:45 -JitterHours 1`, or remove it with `-Remove`.
+**Local fallback:** `scripts/Register-BreachWireSchedule.ps1` registers the same schedule as a Windows scheduled task that refreshes, commits and pushes (`scripts/Invoke-BreachWireRun.ps1`). Don't run both: they would push over each other.
 
 ## Caveats
 
@@ -59,4 +59,4 @@ Each scheduled run goes through `scripts/Invoke-BreachWireRun.ps1`, which refres
 - **Only data categories and volumes are written.** Leaked values (IBANs, emails, passwords, file links) are never copied into the feed.
 - **`?` means the company could not be parsed** from the headline; the headline is shown and the source is linked.
 - **Leak-site claims are noisy.** Groups re-post old victims, inflate volumes and sometimes name the wrong entity.
-- State lives in `state/wire.tsv` (60 days) and `state/run.log`.
+- State lives in `state/wire.tsv` (60 days). Per-source results are in each Actions run log (locally, `state/run.log`).
