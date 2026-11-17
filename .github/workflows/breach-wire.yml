@@ -53,8 +53,7 @@ jobs:
 
       - name: Refresh feed
         if: steps.pick.outputs.run == 'true'
-        shell: pwsh
-        run: ./scripts/Get-BreachWire.ps1
+        run: python3 scripts/breach_wire.py
 
       - name: Commit and push
         if: steps.pick.outputs.run == 'true'

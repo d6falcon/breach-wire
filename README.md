@@ -15,6 +15,7 @@ DATE | STATUS | TTP [ATT&CK] | COMPANY (country, sector) | Stolen: what (volume)
 - **Runs on GitHub Actions** three times a day, at a different time each day. No laptop needed.
 - **Stays inside the free tier:** about 360 Actions minutes a month, against 2,000 free.
 - **19 sources**, all confirmed working from GitHub's runners.
+- **Pure Python**, standard library only: nothing to install.
 
 ## Status
 
@@ -38,10 +39,10 @@ DATE | STATUS | TTP [ATT&CK] | COMPANY (country, sector) | Stolen: what (volume)
 
 The [workflow](.github/workflows/breach-wire.yml) runs in three UTC windows: **06:00–07:30, 13:00–14:30 and 20:00–21:30**. Each day it picks one start time per window. To run it now, go to **Actions → breach-wire → Run workflow**.
 
-To run it locally:
+To run it locally (Python 3.11+, standard library only):
 
 ```bash
-pwsh scripts/Get-BreachWire.ps1 -Days 7 -NoClaims
+python3 scripts/breach_wire.py --days 7 --no-claims
 ```
 
 ## Caveats
