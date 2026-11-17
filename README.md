@@ -50,3 +50,7 @@ pwsh scripts/Get-BreachWire.ps1 -Days 7 -NoClaims
 - **Only data types and volumes are recorded.** Leaked values are never copied into the feed.
 - **Leak-site claims are noisy.** Groups re-post old victims and inflate volumes.
 - **`?` means no company could be parsed** from the headline; follow the source link.
+
+## Licence
+
+Code is [MIT](LICENSE) © 2026 d6falcon. The feed summarises third-party reporting; each linked source keeps its own terms.
