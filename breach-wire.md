@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-18 16:19 UTC** - last 14 days - 11 confirmed, 24 reported, 205 claimed
+Last run **2026-11-18 17:09 UTC** - last 14 days - 11 confirmed, 25 reported, 211 claimed
 
 | Status | Meaning |
 |---|---|
@@ -18,11 +18,11 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-18 | **CONFIRMED** | Defacement \[T1491.002\] | ? "Ice hockey governing body website defaced amid dispute over Russia's exclusion" | Stolen: not disclosed | via [The Record](https://therecord.media/russia-hockey-cyberattack-championships)
 - 2026-11-18 | **REPORTED** | not disclosed | ? "A month after Richmond Public School cyberattack, schools are far from normal" | Stolen: employee/HR data, student records | via [DataBreaches.net](https://databreaches.net/2026/11/18/a-month-after-richmond-public-school-cyberattack-schools-are-far-from-normal/)
 - 2026-11-18 | **REPORTED** | Exploited public-facing app \[T1190\] | ? "Japan to postpone launch of sex offense check system over data leak risk" | Stolen: not disclosed | via [DataBreaches.net](https://databreaches.net/2026/11/18/japan-to-postpone-launch-of-sex-offense-check-system-over-data-leak-risk/)
+- 2026-11-18 | **REPORTED** | not disclosed | ? "Microsoft’s Agent Framework PyPI package compromised to steal credentials" | Stolen: credentials | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/)
 - 2026-11-18 | **REPORTED** | Third-party/trusted relationship \[T1199\] | ? "Russian COLD RELIC Hackers Use Stolen Google Workspace Data to Breach Second U.S. Organization" | Stolen: not disclosed | via [The Hacker News](https://thehackernews.com/2026/11/russian-cold-relic-hackers-use-stolen.html)
-- 2026-11-18 | **REPORTED** | not disclosed | **Norway’s Equinor** | Stolen: not disclosed | via [Reuters](https://news.google.com/rss/articles/CBMivAFBVV95cUxPcVJiUE1UMWtYd2xEb1N0QWJscmN6WXEzMk1xdVhWaVB6Ykw3QVE1ak9FWnR2akotOVNDb0RqVExCaHZsT2tlR2wyWHdHTGpmUnNxZE9ZYlJNQUVBWDJBWF9kaFZGVVdVLWJjQTZhVHFyc1c1RU8xMmZLdU5NS1RlMzJfMURXUXh2Tl9DQTBROTM2bzJ4YWVDWG1xR3FaemNoVE9yYUYwckN0TmpGWFMwdUkxajNaNU5udzNMVA?oc=5)
 - 2026-11-18 | **REPORTED** | Ransomware \[T1486\] | **Wilmington School District 209U** | Stolen: employee/HR data, student records | via [DataBreaches.net](https://databreaches.net/2026/11/18/il-wilmington-school-district-209u-reports-ransomware-attack-and-possible-data-breach/)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (26)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (32)</summary>
 
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - HYFLOCK | **ASIA FM Taiwan Inc** (TW, Technology) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/QVNJQSBGTSBUYWl3YW4gSW5jQEhZRkxPQ0s=)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - hyflock | **ASIA FM Taiwan Inc leaks** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/hyflock)
@@ -30,6 +30,8 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - akira | **Bench Equity** | Stolen: customer data, personal data (PII), employee/HR data, government IDs (18 GB) | via [RansomLook](https://www.ransomlook.io/group/akira)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - HYFLOCK | **bestcorp** (IN) | Stolen: data (10,000 people) | via [ransomware.live](https://www.ransomware.live/id/YmVzdGNvcnBASFlGTE9DSw==)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - hyflock | **bestcorp leaks** | Stolen: data (10,000 people) | via [RansomLook](https://www.ransomlook.io/group/hyflock)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - lockbit5 | **cih.com.vn** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/lockbit5)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - HYFLOCK | **Colombian Real Estate** (CO, Retail & E-Commerce) | Stolen: employee/HR data, financial data, contracts/internal docs (450 employees) | via [ransomware.live](https://www.ransomware.live/id/Q29sb21iaWFuIFJlYWwgRXN0YXRlQEhZRkxPQ0s=)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - hyflock | **Colombian Real Estate Leak** | Stolen: employee/HR data, financial data, contracts/internal docs (450 employees) | via [RansomLook](https://www.ransomlook.io/group/hyflock)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - PixelLeaks | **EKwiiK (EazyPay, ekwiik.com)** (KE, Financial Services) | Stolen: customer data, financial data, credentials, funds/crypto | via [ransomware.live](https://www.ransomware.live/id/RUt3aWlLIChFYXp5UGF5LCBla3dpaWsuY29tKUBQaXhlbExlYWtz), [RansomLook](https://www.ransomlook.io/group/pixelleaks)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - PixelLeaks | **FAIR Health, Inc. (fairhealth.com)** (US, Healthcare) | Stolen: customer data, personal data (PII), employee/HR data, health data | via [ransomware.live](https://www.ransomware.live/id/RkFJUiBIZWFsdGgsIEluYy4gKGZhaXJoZWFsdGguY29tKUBQaXhlbExlYWtz), [RansomLook](https://www.ransomlook.io/group/pixelleaks)
@@ -37,16 +39,20 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Jazz Pharmaceuticals plc** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - whitearmor | **Jeld-wen** | Stolen: customer data, personal data (PII), employee/HR data, financial data (2.3 million customers) | via [RansomLook](https://www.ransomlook.io/group/whitearmor)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **KDBS Solutions** (Technology) | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/pixelleaks), [ransomware.live](https://www.ransomware.live/id/S0RCUyBTb2x1dGlvbnMgKGNsaWVudCBob3N0aW5nKUBQaXhlbExlYWtz)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - lockbit5 | **laguarda.com.ec** | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/lockbit5)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Meridian Capital Group** (US, Financial Services) | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/qilin), [ransomware.live](https://www.ransomware.live/id/TWVyaWRpYW4gQ2FwaXRhbCBHcm91cEBxaWxpbg==)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - Helix | **Mnfhs** | Stolen: data (298.47 GB) | via [ransomware.live](https://www.ransomware.live/id/TW5maHNASGVsaXg=)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - thegentlemen | **NVIDIA** (US, Technology) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/TlZJRElBQHRoZWdlbnRsZW1lbg==), [RansomLook](https://www.ransomlook.io/group/the%20gentlemen)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Permit Pros LLC** | Stolen: customer data, personal data (PII), databases/backups | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - lockbit5 | **primecareofmi.com** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/lockbit5)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Proymoda** (MX, Retail & E-Commerce) | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/pixelleaks), [ransomware.live](https://www.ransomware.live/id/UHJveW1vZGEgKHByb3ltb2RhLmNvbS5teClAUGl4ZWxMZWFrcw==)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - emperador | **Scooter Autoservice gmbh** (DE, Transportation) | Stolen: data (4.6 GB) | via [ransomware.live](https://www.ransomware.live/id/U2Nvb3RlciBBdXRvc2VydmljZSBnbWJoQGVtcGVyYWRvcg==), [RansomLook](https://www.ransomlook.io/group/emperador)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - PixelLeaks | **Seguridad Reyna (REYA)** (MX, Professional Services) | Stolen: customer data, financial data | via [ransomware.live](https://www.ransomware.live/id/U2VndXJpZGFkIFJleW5hIChSRVlBKUBQaXhlbExlYWtz), [RansomLook](https://www.ransomlook.io/group/pixelleaks)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - lockbit5 | **softlinefurniture.com** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/lockbit5)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **SteelTech Inc** (Manufacturing) | Stolen: customer data, personal data (PII), employee/HR data, health data (1.5 TB, 183 employees) | via [ransomware.live](https://www.ransomware.live/id/U3RlZWxUZWNoIEluYy5Acmh5c2lkYQ==), [RansomLook](https://www.ransomlook.io/group/rhysida)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - krybit | **STL International Pte Ltd** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/krybit)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - Aoqin | **TopGroup** (AR) | Stolen: customer data, employee/HR data, financial data, contracts/internal docs (327 GB) | via [ransomware.live](https://www.ransomware.live/id/VG9wR3JvdXBAQW9xaW4=), [RansomLook](https://www.ransomlook.io/group/aoqin%20leaks)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - lockbit5 | **umraocashmere.com** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/lockbit5)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - Helix | **Veritiv** (US, Manufacturing) | Stolen: data (68.65 GB) | via [ransomware.live](https://www.ransomware.live/id/VmVyaXRpdkBIZWxpeA==)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - PixelLeaks | **Wei Tai Leather Viet Nam Co., Ltd (weitai-leather.com)** (VN, Manufacturing) | Stolen: customer data, employee/HR data | via [ransomware.live](https://www.ransomware.live/id/V2VpIFRhaSBMZWF0aGVyIFZpZXQgTmFtIENvLiwgTHRkICh3ZWl0YWktbGVhdGhlci5jb20pQFBpeGVsTGVha3M=), [RansomLook](https://www.ransomlook.io/group/pixelleaks)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **WILLIAMS, BRODERSEN, PRITCHETT & RUIZ LLP** | Stolen: customer data, personal data (PII), employee/HR data, government IDs | via [RansomLook](https://www.ransomlook.io/group/rhysida)
@@ -75,6 +81,7 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-17 | **REPORTED** | DDoS \[T1498\] | ? "Tor releases emergency update amid ongoing DDoS attack" | Stolen: not disclosed | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/tor-releases-emergency-update-amid-ongoing-ddos-attack/)
 - 2026-11-17 | **REPORTED** | not disclosed | **Access Dental Management** | Stolen: health data | via [SecurityWeek](https://www.securityweek.com/access-dental-management-data-breach-impacts-over-340000/)
 - 2026-11-17 | **REPORTED** | not disclosed | **Japan’s Fugaku Supercomputer** | Stolen: personal data (PII) (4,597 users) | via [DataBreaches.net](https://databreaches.net/2026/11/17/cyberattack-on-japans-fugaku-supercomputer-puts-data-of-4597-users-at-risk/)
+- 2026-11-17 | **REPORTED** | not disclosed | **Norway’s Equinor** | Stolen: not disclosed | via [Reuters](https://news.google.com/rss/articles/CBMivAFBVV95cUxPcVJiUE1UMWtYd2xEb1N0QWJscmN6WXEzMk1xdVhWaVB6Ykw3QVE1ak9FWnR2akotOVNDb0RqVExCaHZsT2tlR2wyWHdHTGpmUnNxZE9ZYlJNQUVBWDJBWF9kaFZGVVdVLWJjQTZhVHFyc1c1RU8xMmZLdU5NS1RlMzJfMURXUXh2Tl9DQTBROTM2bzJ4YWVDWG1xR3FaemNoVE9yYUYwckN0TmpGWFMwdUkxajNaNU5udzNMVA?oc=5)
 
 <details><summary>Claimed on leak sites / dark web / Telegram (57)</summary>
 
