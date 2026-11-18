@@ -1,0 +1,26 @@
+{
+  "_comment": "vuln-wire sources. type: kev (CISA KEV JSON), ghsa (GitHub Advisory API, critical only), rss. filter (rss only): cve = keep items naming a CVE, a nickname or a zero-day; zdi0day = ZDI '(0Day)' items only; severity = keep CRITICAL/HIGH or CVSS >= 9. Disable a source with \"enabled\": false.",
+  "sources": [
+    { "name": "CISA KEV",        "type": "kev",  "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json", "enabled": true },
+    { "name": "GitHub Advisory", "type": "ghsa", "url": "https://api.github.com/advisories", "enabled": true },
+
+    { "name": "Wiz",             "type": "rss",  "filter": "cve",      "url": "https://www.wiz.io/feed/rss.xml", "enabled": true },
+    { "name": "watchTowr",       "type": "rss",  "filter": "cve",      "url": "https://labs.watchtowr.com/rss/", "enabled": true },
+    { "name": "Rapid7",          "type": "rss",  "filter": "cve",      "url": "https://www.rapid7.com/blog/rss/", "enabled": true },
+    { "name": "Unit 42",         "type": "rss",  "filter": "cve",      "url": "https://unit42.paloaltonetworks.com/feed/", "enabled": true },
+    { "name": "Tenable",         "type": "rss",  "filter": "cve",      "url": "https://www.tenable.com/blog/feed", "enabled": true },
+
+    { "name": "Cisco PSIRT",     "type": "rss",  "filter": "cve",      "url": "https://sec.cloudapps.cisco.com/security/center/psirtrss20/CiscoSecurityAdvisory.xml", "enabled": true },
+    { "name": "Fortinet PSIRT",  "type": "rss",  "filter": "severity", "url": "https://filestore.fortinet.com/fortiguard/rss/ir.xml", "enabled": true },
+    { "name": "Palo Alto",       "type": "rss",  "filter": "severity", "url": "https://security.paloaltonetworks.com/rss.xml", "enabled": true },
+    { "name": "ZDI",             "type": "rss",  "filter": "zdi0day",  "url": "https://www.zerodayinitiative.com/rss/published/", "enabled": true },
+
+    { "name": "BleepingComputer", "type": "rss", "filter": "cve",      "url": "https://www.bleepingcomputer.com/feed/", "enabled": true },
+    { "name": "The Hacker News",  "type": "rss", "filter": "cve",      "url": "https://feeds.feedburner.com/TheHackersNews", "enabled": true },
+    { "name": "SecurityWeek",     "type": "rss", "filter": "cve",      "url": "https://www.securityweek.com/feed/", "enabled": true }
+  ],
+  "enrich": {
+    "epss": "https://api.first.org/data/v1/epss",
+    "cve":  "https://cveawg.mitre.org/api/cve/"
+  }
+}

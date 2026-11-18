@@ -1,0 +1,2541 @@
+{
+"observations": [
+{
+"src": "GitHub Advisory",
+"date": "2026-10-19",
+"title": "Mercury: Unauthenticated Remote Code Execution in /api/terminals - access control bypass",
+"text": "### Summary\nA missing comma in `mercury_app/block_handler.py`'s `BLOCKED_PATTERNS` list causes the blocklist to fail to cover the `/api/terminals` endpoint. As a result, any unauthenticated attacker can spawn a full, interactive OS-level shell on the host running Mercury.\n\n### Details\nThe blocklist in `mercury_app/block_handler.py` is defined as:\n```\nBLOCKED_PATTERNS = [\n    # JupyterLab UI + API\n    r\"/lab(?!/(?:extensions/|api/settings(?:/|$)|api/translations(?:/|$)))(?:/.*)?\"\n    r\"/api/terminals(?:/.*)?\",\n    r\"/api/shutdown(?:/.*)?\",\n    r\"/files(?:/.*)?\",\n]\n```\nThe missing comma between the first and the second line causes Python to merge the rules, therefore the actual list that is blocked looks like this:\n\n/lab...(?:/.`*`)?/api/terminals(?:/.`*`)? (the first two lines joined togeth",
+"link": "https://github.com/advisories/GHSA-f8c7-rwf9-fmgm",
+"cves": [
+"CVE-2026-111057"
+],
+"nick": "",
+"product": "pip/mercury",
+"fix": "upgrade mercury to 3.2.4",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-19",
+"title": "Mercury: Unauthenticated Remote Code Execution via /api/kernels",
+"text": "Mercury runs a JupyterLab server with **anonymous access by default** (`mercury_app/__main__.py` sets `--IdentityProvider.token=''` when no `--token`/`MERCURY_TOKEN` is given; when tokenless it also sets `--ServerApp.disable_check_xsrf=True`). It relies on a **blocklist** (`mercury_app/block_handler.py` `BLOCKED_PATTERNS`: `/lab`, `/api/terminals`, `/api/shutdown`, `/files`) to keep anonymous users off dangerous Jupyter endpoints.\n\n## The vulnerability\n`/api/kernels` is **NOT** in the blocklist (and cannot be — Mercury needs kernels to run notebooks), and `patch_kernel_websocket_handler()` (`mercury_app/idle_timeout.py`) only tracks the idle-timeout: it wraps `on_message` to call `self.application._timeout_manager.touch()` and then invokes the original handler with **no filtering of `execu",
+"link": "https://github.com/advisories/GHSA-rv4m-xm3f-3ccq",
+"cves": [
+"CVE-2026-111058"
+],
+"nick": "",
+"product": "pip/mercury",
+"fix": "upgrade mercury to 3.2.6",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-20",
+"title": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+"text": "EG Secure Solutions SiteGuard Server Edition contains an OS command injection vulnerability which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-106931",
+"cves": [
+"CVE-2026-106931"
+],
+"nick": "",
+"product": "EG Secure Solutions SiteGuard Server Edition",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-10-23",
+"ransomware": false
+},
+"extra_link": "https://www.eg-secure.co.jp/siteguard/news/alert-202610-1"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-20",
+"title": "Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+"text": "Siemens Software Center contains an uncontrolled search path element vulnerability that could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with the privileges of the affected application.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-110936",
+"cves": [
+"CVE-2026-110936"
+],
+"nick": "",
+"product": "Siemens Software Center",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-03",
+"ransomware": false
+},
+"extra_link": "https://productcert.siemens.com/productcert/html/ssa-580366.html"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-20",
+"title": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+"text": "Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination. This vulnerability can be chained with CVE-2026-96654, CVE-2026-96655, and CVE-2026-96656.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-96652",
+"cves": [
+"CVE-2026-96652"
+],
+"nick": "",
+"product": "Plex Media Server",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-03",
+"ransomware": false
+},
+"extra_link": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-20",
+"title": "Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
+"text": "Plex Media Server contains an improper neutralization of encoded URI schemes in a web page vulnerability that could allow an attacker to call other plugins' functions and supply their own parameters. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96655, and CVE-2026-96656.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-96654",
+"cves": [
+"CVE-2026-96654"
+],
+"nick": "",
+"product": "Plex Media Server",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-10-23",
+"ransomware": false
+},
+"extra_link": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-20",
+"title": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+"text": "Plex Media Server contains a server-side request forgery (SSRF) vulnerability that could allow an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96656.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-96655",
+"cves": [
+"CVE-2026-96655"
+],
+"nick": "",
+"product": "Plex Media Server",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-03",
+"ransomware": false
+},
+"extra_link": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-20",
+"title": "Plex Media Server External Control of File Name or Path Vulnerability",
+"text": "Plex Media Server contains an external control of file name or path vulnerability which can allow an admin user to write arbitrary files that may be executed on load. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96655.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-96656",
+"cves": [
+"CVE-2026-96656"
+],
+"nick": "",
+"product": "Plex Media Server",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-10-23",
+"ransomware": false
+},
+"extra_link": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-20",
+"title": "certifi bundles emSign root CAs with compromised intermediate CA keys",
+"text": "Certifi versions before 2026.10.18 include the `emSign ECC Root CA - G3` root certificate in their bundled CA store. Eight eMudhra intermediate CA certificates that chain to this root have compromised private keys and the CA has revoked them. \n\nAn attacker with one of the compromised keys can issue valid-looking certificates for any hostname. If the attacker is also on-path, they can intercept or modify TLS traffic from clients that trust the certifi bundle. Examples include `requests`, `urllib3` and `pip`, and the Python.org macOS installer.\n\nCertifi 2026.10.18 removed all emSign roots from the bundle. Certifi 2026.10.19 restored the emSign roots that are not affected. Upgrade to 2026.10.19 or later, and rebuild container images that vendor certifi. Improper Certificate Validation",
+"link": "https://github.com/advisories/GHSA-6q48-6c7w-9gw2",
+"cves": [
+"GHSA-6q48-6c7w-9gw2"
+],
+"nick": "",
+"product": "pip/certifi",
+"fix": "upgrade certifi to 2026.10.18",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-20",
+"title": "Pillow: Heap buffer overflow in ImagingJpegDecode",
+"text": "## Summary\n\n`JpegImageFile.draft()` — which `Image.thumbnail()` calls automatically — requests 1/2, 1/4 or 1/8 scaled JPEG output and shrinks `self._size` and the tile extents to match, so `_setimage()` allocates a single-row decode buffer of `ceil(W/s)` samples. `ImagingJpegDecode()` sets `cinfo.scale_num`/`scale_denom`, calls `jpeg_start_decompress()`, and then reads scanlines into that buffer without ever comparing `cinfo.output_width`, `cinfo.output_height` or `cinfo.out_color_components` against `state->xsize`, `state->ysize` and `state->bits`.\n\nlibjpeg-turbo 3.x decodes lossless (SOF3) JPEG, but hardwires lossless streams to no scaling — the requested `scale_denom` is silently discarded. It therefore returns full-width `W`-sample rows into a buffer sized for `ceil(W/s)`. Each `jpeg_r",
+"link": "https://github.com/advisories/GHSA-8g5g-8vmr-9782",
+"cves": [
+"CVE-2026-112403"
+],
+"nick": "",
+"product": "pip/Pillow",
+"fix": "upgrade Pillow to 13.0.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-20",
+"title": "uv's bundled CA store trusts an emSign root whose intermediate CA keys are compromised",
+"text": "By default, uv verifies TLS connections against a vendored copy of the `webpki-root-certs` bundle. Versions before 0.13.4 include the `emSign ECC Root CA - G3` root. Eight eMudhra intermediate CA certificates that chain to that root have compromised private keys, and the CA has revoked them.\n\nAn attacker with one of the compromised keys can issue certificates that uv accepts for any hostname, and can be used to issue certificates to enable MITM attacks.\n\nuv 0.13.4 removes the root from its vendored bundle, following `webpki-root-certs` 1.0.10. Upgrade to 0.13.4 or later. Improper Certificate Validation",
+"link": "https://github.com/advisories/GHSA-hq85-5cpj-mr62",
+"cves": [
+"GHSA-hq85-5cpj-mr62"
+],
+"nick": "",
+"product": "pip/uv",
+"fix": "upgrade uv to 0.13.4",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Unit 42",
+"date": "2026-10-20",
+"title": "Active Exploitation of May 2026 PAN-OS CVE-2026-0257 (Updated October 20)",
+"text": "Ransomware operators including Spikey Scorpius (aka Qilin) and Tarnished Scorpius (aka Inc) are exploiting PAN-OS vulnerability CVE-2026-0257. The post Active Exploitation of May 2026 PAN-OS CVE-2026-0257 (Updated October 20) appeared first on Unit 42 .",
+"link": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/",
+"cves": [
+"CVE-2026-0257"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-21",
+"title": "Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO",
+"text": "```\n============================================================================\nHeap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO\nLocation: src/libImaging/TiffDecode.c:94  in _tiffWriteProc()\nCommit:   a707c6b21c313880d0771e54965d142dd42358b6\n============================================================================\n```\n\nPillow can write attacker-chosen data past the end of a heap buffer when it saves a TIFF image to an in-memory destination such as `io.BytesIO` rather than to a file. The same code also copies leftover heap memory from the process into the saved file. Anyone who can supply an image to a service that opens it and re-saves it as TIFF this way can trigger this with default settings. The attached reproducer crashes the process, and the overflow could potent",
+"link": "https://github.com/advisories/GHSA-332p-7hrc-92wf",
+"cves": [
+"CVE-2026-112393"
+],
+"nick": "",
+"product": "pip/Pillow",
+"fix": "upgrade Pillow to 13.0.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-21",
+"title": "Storybook: Missing origin validation in Storybook preview allows code injection from malicious websites",
+"text": "**Summary:** A malicious website may be able to cause unauthorized file changes in a developer’s project while an affected Storybook development server is running. Under additional conditions, a changed file could be executed by a local runtime with the developer’s privileges. We are not aware of exploitation in the wild.\n\n## Who is impacted?\n\nYou are impacted if you run a Storybook dev server in the affected versions.\n\nYou are not impacted if:\n\n- You run a dev server that you never open in a web browser (e.g. headless automation, MCP clients)\n- You run or visit a built version of Storybook\n\nRecent versions of Chrome and Firefox may ask for permission before a website can connect to a `localhost` service. This reduces the risk, but does not remove it. Do not grant this permission to websit",
+"link": "https://github.com/advisories/GHSA-f2ph-cmg5-wxc8",
+"cves": [
+"CVE-2026-114125"
+],
+"nick": "",
+"product": "npm/storybook",
+"fix": "upgrade storybook to 8.6.19; upgrade storybook to 9.1.21",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-21",
+"title": "Duplicate Advisory: vLLM: Request-controlled mm_processor_kwargs.code_revision allows remote code execution",
+"text": "## Duplicate Advisory\n\nThis advisory has been withdrawn because it is a duplicate of GHSA-h3rc-6mm3-gc2m. This link is maintained to preserve external references.\n\n## Original Description\nvLLM from 0.7.3 before 0.31.0 forwards the request-supplied mm_processor_kwargs.code_revision to Transformers AutoProcessor.from_pretrained, letting clients select which revision of a model's dynamic processor code is imported when trust_remote_code is enabled. An attacker controlling a revision in the served model repository can send a multimodal request to the unauthenticated /tokenize endpoint to execute arbitrary Python in the vLLM API process. Improper Control of Generation of Code",
+"link": "https://github.com/advisories/GHSA-f623-hjm8-5wg5",
+"cves": [
+"GHSA-f623-hjm8-5wg5"
+],
+"nick": "",
+"product": "pip/vllm",
+"fix": "upgrade vllm to 0.31.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-21",
+"title": "Pillow: Argument Injection in Ghostscript call, potentially leading into RCE",
+"text": "### Summary\n`PIL.EpsImagePlugin.Ghostscript()` builds the Ghostscript command line using the input file path (`fp.name`) **without sanitization**, placing it at `-f <infile>`. A filename beginning with `-` is interpreted by Ghostscript as an option, giving command-line argument injection; chainable to RCE (see Impact). Reproduces with Pillow's default invocation (with `-dSAFER` enabled).\n\n### Details\n_Give all details on the vulnerability. Pointing to the incriminated source code is very helpful for the maintainer._\n\n#### Type\nCWE-88 (Argument Injection) (→ CWE-78 (OS Command Injection) optionally, with attacker controlled text file)\n\n#### Vulnerable Codes\n\n```python\ninfile_temp = None\nif hasattr(fp, \"name\") and os.path.exists(fp.name):\n    infile = fp.name                      # user-cont",
+"link": "https://github.com/advisories/GHSA-w889-685w-c8fh",
+"cves": [
+"CVE-2026-112900"
+],
+"nick": "",
+"product": "pip/Pillow",
+"fix": "upgrade Pillow to 13.0.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Wiz",
+"date": "2026-10-21",
+"title": "PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet",
+"text": "Core PHP engine flaws enable remote code execution and Heartbleed-style memory disclosure across the web.",
+"link": "https://www.wiz.io/blog/php2shell-php-rce",
+"cves": [],
+"nick": "PHP2Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Cisco PSIRT",
+"date": "2026-10-22",
+"title": "Multiple Cisco Products Snort 3 Security Hardening Release: October 2026",
+"text": "As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco owned Open Source Snort 3 Software engineering team has conducted a comprehensive internal security review. This review resulted in software hardening releases that address multiple internally discovered vulnerabilities. The vulnerabilities tracked by CVE-2026-20043 are related to issues concerning out-of-bounds writes that are grouped under the Common Weakness Enumeration (CWE) Base CWE-787. As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco-owned Open Source Snort 3 engineering team has conducted a comprehensive internal security review. This review resulted in software hardening releases that address multiple internally discovered vulnerabilities. These vuln",
+"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-hardening-snort3-ybgmhTQe?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Multiple%20Cisco%20Products%20Snort%203%20Security%20Hardening%20Release:%20October%202026%26vs_k=1",
+"cves": [
+"CVE-2026-20043",
+"CVE-2026-20236"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-22",
+"title": "Next.js: Unauthenticated Remote Code Execution in Image Optimization API when SVG files are used",
+"text": "## Impact\n\nA memory-related vulnerability has been discovered in an upstream library used for Image Optimization can lead to possible remote code execution (RCE) when Next.js runs on glibc-based Linux.\n\n## Workaround\n\nEnsure the version of `sharp` used by Next.js is greater than or equal to `0.35.5`. Fresh installs automatically get a fixed version of `sharp`.\nUpgrading Next.js to the patched versions will ensure package managers automatically provide a fixed version of `sharp` to Next.js. Dependency on Vulnerable Third-Party Component",
+"link": "https://github.com/advisories/GHSA-2464-fhr4-w9xw",
+"cves": [
+"GHSA-2464-fhr4-w9xw"
+],
+"nick": "",
+"product": "npm/next",
+"fix": "upgrade next to 15.5.28; upgrade next to 16.4.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-22",
+"title": "Next.js: Unauthenticated Remote Code Execution in `use cache` functions returning typed arrays",
+"text": "## Impact\n\nA vulnerability in applications using App router with Cache Component can lead to remote code execution. The application needs to have a `use cache` function that returns multiple typed arrays.\n\n## Workaround\n\nThere is no known workaround for affected applications with such `use cache` functions. You should upgrade immediately even if your application does not have similar functions. Deserialization of Untrusted Data",
+"link": "https://github.com/advisories/GHSA-673q-mjm6-r5xr",
+"cves": [
+"GHSA-673q-mjm6-r5xr"
+],
+"nick": "",
+"product": "npm/next",
+"fix": "upgrade next to 16.4.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-22",
+"title": "mem0ai Databricks vector store vulnerable to SQL injection",
+"text": "mem0 0.1.117 before 1.0.8 contains an sql injection vulnerability in mem0/vector_stores/databricks.py that allows attackers to inject SQL by influencing stored memory content. Attackers can supply crafted memory text, metadata, or message names that reach unescaped insert() and update() string interpolation to execute injected SQL on the configured Databricks SQL warehouse. Improper Neutralization of Special Elements used in an SQL Command",
+"link": "https://github.com/advisories/GHSA-7587-9684-52r6",
+"cves": [
+"CVE-2026-115324"
+],
+"nick": "",
+"product": "pip/mem0ai",
+"fix": "upgrade mem0ai to 1.0.8",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-22",
+"title": "Brotli: Out-of-bounds write in the Brotli decoder (\"Node2Shell\") also affects the PyPI Brotli package",
+"text": "A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in Google Brotli versions 1.0.3 through 1.2.0 on all platforms allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream.\n\nUsers need to update any Brotli libraries or binaries between 1.0.3 through 1.2.0 to the latest available version: 1.0.10 or 1.1.1 or 1.2.1. Unchecked Return Value",
+"link": "https://github.com/advisories/GHSA-9v8h-qqgm-4m35",
+"cves": [
+"CVE-2026-111497"
+],
+"nick": "Node2Shell",
+"product": "pip/brotli, pip/brotlicffi",
+"fix": "upgrade brotli to 1.2.1; upgrade brotlicffi to 1.2.1.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-22",
+"title": "DOMPurify SAFE_FOR_TEMPLATES bypass: split template expressions survive in attached shadow root content on DOM output modes",
+"text": "## Summary\n\nWhen DOMPurify is configured with `SAFE_FOR_TEMPLATES: true` together with a DOM-returning mode (`RETURN_DOM: true`, `RETURN_DOM_FRAGMENT: true`, or `IN_PLACE: true`), template expressions such as `{{...}}`, `${...}`, and `<%...%>` survive sanitization inside the text content of an attached shadow root. The post-walk safety net `_scrubTemplateExpressions` (`src/purify.ts:1717`) was extended to recurse into `<template>.content`, but it never recurses into attached shadow roots. An attacker who can supply a DOM node carrying a shadow root (the `IN_PLACE` and shadow-aware `RETURN_DOM` surfaces) can split an expression across text nodes separated by disallowed elements; after those elements are removed the fragments become adjacent and serialize into a complete expression that a do",
+"link": "https://github.com/advisories/GHSA-cg2g-xh64-v4q7",
+"cves": [
+"GHSA-cg2g-xh64-v4q7"
+],
+"nick": "",
+"product": "npm/dompurify",
+"fix": "upgrade dompurify to 3.4.17",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-22",
+"title": "Sentry-Javascript: Middleware Bypass when using Tunnel route",
+"text": "### Impact\n\nThe `tunnelRoute` option makes the SDK send browser events to a path on your own Next.js server (for example `/monitoring`), where a rewrite forwards them to Sentry to prevent ad blockers from blocking them. To keep those envelope requests from being rejected by your middleware, the SDK skips middleware for them.\n\nThe middleware skip was wider than the rewrite. The rewrite only serves requests to the tunnel path itself with the `o` and `p` parameters set. The skip applied to anything under the tunnel path. Requests in that gap go to your application instead of Sentry, and your middleware never runs on them.\n\nSkipping middleware does not grant the request any privileges. Routes that check the session server-side are still protected.\n\nYou are affected only if **all** of the follo",
+"link": "https://github.com/advisories/GHSA-mchm-gjx6-7h55",
+"cves": [
+"CVE-2026-114139"
+],
+"nick": "",
+"product": "npm/@sentry/nextjs",
+"fix": "upgrade @sentry/nextjs to 9.47.2; upgrade @sentry/nextjs to 10.75.2",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-22",
+"title": "Pillow multi-frame loaders can reuse stale native image storage after mode transitions",
+"text": "### Summary\nPillow multi-frame image loaders can retain native `ImagingCore` storage allocated for one frame while changing the Python-side image `mode` and decoder tiles for a later frame.\n\nIf frame 0 allocates storage for a narrow mode such as `L`, and a later frame of the same dimensions switches to a wider mode such as `RGB` or `CMYK`, Pillow may decode wider pixels into the stale narrow native buffer. This causes native\nout-of-bounds writes and process crashes. In the MPO/JPEG path, I also demonstrated command execution in matching Python/Pillow runtime profiles through Pillow's documented `ImageSequence.Iterator` + `frame.load()` path.\n\n### Details\nThe root cause appears to be that `ImageFile.load_prepare()` only reallocates native storage when `_im is None`. It does not verify that ",
+"link": "https://github.com/advisories/GHSA-v9pv-5gc8-w2m6",
+"cves": [
+"CVE-2026-96639"
+],
+"nick": "",
+"product": "pip/Pillow",
+"fix": "upgrade Pillow to 13.0.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-23",
+"title": "Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
+"text": "Collabora Collabora Online – Built-in CODE Server when used within the NextCloud platform contains an OS command injection vulnerability that allows for remote code execution when the CODE server isn't running.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-110447",
+"cves": [
+"CVE-2026-110447"
+],
+"nick": "",
+"product": "Collabora Online – Built-in CODE Server",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-10-26",
+"ransomware": false
+},
+"extra_link": "https://help.nextcloud.com/t/to-collabora-built-in-user-update-asap/250516"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-23",
+"title": "Arista VeloCloud Orchestrator SQL Injection Vulnerability",
+"text": "Arista VeloCloud Orchestrator on-prem contains a SQL injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-114625",
+"cves": [
+"CVE-2026-114625"
+],
+"nick": "",
+"product": "Arista VeloCloud Orchestrator",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-10-26",
+"ransomware": false
+},
+"extra_link": "https://www.arista.com/en/support/advisories-notices/security-advisory/24838-security-advisory-0199"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-23",
+"title": "Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution",
+"text": "### Credits\n\n**Researcher**: Alex Bouffard (mixbo@pebwalker.com)\n\n### Summary\n\nA heap buffer overflow in Pillow's FlashPix (FPX) JPEG-tile decoder lets an attacker achieve arbitrary code execution by getting an application to open a single crafted file with `Image.open()`. The file is recognized by content (the OLE2 magic), not by extension, so any service that opens or thumbnails untrusted uploads with the optional `olefile` dependency installed is reachable with no user interaction. In the PoC below, opening one crafted file executes an attacker-chosen command on stock Pillow 12.2.0 (x86_64 Ubuntu 24.04, glibc 2.39).\n\n### Details\n\n`FpxImagePlugin` decodes FlashPix (FPX) files, which are OLE2/CFBF compound documents.\n\n`Image.open()` auto-detects them from the OLE2 magic `D0CF11E0...` when",
+"link": "https://github.com/advisories/GHSA-5x8w-8jj5-q52h",
+"cves": [
+"CVE-2026-112398"
+],
+"nick": "",
+"product": "pip/pillow",
+"fix": "upgrade pillow to 13.0.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-23",
+"title": "obsidian-tc tokens can access arbitrary configured vaults",
+"text": "### Impact\nTool dispatch did not check the caller-supplied `input.vault` against the caller's bound vault (`ctx.vaultId`); the folder ACL was a single global instance and the JWT carried no vault claim. As a result, **any valid token could read, write, or delete any configured vault** by passing `input.vault`, defeating multi-tenant isolation across ~90 tool sites. (`resources/read` was the only surface that already guarded this.)\n\n### Patches\nFixed in **1.3.1** (the fix was developed on the `v1.3.0` tag, which never published to npm; 1.3.1 is the first published release with the fix). Upgrade to `>= 1.3.1`.\n\n### Workarounds\nRun a single vault per server process, or isolate each tenant on a separate process/credential.\n\n### Fix\nA central `input.vault === ctx.vaultId` guard was added in dis",
+"link": "https://github.com/advisories/GHSA-84c9-qqpq-2pq5",
+"cves": [
+"CVE-2026-77366"
+],
+"nick": "",
+"product": "npm/obsidian-tc",
+"fix": "upgrade obsidian-tc to 1.3.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-23",
+"title": "Wasmtime: Bit-packing in Cranelift compiler causes silent overflow and miscompilation",
+"text": "## Summary\n\nIn Wasmtime prior to v43, the Cranelift compiler backend bit-packs its SSA value indices in a way that can result in silent overflow in release builds, and result in incorrect value references in the IR resulting in arbitrary miscompilation. A very large Wasm function body, or one that is specially crafted to use many SSA values, can use this to force type-confusion or other arbitrary side-effects and escape the sandbox.\n\nCranelift was changed in Wasmtime v43 to use a full `u32` index, with checks if that limit is exceeded, and so is no longer susceptible to this bug.\n\n## Impact\n\nA Wasmtime engine with default settings (using the Cranelift backend) on any architecture/platform could experience a sandbox escape from a specially-crafted Wasm module.\n\n## Patches\n\nWasmtime v36.0.19",
+"link": "https://github.com/advisories/GHSA-897f-g5gm-fmxm",
+"cves": [
+"CVE-2026-115889"
+],
+"nick": "",
+"product": "rust/wasmtime",
+"fix": "upgrade wasmtime to 36.0.19; upgrade wasmtime to 43.0.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-23",
+"title": "Echo: Rejected WebSocket upgrades can bypass Echo route-level access controls",
+"text": "## Impact\n\nEcho's Proxy middleware selected a raw tunnel when the client requested a WebSocket upgrade, before validating whether the configured upstream accepted it. If the upstream returned an ordinary HTTP response and kept the connection alive, subsequent HTTP requests on that connection were forwarded directly to the same upstream without passing through Echo's router or route-specific middleware.\n\nThis can bypass authentication or authorization enforced only at Echo's routes. Exploitation requires an accessible proxy route, an upstream that rejects the upgrade without closing the connection, and a target resource on that upstream without independent authorization. The issue does not provide arbitrary-host proxying or bypass the upstream's own authentication.\n\n## Affected versions and",
+"link": "https://github.com/advisories/GHSA-cxf3-9h37-7rr8",
+"cves": [
+"CVE-2026-118264"
+],
+"nick": "",
+"product": "go/github.com/labstack/echo/v4, go/github.com/labstack/echo/v5",
+"fix": "upgrade github.com/labstack/echo/v4 to 4.16.1; upgrade github.com/labstack/echo/v5 to 5.4.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-23",
+"title": "Laravel TokenGuard authentication bypass through non-string API credentials",
+"text": "Laravel's built-in TokenGuard, **when configured with a standard token-based API guard**, may be bypassed to authenticate as an arbitrary existing user without knowledge of their valid API token. \n\n**Under certain database configurations (MySQL/MariaDB)** an attacker can submit a specially crafted, non-string credential value that is mishandled during the authentication lookup, causing the underlying query to match an unintended user record rather than failing authentication as expected.\n\n### Impact\nAn unauthenticated attacker may authenticate as another user without possessing that user's API token, leading to authentication bypass and account takeover on any route protected by the affected guard. Improper Authentication Improper Validation of Specified Type of Input",
+"link": "https://github.com/advisories/GHSA-f9x3-7vq9-cph6",
+"cves": [
+"CVE-2026-114509"
+],
+"nick": "",
+"product": "composer/laravel/framework",
+"fix": "upgrade laravel/framework to 13.27.0; upgrade laravel/framework to 12.68.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-23",
+"title": "obsidian-tc HTTP transport lacks Origin/DNS-rebinding protection, enabling drive-by vault access on loopback",
+"text": "### Impact\nThe Streamable HTTP transport was constructed without `enableDnsRebindingProtection`/`allowedHosts`/`allowedOrigins` and performed no `Origin`-header validation. With the documented `auth.mode: \"none\"` loopback default, a **drive-by web page could `POST http://127.0.0.1/mcp`** and receive caller `http-local` with scopes `[\"*\"]` — full vault read/write — via DNS rebinding / a forged Origin.\n\n### Patches\nFixed in **1.3.1**. Upgrade to `>= 1.3.1`. The transport now enables DNS-rebinding protection and allowed hosts/origins and returns HTTP 403 on an invalid Origin (per MCP 2025-11-25).\n\n### Workarounds\nDo not expose the HTTP transport with `auth.mode: \"none\"`; require JWT auth, or bind to a non-loopback interface behind a proxy that validates `Origin`. Origin Validation Error Missi",
+"link": "https://github.com/advisories/GHSA-pqh8-4pj7-32xx",
+"cves": [
+"CVE-2026-77363"
+],
+"nick": "",
+"product": "npm/obsidian-tc",
+"fix": "upgrade obsidian-tc to 1.3.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-26",
+"title": "PHP Memory Corruption Vulnerability",
+"text": "PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-109618",
+"cves": [
+"CVE-2026-109618"
+],
+"nick": "",
+"product": "PHP",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-10-29",
+"ransomware": false
+},
+"extra_link": "https://www.php.net/"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-26",
+"title": "PHP Stale Internal Request-State Vulnerability",
+"text": "PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-109619",
+"cves": [
+"CVE-2026-109619"
+],
+"nick": "",
+"product": "PHP",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-10-29",
+"ransomware": false
+},
+"extra_link": "https://www.php.net/"
+},
+{
+"src": "Fortinet PSIRT",
+"date": "2026-10-26",
+"title": "Node2Shell CVEs",
+"text": "CVSSv3 Score: 9.8 CVE-2026-105482 - (high)This vulnerability affects Node.js 26.x, 24.x, and 22.x.CVE-2026-105483 - (high)This vulnerability affects Node.js 26.x and 24.x.CVE-2026-106069 - (high)This vulnerability affects Node.js 26.x, 24.x, and 22.x.CVE-2026-111497 - (high)A flaw in Node.js can cause Node.js Brotli decoder out-of-bounds write permits remote code execution.This vulnerability affects Node.js 26.x, 24.x, and 22.x.CVE-2026-105481 - (medium)This vulnerability affects Node.js 26.x, 24.x, and 22.x.CVE-2026-106072 - (medium)This vulnerability affects Node.js 26.x, 24.x, and 22.x.CVE-2026-106074 - (medium)This vulnerability affects Node.js 26.x, 24.x, and 22.x.CVE-2026-106070 - (low)This vulnerability affects Node.js 26.x.CVE-2026-106071 - (low)This vulnerability affects Node.js 2",
+"link": "https://fortiguard.fortinet.com/psirt/FG-IR-26-187",
+"cves": [
+"CVE-2026-105482",
+"CVE-2026-105483"
+],
+"nick": "Node2Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Rapid7",
+"date": "2026-10-26",
+"title": "CVE-2026-111497: Critical out-of-bounds write in the Node.js Brotli decoder",
+"text": "Overview On October 21, 2026, the Node.js Project published a security advisory for CVE-2026-111497 , an out-of-bounds write in the Brotli decoder bundled with Node.js. The vulnerability affects the Node.js 26.x , 24.x , and 22.x release lines. Node.js rates the issue High, while Google, the CVE Numbering Authority (CNA), gives it a critical CVSSv4 score of 9.2 . An attacker who can supply Brotli data that an application decompresses with node:zlib can corrupt process memory. According to Node.js, this corruption can lead to a process crash, disclosure of sensitive process memory, or remote code execution. Exposure therefore depends on whether an application passes attacker-controlled compressed data to the affected decoder. On October 27, 2026, CVE-2026-111497 was added to the U.S. Cybers",
+"link": "https://www.rapid7.com/blog/post/etr-cve-2026-111497-critical-out-of-bounds-write-in-the-node-js-brotli-decoder",
+"cves": [
+"CVE-2026-111497"
+],
+"nick": "",
+"product": "",
+"fix": "upgrade to 22.23.4 / 24.22.1 / 26.12.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-27",
+"title": "Google Brotli Unchecked Return Value Vulnerability",
+"text": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-111497",
+"cves": [
+"CVE-2026-111497"
+],
+"nick": "",
+"product": "Google Brotli",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-10",
+"ransomware": false
+},
+"extra_link": "https://github.com/google/brotli/releases/tag/v1.2.1"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-27",
+"title": "Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+"text": "Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's account or session.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-48356",
+"cves": [
+"CVE-2026-48356"
+],
+"nick": "",
+"product": "Adobe Commerce and Magento",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-10",
+"ransomware": false
+},
+"extra_link": "https://www.adobe.com/trust/security/products/commerce/apsb26-73.html"
+},
+{
+"src": "Cisco PSIRT",
+"date": "2026-10-27",
+"title": "Cisco Expressway Series Security Hardening Release: October 2026",
+"text": "As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco Expressway Series software engineering team has conducted a comprehensive internal security review. This review resulted in a software hardening release that addresses multiple internally discovered vulnerabilities. These vulnerabilities were found during internal testing and are not known to be actively exploited. To assist customers in patching and streamline the disclosure process, Cisco has grouped these issues by their underlying vulnerability class - Common Weakness Enumeration (CWE) - and assigned a single Common Vulnerabilities and Exposures identifier (CVE ID) to each CWE grouping. Cisco Expressway Series refers to Cisco Expressway Core (Expressway-C) devices and Cisco Expressway Edge (Expre",
+"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-exwy-hardening-FhcqBVcs?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Cisco%20Expressway%20Series%20Security%20Hardening%20Release:%20October%202026%26vs_k=1",
+"cves": [
+"CVE-2026-76490",
+"CVE-2026-76491"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Cisco PSIRT",
+"date": "2026-10-27",
+"title": "Cisco Unified Communications Products Security Hardening Release: October 2026",
+"text": "As part of Cisco's ongoing commitment to proactive security and product quality, engineering teams for Cisco Emergency Responder, Cisco Prime Collaboration Deployment, Cisco Unified Communications Manager (Unified CM), Cisco Unified Communications Manager IM & Presence Service (Unified CM IM&P), Cisco Unified Communications Manager Session Management Edition (Unified CM SME), and Cisco Unity Connection have conducted a comprehensive internal security review. This review resulted in software hardening releases that address multiple internally discovered vulnerabilities. These vulnerabilities were found during internal testing and are not known to be actively exploited. To assist customers in patching and streamline the disclosure process, Cisco has grouped these issues by their underlying v",
+"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-voice-hardening-twgbH9e3?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Cisco%20Unified%20Communications%20Products%20Security%20Hardening%20Release:%20October%202026%26vs_k=1",
+"cves": [
+"CVE-2026-76473",
+"CVE-2026-76474"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-27",
+"title": "MLflow vulnerable to remote code execution on unauthenticated servers via third-party scorer deserialization importing caller-placed artifact modules",
+"text": "## Summary\n\nMLflow 3.12.0 introduced registration and deserialization support for third-party scorers in OSS MLflow. During scorer deserialization, the server accepts a request-controlled Python module path beneath one of four allowed package prefixes, imports that module, obtains a request-controlled class, and instantiates it synchronously.\n\nAn HTTP caller can combine this behavior with MLflow's built-in experiment, run, and artifact-upload endpoints:\n\n1. Create an experiment whose local artifact location points to a writable allowed scorer package.\n2. Create a run, causing MLflow to allocate `<artifact_location>/<run_id>/artifacts/`.\n3. Upload a Python module into that run artifact directory.\n4. Submit a serialized third-party scorer whose module path resolves to the uploaded file.\n5. T",
+"link": "https://github.com/advisories/GHSA-26p8-2jq9-3vq9",
+"cves": [
+"CVE-2026-116692"
+],
+"nick": "",
+"product": "pip/mlflow",
+"fix": "upgrade mlflow to 3.17.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-27",
+"title": "MONAILabel Server Crash and Silent Inference Corruption via Crafted DICOM (pydicom DS/IS Validation Bypass)",
+"text": "### Summary\n\nAn unauthenticated remote attacker can crash a running MONAILabel server or silently corrupt its medical AI inference results by uploading a single crafted DICOM file (~132 KB) via the REST API. The vulnerability stems from pydicom's lack of validation for Decimal String (DS) and Integer String (IS) DICOM Value Representations, which allows NaN and infinity values to pass through MONAI's PydicomReader and propagate through the entire spatial transform and ML inference pipeline.\n\nNo authentication is required for the default MONAILabel REST API. The attacker needs only network access to the server (default port 8000).\n\n**Severity:** CVSS 3.1: 8.7 HIGH  \n**CVSS Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:L  \n**CWE:** CWE-20 (Improper Input Validation) → CWE-682 (Incorre",
+"link": "https://github.com/advisories/GHSA-6hp3-vr39-rqw8",
+"cves": [
+"CVE-2026-48705"
+],
+"nick": "",
+"product": "pip/monai",
+"fix": "upgrade monai to 1.6.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-27",
+"title": "Authlib: empty signatures validation in JWS JSON deserialization",
+"text": "Authlib (prior to 1.9.0) contains a signature verification bypass vulnerability. The JsonWebSignature.deserialize_json() method accepts a JSON Serialization JWS object and returns the payload as successfully verified without checking for a signature and without requiring a cryptographic key.\n\n## Root cause\n\n`authlib/jose/rfc7515/jws.py`, read on the installed 1.8.0 artifact:\n\n```python\nis_valid = True                        # set before anything is checked\nfor header_obj in obj[\"signatures\"]:   # empty array means the body never runs\n    jws_header, valid = self._validate_json_jws(...)\n    if not valid:\n        is_valid = False\n...\nif is_valid:\n    return rv                          # returns the payload as verified\n```\n\n`is_valid` is initialised to `True` and only ever set to `False` from",
+"link": "https://github.com/advisories/GHSA-6v38-4h7w-rj9h",
+"cves": [
+"CVE-2026-96760"
+],
+"nick": "",
+"product": "pip/authlib",
+"fix": "upgrade authlib to 1.9.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-27",
+"title": "better-auth: OAuth state can be used as a Magic Link to sign in as another user",
+"text": "## Am I affected?\n\nYou may be affected if you use `better-auth` from `1.4.0-beta.18` through versions before `1.7.7` with the Magic Link plugin and social or Generic OAuth sign-in.\n\nYou are affected if **all** of these are true:\n\n- Magic Link is enabled with default `storeToken: \"plain\"`, or with `storeToken: \"hashed\"` and global `verification.storeIdentifier: \"hashed\"` (including a hashed default).\n- At least one built-in social provider or Generic OAuth provider is enabled.\n- OAuth state uses `account.storeStateStrategy: \"database\"`, the default when a database or secondary storage is configured.\n\nCookie-backed state blocks this path, subject to the OAuth Proxy condition below. With custom hashers, confirm the flows cannot resolve to the same stored identifier.\n\n## Summary\n\nBetter Auth a",
+"link": "https://github.com/advisories/GHSA-965c-763c-88jm",
+"cves": [
+"CVE-2026-114607"
+],
+"nick": "",
+"product": "npm/better-auth",
+"fix": "upgrade better-auth to 1.7.7",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-27",
+"title": "Agno: Arbitrary code execution via `eval()` on `field_type` in `FunctionCall`",
+"text": "### Impact\nAgno versions prior to 2.3.24 contain an arbitrary code execution vulnerability\nin the model execution component. The `field_type` parameter on a `FunctionCall`\ninput field was passed to Python's built-in `eval()`, allowing an attacker who\ncould influence that value to execute arbitrary Python code in the Agno process.\n\nThis is a code injection flaw (CWE-95) with full impact to confidentiality,\nintegrity, and availability. CVSS 3.1 score: 9.3 (Critical).\n\nAny deployment that exposes Agno to user-influenced FunctionCall inputs\n(for example via an API, web UI, or untrusted tool/model output) is affected.\n\n### Patches\nFixed in **Agno 2.3.24**.\n\nThe unsafe `eval()` call was replaced with a fixed `type_mapping` dictionary\nlookup, and `field_type` is now validated as either a known st",
+"link": "https://github.com/advisories/GHSA-m4w4-3r8h-jw98",
+"cves": [
+"CVE-2026-35002"
+],
+"nick": "",
+"product": "pip/agno",
+"fix": "upgrade agno to 2.3.24",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Tenable",
+"date": "2026-10-27",
+"title": "Brotli2Shell: Frequently asked questions for Google Brotli decoder vulnerability (CVE-2026-111497)",
+"text": "Researchers have demonstrated remote code execution through CVE-2026-111497, an out-of-bounds write in Google's Brotli decoder library, and public proofs-of-concept (PoCs) are available. Software that uses the decoder includes Node.js, .NET, Bun, Envoy Proxy, Istio, Python HTTP clients and PHP for Windows. Change log Update October 28: Added a section on how reliable exploitation of CVE-2026-111497 has been so far, based on research from ELLIO and Imperva. Click here to review the change log history Update October 28: Added a section on how reliable exploitation of CVE-2026-111497 has been so far, based on research from ELLIO and Imperva. Update October 27: CISA added CVE-2026-111497 to its KEV catalog. October 26: Original publication. Key Takeaways CVE-2026-111497, known as Brotli2Shell ",
+"link": "https://www.tenable.com/blog/brotli2shell-frequently-asked-questions-for-google-brotli-decoder-cve-2026-111497",
+"cves": [
+"CVE-2026-111497"
+],
+"nick": "Brotli2Shell",
+"product": "",
+"fix": "",
+"sev": "MEDIUM",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Wiz",
+"date": "2026-10-27",
+"title": "PHP2Shell: Exploitation Attempts and Remediation Trends",
+"text": "Wiz research has been monitoring PHP2Shell exploitation attempts, but none have succeeded so far. We examine the techniques used, what prevented the attacks from completing and how observed exposure has changed since disclosure.",
+"link": "https://www.wiz.io/blog/php2shell-exploitation-so-far",
+"cves": [],
+"nick": "PHP2Shell",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-28",
+"title": "Broadcom VMWare ESX Insufficient Logging Vulnerability",
+"text": "Broadcom VMWare ESX contains an insufficient logging vulnerability that could allow a malicious actor with admin access to perform certain operations without being logged.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-41709",
+"cves": [
+"CVE-2026-41709"
+],
+"nick": "",
+"product": "Broadcom VMware ESX",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-11",
+"ransomware": false
+},
+"extra_link": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-28",
+"title": "Linux Kernel Missing Initialization of a Variable Vulnerability",
+"text": "Linux Kernel contains a missing initialization of a variable vulnerability that could allow for unintended modification of page-cache-backed data via failure to preserve the shared-fragment marker during socket buffer coalescing, causing ESP input processing to decrypt shared fragments in place. This vulnerability can be chained with CVE-2026-109618 and CVE-2026-109619 to implant PHP webshells and run commands as root.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-46300",
+"cves": [
+"CVE-2026-46300"
+],
+"nick": "",
+"product": "Linux Kernel",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-10-31",
+"ransomware": false
+},
+"extra_link": "https://git.kernel.org/stable/c/3599e6b3cc1ada96883d496a50a210d3afbb6987"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-28",
+"title": "Electrum: Malicious server can replace a just-broadcast tx and try to trick user into RBF-ing it",
+"text": "### Summary\n\nThe main Electrum server the client connects to is trusted with mempool (\"unconfirmed\") transactions. This is documented [design](https://electrum.readthedocs.io/en/latest/faq.html#does-electrum-trust-servers). [0]\n\nHowever now someone figured out a way to practically exploit it:\n- when the client broadcasts a new tx1, a malicious server can swallow it,\n- and update the client's history with a conflicting (invalid) tx2 that replaces the outputs with the attacker's output address.\n- Tx2 has invalid signatures, but this is not checked (due to light client design).\n- The wallet will display tx2 as an unconfirmed transaction - tx1 will not be displayed.\n- If the client then manually RBF fee-bumps tx2, the client will sign it with a higher fee, and hence pay the attacker.\n\n### Fixe",
+"link": "https://github.com/advisories/GHSA-6jp4-8v48-cc5v",
+"cves": [
+"CVE-2026-117601"
+],
+"nick": "",
+"product": "pip/electrum",
+"fix": "upgrade electrum to 4.8.3",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-28",
+"title": "zip: Critical Parser Differential & Security Control Bypass via Dual-Header Inconsistencies (Zip Cloaking) Leading to Arbitrary File Overwrite & RCE",
+"text": "## Summary\nA critical architectural parser differential exists in the `zip` crate (`<= 9.0.4`) between random-access archive readers (`ZipArchive`) and streaming readers (`ZipStreamReader`). `ZipArchive` considers the Central Directory File Header (CDFH) authoritative and ignores the filename declared in the Local File Header (LFH). In contrast, `ZipStreamReader` relies exclusively on the Local File Header (LFH) when extracting files to the filesystem.\n\nThis discrepancy enables ZIP archives to appear to have different file paths and contents according to which tool is reading them.\n\n---\n\n## Details\n\n### Architectural Root Cause\nIn the PKWARE ZIP archive format, every file entry is defined in two distinct locations:\n1. **Local File Header (LFH):** Precedes the compressed payload of each fil",
+"link": "https://github.com/advisories/GHSA-m665-v7pm-7grj",
+"cves": [
+"CVE-2026-115905"
+],
+"nick": "",
+"product": "rust/zip",
+"fix": "upgrade zip to 9.0.5",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-28",
+"title": "Wasmtime: Cranelift backend on aarch64 can jump to incorrect target on large Wasm `br_table` instruction",
+"text": "## Summary\n\nWhen running with the Cranelift compiler backend on an aarch64 target, Wasmtime can compile a Wasm module with more than ~256k targets on one `br_table` instruction in a way that results in an incorrect conditional branch target. This conditional branch could then jump to arbitrary other code (at an user-controlled offset), leading to arbitrary sandbox escapes.\n\n## Impact\n\nAny Wasmtime engine running on aarch64 with default settings can be forced to jump to arbitrary code by a user-controlled Wasm module. All versions of Wasmtime/Cranelift that support aarch64, since the initial release of that support in 2020 (before Wasmtime v1.0), are affected.\n\n## Patches\n\nWasmtime v36.0.19, v48.0.7, and v49.0.4 have been released which all fix this issue. Insufficient Control Flow Manageme",
+"link": "https://github.com/advisories/GHSA-mghf-wjfp-p5xm",
+"cves": [
+"CVE-2026-115893"
+],
+"nick": "",
+"product": "rust/wasmtime",
+"fix": "upgrade wasmtime to 36.0.19; upgrade wasmtime to 48.0.7",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-29",
+"title": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
+"text": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software contains an unchecked return value to NULL pointer dereference vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-76418",
+"cves": [
+"CVE-2026-76418"
+],
+"nick": "",
+"product": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-01",
+"ransomware": false
+},
+"extra_link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-29",
+"title": "GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
+"text": "GitLab Community Edition and Enterprise Edition contain a integer overflow or wraparound vulnerability that could allow an unauthenticated user to execute arbitrary code on the GitLab server via a specially crafted regular expression in a CI/CD configuration, due to insufficient regular expression validation.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-97229",
+"cves": [
+"CVE-2026-97229"
+],
+"nick": "",
+"product": "GitLab Community Edition and Enterprise Edition",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-01",
+"ransomware": false
+},
+"extra_link": "https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves"
+},
+{
+"src": "Palo Alto",
+"date": "2026-10-29",
+"title": "CVE-2026-109618 Impact of Critical Vulnerabilities in PHP (CVE-2026-109618, CVE-2026-109619) on Palo Alto Networks Products (Severity: CRITICAL)",
+"text": "",
+"link": "https://security.paloaltonetworks.com/CVE-2026-109618",
+"cves": [
+"CVE-2026-109618",
+"CVE-2026-109619"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Unit 42",
+"date": "2026-10-29",
+"title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
+"text": "CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29) appeared first on Unit 42 .",
+"link": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
+"cves": [
+"CVE-2026-109618",
+"CVE-2026-109619"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-30",
+"title": "Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+"text": "Ivanti Connect Secure contains a missing authentication for critical function vulnerability that could allow a local authenticated attacker to escalate their privileges. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-118527.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-111357",
+"cves": [
+"CVE-2026-111357"
+],
+"nick": "",
+"product": "Ivanti Connect Secure",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-02",
+"ransomware": false
+},
+"extra_link": "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935?language=en_US"
+},
+{
+"src": "CISA KEV",
+"date": "2026-10-30",
+"title": "Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+"text": "Ivanti Connect Secure contains a generation of predictable numbers or identifiers vulnerability that allows a remote authenticated attacker to upload files with attacker-controlled content to a known location on disk. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-111357.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-118527",
+"cves": [
+"CVE-2026-118527"
+],
+"nick": "",
+"product": "Ivanti Connect Secure",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-13",
+"ransomware": false
+},
+"extra_link": "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935?language=en_US"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-30",
+"title": "Signal K resources API path traversal can disclose the JWT signing secret and enable remote code execution",
+"text": "### Summary\n\nPath traversal in the Signal K resources and applicationData APIs lets an\nunauthenticated or low-privileged user read, write and delete files outside\nthe storage root. Reading <config>/security.json discloses the JWT signing\nsecret, enabling admin token forgery and remote code execution. \n\n### Details\n\n## Description\n\nThe v2 REST resources API `GET /signalk/v2/api/resources/:resourceType/:resourceId` passes `resourceId` to `FileStore.getResource()` without validation. `getResource()` builds the file path with `path.join(this.resources[type].path, itemUuid)` followed by `readFile` + `JSON.parse`, so a `%2F`-encoded multi-level traversal (`..%2F..%2F..%2F..%2F`) escapes the resource storage directory and returns any JSON file on the server (source: `src/api/resources/index.ts:55",
+"link": "https://github.com/advisories/GHSA-4xm8-rg9h-jhq2",
+"cves": [
+"CVE-2026-123807"
+],
+"nick": "",
+"product": "npm/signalk-server, npm/@signalk/resources-provider",
+"fix": "upgrade signalk-server to 2.34.0; upgrade @signalk/resources-provider to 1.5.3",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-30",
+"title": "pypi-publish action revocation of CA in the chain that Sigstore uses in Trusted Publishing and Digital Attestations for PyPI",
+"text": "### Summary\n\nThe [pypi-publish action][pypi-publish] versions before 1.14.2 used to bundle the `emSign` root CA trust store certificate through the `certifi` distribution. It has since been removed through the bundle and the new version no longer includes them.\n\n[pypi-publish]: https://github.com/marketplace/actions/pypi-publish\n\n### Details\n\nThe `certifi`-provided TLS trust store is typically used by many projects in the Python ecosystem, including Sigstore that [pypi-publish] relies on for Trusted Publishing and Digital Attestations.\n\n### Related\n\nThe external compromise is being tracked at https://emudhra.we-have-a-problem.com Improper Certificate Validation",
+"link": "https://github.com/advisories/GHSA-5xjx-3w67-w9x9",
+"cves": [
+"GHSA-5xjx-3w67-w9x9"
+],
+"nick": "",
+"product": "actions/pypa/gh-action-pypi-publish",
+"fix": "upgrade pypa/gh-action-pypi-publish to 1.14.3",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-10-30",
+"title": "imgproxy has integer overflow in imgproxy ICO loader that causes denial of service and may permit remote code execution",
+"text": "## Summary\n\nThe ICO loader allocates `data_size + BMP_FILE_HEADER_LEN` bytes after reading a 32-bit attacker-controlled `data_size`. For `data_size > UINT32_MAX - BMP_FILE_HEADER_LEN`, the addition wraps before allocation. imgproxy then writes the ICO prefix and reads up to the original declared size starting 14 bytes into the undersized allocation. A network client can turn this heap overflow into remote denial of service or remote code execution.\n\n## Technical details\n\nThe vulnerable path is in [`vips/icoload.c` at commit `f4fedbb`](https://github.com/imgproxy/imgproxy/blob/f4fedbb5c7f6684e7a8e0a9bb7e666773f3c40c0/vips/icoload.c#L154-L164):\n\n```c\nuint32_t data_size = GUINT32_FROM_LE(largest_image_header.data_size);\n\nVipsPel *data = (VipsPel *) VIPS_MALLOC(NULL, data_size + BMP_FILE_HEADE",
+"link": "https://github.com/advisories/GHSA-hff9-5pqw-6w9f",
+"cves": [
+"GHSA-hff9-5pqw-6w9f"
+],
+"nick": "",
+"product": "go/github.com/imgproxy/imgproxy/v3, go/github.com/imgproxy/imgproxy/v2",
+"fix": "upgrade github.com/imgproxy/imgproxy/v3 to 4.0.16; upgrade github.com/imgproxy/imgproxy/v2 to 4.0.16",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Rapid7",
+"date": "2026-10-30",
+"title": "Rapid7 Analysis: Unauthenticated File Upload to RCE in BeyondTrust Remote Support (CVE-2026-102764)",
+"text": "Overview An origin-validation flaw in BeyondTrust Remote Support lets an unauthenticated attacker write files on the appliance and execute code as the site's operating-system user. The entry point is the public customer connection used to start a support session. No account credentials or user interaction are required. The flaw sits between the internal message router, brain , and an appliance-side customer worker, thin-scc . An attacker can put a reserved local router ID into a message's source address. The router forwards the message, and the worker accepts that address as proof that the request came from a local component. This gives the attacker access to an internal file-transfer service, including its native filesystem provider. We first confirmed the file write then used the primiti",
+"link": "https://www.rapid7.com/blog/post/ra-rapid7-analysis-unauthenticated-file-upload-to-rce-in-beyondtrust-remote-support-cve-2026-102764",
+"cves": [
+"CVE-2026-102764"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Fortinet PSIRT",
+"date": "2026-11-02",
+"title": "Linux kernel RCE CVE-2026-98432",
+"text": "CVSSv3 Score: 9.8 CVE-2026-98432:ipv4: free inet_opt and ireq_opt after an RCU grace period tcp_v4_syn_recv_sock() transfers ownership of ireq->ireq_opt to the child socket (newinet->inet_opt) without copying it. Another cpu can concurrently process a retransmitted SYN for the same request socket, and send a SYNACK from tcp_check_req(). tcp_v4_send_synack() and inet_csk_route_req() read ireq->ireq_opt under rcu_read_lock() only, and ip_build_and_send_pkt() and ip_options_build() then read opt->optlen twice. Note that the SYNACK timer itself is not an issue: it holds a reference on its request socket, and inet_csk_reqsk_queue_drop() calls timer_delete_sync() before the child can be freed. Since commit 079096f103fa (\"tcp/dccp: install syn_recv requests into ehash table\"), request sockets are",
+"link": "https://fortiguard.fortinet.com/psirt/FG-IR-26-188",
+"cves": [
+"CVE-2026-98432"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Rapid7",
+"date": "2026-11-02",
+"title": "Additional Ivanti Connect Secure zero-days exploited in the wild (CVE-2026-111357, CVE-2026-118527)",
+"text": "Overview On October 29, 2026, Ivanti updated its security advisory for Ivanti Connect Secure (ICS) to include two additional vulnerabilities and released fixes for both. Ivanti rates CVE-2026-111357 , a missing authentication for critical function vulnerability ( CWE-306 ), with a CVSSv3.1 score of 8.8 ; it allows a local authenticated attacker to escalate privileges. CVE-2026-118527 , classified as generation of predictable numbers or identifiers ( CWE-340 ), has an Ivanti-assigned CVSSv3.0 score of 4.3 and, according to CISA's KEV entry , allows a remote authenticated attacker to upload attacker-controlled content to a known location on disk. Per Ivanti, exploitation in the wild has already occurred prior to disclosure, affecting a limited number of customers when these flaws are chained",
+"link": "https://www.rapid7.com/blog/post/etr-additional-ivanti-connect-secure-zero-days-exploited-in-the-wild-cve-2026-111357-cve-2026-118527",
+"cves": [
+"CVE-2026-111357",
+"CVE-2026-118527"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "HIGH",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-03",
+"title": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+"text": "WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. This is due to predictable, web-accessible staging paths used during full-package core upgrades.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-119977",
+"cves": [
+"CVE-2026-119977"
+],
+"nick": "",
+"product": "WordPress Core",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-06",
+"ransomware": false
+},
+"extra_link": "https://wordpress.org/news/2026/10/wordpress-7-1-4"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-03",
+"title": "Elo JavaScript emitter has sandbox escape to arbitrary Node.js / browser code execution via unfiltered `.constructor` member access",
+"text": "### Summary\n\nAn unauthenticated attacker who controls a string passed to any Elo JavaScript-emission path — `defaultFormats.elo.parse()`, the `bin/elo` CLI, or the live browser playground at `elo-lang.org/try` — can execute arbitrary code in the host JavaScript runtime. A payload built from the `.constructor.constructor` chain compiles, without modification, to a live `Function` invocation in the emitted JavaScript, escaping any sandbox assumption around \"Elo is a safe data/DSL language.\"\n\n### Vulnerable sink and root cause\n\nThree interacting sites in `src/` produce the bug at commit `749af7b`:\n\n1. **`src/transform.ts:144–158`** — the `member_access` handler allows access on types `any`, `object`, or `array` without filtering the property name. This is the only place an integrator could ha",
+"link": "https://github.com/advisories/GHSA-33r5-xmm8-v6x5",
+"cves": [
+"CVE-2026-44267"
+],
+"nick": "",
+"product": "npm/@enspirit/elo",
+"fix": "upgrade @enspirit/elo to 1.0.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-03",
+"title": "Elo Ruby backend has Remote Code Execution via unescaped `#{...}` interpolation in emitted string literals and subtype-constraint labels",
+"text": "### Summary\n\nElo's Ruby backend emits attacker-controlled text into Ruby double-quoted strings without escaping the `#` character. Because `#` begins Ruby's interpolation sequences — `#{expr}`, `#@ivar`, `#@@cvar`, `#$gvar` — and any expression wrapped in `#{...}` may use backticks for shell execution, an Elo program that contains a crafted string literal or a labelled subtype constraint compiles to Ruby that evaluates attacker-chosen Ruby, and through backticks runs attacker-chosen shell commands, at runtime.\n\nThe same Elo source compiled to JavaScript, Python, or SQL is benign, so the bug also breaks the cross-target portability guarantee the rest of the compiler honours.\n\n### Vulnerable sinks\n\nTwo sinks exist in `src/compilers/ruby.ts` at commit `749af7b`:\n\n1. **String-literal emitter —",
+"link": "https://github.com/advisories/GHSA-7w38-ggh5-v542",
+"cves": [
+"CVE-2026-44266"
+],
+"nick": "",
+"product": "npm/@enspirit/elo",
+"fix": "upgrade @enspirit/elo to 1.0.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-04",
+"title": "Apple Multiple Products Improper Authentication Vulnerability",
+"text": "Apple iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5 contain an improper authentication vulnerability which could allow an attacker with arbitrary read and write capability to bypass pointer authentication.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2024-27834",
+"cves": [
+"CVE-2024-27834"
+],
+"nick": "",
+"product": "Apple Multiple Products",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-18",
+"ransomware": false
+},
+"extra_link": "https://support.apple.com/en-us/120896"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-04",
+"title": "Duplicate Advisory: Active Storage: Possible arbitrary file write and read in Active Storage image analysis",
+"text": "## Duplicate Advisory\n\nThis advisory has been withdrawn because it is a duplicate of GHSA-f3w6-w445-fwh9. This link is maintained to preserve external references.\n\n## Original Description\nThe activestorage gem before 8.1.4.1 for Ruby on Rails, when ImageMagick attachment processing occurs, can allow server read and write operations (e.g., reading secret_key_base) because the ImageMagick analyzer runs when a file is attached, and there is not an ImageMagick security policy to block unintended functionality. Initialization of a Resource with an Insecure Default",
+"link": "https://github.com/advisories/GHSA-wgv4-95jc-33jm",
+"cves": [
+"GHSA-wgv4-95jc-33jm"
+],
+"nick": "",
+"product": "rubygems/activestorage",
+"fix": "no patched version yet",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Rapid7",
+"date": "2026-11-04",
+"title": "The Race Against the 3-Day Clock: How Rapid7 Helps Meet BOD 26-04 Compliance",
+"text": "Introduction to BOD 26-04 On June 10, 2026, CISA issued Binding Operational Directive 26-04, \"Prioritizing Security Updates Based on Risk.\" Strip away the regulatory language and it reads like a single operational fact: for a vulnerability that is actively exploited, publicly reachable, and grants an attacker full control, you now have three calendar days to remediate it — and you must run a forensic investigation in parallel to determine whether you've already been breached. The 2026 Verizon Data Breach Investigations Report puts the industry's median full-remediation time at 43 days, adding that only 26% of Known Exploited Vulnerabilities were fully remediated in 2025, down from 38% the year before. That's a 43-day reality vs. a 3-day mandate; a gap you don't exactly just close by hiring",
+"link": "https://www.rapid7.com/blog/post/it-racing-the-three-day-clock-cisa-bod-26-04",
+"cves": [
+"CVE-2026-55040",
+"CVE-2026-63520"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "HIGH",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-05",
+"title": "kaniko can send the build's Azure (Entra ID) access token to lookalike ACR registry hosts",
+"text": "### Summary\n\nkaniko before v1.25.20 can send a Microsoft Entra ID (Azure AD) access token for Azure Resource Manager to a registry host an attacker controls. A Dockerfile that references an image on a lookalike host, such as `FROM x.azurecr.io.attacker.com/img`, is enough. The build needs no `RUN` instruction and never has to push.\n\nThe flaw is in the Azure Container Registry (ACR) credential helper, `github.com/chrismellard/docker-credential-acr-env`. kaniko links it into the executor and warmer (the built-in helper) and also builds it as the standalone `docker-credential-acr-env` binary. The helper decides whether a host is an ACR registry with an unanchored regex, so any hostname that contains `.azurecr.io` (or `.azurecr.cn`, `.azurecr.de`, `.azurecr.us`) passes. The upstream module is ",
+"link": "https://github.com/advisories/GHSA-5q7h-w9jf-cx97",
+"cves": [
+"CVE-2026-105769"
+],
+"nick": "",
+"product": "go/github.com/chainguard-dev/kaniko",
+"fix": "upgrade github.com/chainguard-dev/kaniko to 1.25.20",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "watchTowr",
+"date": "2026-11-05",
+"title": "Barracuda Networks is your new best friend (Barracuda Email Security Gateway Pre-Auth Remote Root RCE CVE-2026-116606 / CVE-2026-111560)",
+"text": "Yes, that's right! Today we're at the aquarium. Welcome back to yet another watchTowr Labs blog post. You can begin preparing your comments now. What Is A Barracuda, And Why? Must We? Barracuda’s Email Security Gateway solution (ESG) is no stranger to love , for",
+"link": "https://labs.watchtowr.com/barracuda-networks-is-your-new-best-friend-barracuda-email-security-gateway-pre-auth-remote-root-rce-cve-2026-116606-cve-2026-111560/",
+"cves": [
+"CVE-2026-116606",
+"CVE-2026-111560"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-06",
+"title": "SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
+"text": "SonicWall SonicOS SSLVPN contains a use of single-factor authentication vulnerability that may allow a user with valid credentials for an alternate authentication method to bypass SAML authentication controls. Successful exploitation may also bypass SAML-enforced multi-factor authentication (MFA).",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-19868",
+"cves": [
+"CVE-2026-19868"
+],
+"nick": "",
+"product": "SonicWall SonicOS SSLVPN",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-20",
+"ransomware": false
+},
+"extra_link": "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0014"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-06",
+"title": "LXD has restricted project bypass leading to arbitrary command execution",
+"text": "Reported from https://github.com/lxc/incus/security/advisories/GHSA-48q5-w887-33wv\n\n### Summary\n\nInstance snapshots ignore the `restricted.containers.lowlevel=block` setting;\nallowing for arbitrary command execution on the Incus server by abusing\nlowlevel hooks such as `raw.lxc` and `raw.qemu`.\n\n\n### Details\n\nInstance snapshots ignore the `restricted.containers.lowlevel=block` setting;\nallowing for arbitrary command execution on the Incus server by abusing\nlowlevel hooks such as `raw.lxc` and `raw.qemu`.\n\nAs snapshots can be moved from one server to another, a malicious\ninstance+snapshot can be crafted locally, moved to a restricted project\nand the snapshot restored for arbitrary command execution.\n\nIn practice, this allows a malicious actor to execute arbitrary commands\non the host with r",
+"link": "https://github.com/advisories/GHSA-47w9-6r3f-938g",
+"cves": [
+"GHSA-47w9-6r3f-938g"
+],
+"nick": "",
+"product": "go/github.com/canonical/lxd",
+"fix": "upgrade github.com/canonical/lxd to 0.0.0-20260630083100-c5184be310b1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-06",
+"title": "LXD has arbitrary file write on host via `exec-output` symlink in crafted image",
+"text": "Reported from https://github.com/lxc/incus/security/advisories/GHSA-48q5-w887-33wv\n\n### Summary\n\nThe `record-output` parameter of the `/instances/$name/exec` endpoint\nstores the output of the command in the `exec-output` directory of the\ninstance. If `exec-output` is a symlink, file named `exec_UUID.stdout`\nand `exec_UUID.stderr` can be written to an arbitrary location where\nthe `.stdout` file will contain arbitrary content. This behavior can be\nabused for arbitrary command execution.\n\n\n### Details\n\nWhen an image is unpacked, top-level symlinks are extracted as is;\nallowing for `exec-output` to be placed on disk. In `instance_exec.go`,\n`os.Mkdir` continues of `exec-output` exists and `os.OpenFile` follows\nthe `exec-output` symlink.\n\n\n### PoC\n\nBelow, we place the `exec_UUID.stdout` file in ",
+"link": "https://github.com/advisories/GHSA-9j25-mm2h-2f76",
+"cves": [
+"GHSA-9j25-mm2h-2f76"
+],
+"nick": "",
+"product": "go/github.com/canonical/lxd",
+"fix": "upgrade github.com/canonical/lxd to 0.0.0-20260626085134-124f90100640",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-06",
+"title": "LXD has argument injection in backup compression algorithm leading to AFW and ACE",
+"text": "Reported from  https://github.com/lxc/incus/security/advisories/GHSA-v6mj-8pf4-hhw4\n\n### Summary\n\nImproper validation of user-provided backup compression algorithm leads to\nargument injection in the constructed command line. This leads to an\narbitrary file write on the host, possibly leading to arbitrary command\nexecution.\n\n\n### Details\n\nIncus validates `compression_algorithm` by parsing it into fields and checking\nonly the first token against an allowlist:\n\n```go\nfields, err := shellquote.Split(value)\n...\nif !slices.Contains([]string{\"bzip2\", \"gzip\", \"lz4\", \"lzma\", \"pigz\", \"pzstd\", \"pxz\", \"tar2sqfs\", \"xz\", \"zstd\"}, fields[0]) {\n    return fmt.Errorf(\"Compression algorithm %q isn't currently supported\", fields[0])\n}\n_, err = exec.LookPath(fields[0])\n```\n\nExtra arguments are not rejected. `",
+"link": "https://github.com/advisories/GHSA-fmc8-p6q7-75cc",
+"cves": [
+"GHSA-fmc8-p6q7-75cc"
+],
+"nick": "",
+"product": "go/github.com/canonical/lxd",
+"fix": "upgrade github.com/canonical/lxd to 0.0.0-20260630083100-c5184be310b1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-06",
+"title": "LXD has arbitrary file read+write on host via templates/ symlink in malicious image",
+"text": "Reported from https://github.com/lxc/incus/security/advisories/GHSA-vxp5-584q-c479\n\n### Summary\n\nA specially crafted image can be used to read or create/write arbitrary\nfiles on the host; possibly leading to arbitrary command execution.\n\n\n### Details\n\nFor container images, `internal/server/storage/utils.go` calls\n`archive.Unpack(imageFile, destPath, ...)`. The tar extraction path in\n`shared/archive/archive.go` excludes device nodes, but it does not\nreject a top-level `templates` symlink.\n\nIn practice, this allows a malicious actor to access an arbitrary\ndirectory and edit arbitrary files in it.\n\n\n### PoC\n\nBelow, we map the templates directory to `/etc/cron.d` on the host, but\nit can be mapped anywhere. We then create a cronjob to run `id` as root.\n\n```\n#!/bin/sh\nset -eu\n\ntmpdir=$(mktemp -d",
+"link": "https://github.com/advisories/GHSA-jpf8-86f3-wp38",
+"cves": [
+"GHSA-jpf8-86f3-wp38"
+],
+"nick": "",
+"product": "go/github.com/canonical/lxd",
+"fix": "upgrade github.com/canonical/lxd to 0.0.0-20260203144152-d1c8ba15d160",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-06",
+"title": "LXD has arbitrary file write on client due to trusted image hash",
+"text": "Reported from https://github.com/lxc/incus/security/advisories/GHSA-f6m5-xw2g-xc4x\n\n### Summary\n\nAn arbitrary file write exists in the Incus client when a malicious image\nserver returns a crafted `Incus-Image-Hash` header. This can lead to\narbitrary command execution as root on the server.\n\n\n### Details\n\n- `cmd/incusd/images.go:611-684` handles `source.type=url` by HEADing the user-supplied URL, reading `Incus-Image-Hash` and `Incus-Image-URL`, and passing them to `imageDownload()` as `Alias`\n and `Server`.\n- `cmd/incusd/daemon_images.go:91-92` defaults `fp` to the caller-controlled alias string.\n- `cmd/incusd/daemon_images.go:333-335` builds `destName := filepath.Join(destDir, fp)`.\n- `cmd/incusd/daemon_images.go:469-523` enters the `direct` protocol branch, opens `destName` with `os.Crea",
+"link": "https://github.com/advisories/GHSA-pjff-c2wc-f6jm",
+"cves": [
+"GHSA-pjff-c2wc-f6jm"
+],
+"nick": "",
+"product": "go/github.com/canonical/lxd",
+"fix": "upgrade github.com/canonical/lxd to 0.0.0-20260630083100-c5184be310b1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-06",
+"title": "LXD has arbitrary file read+write on host via rootfs/ symlink in malicious image",
+"text": "Reported from https://github.com/lxc/incus/security/advisories/GHSA-2q3f-q5pq-g8wv\n\n### Summary\n\nA specially crafted image can be used to read or create/write arbitrary files on the host; possibly leading to arbitrary command execution.\n\n\n### Details\n\nIncus validates an image as soon as it sees a normal `metadata.yaml` and\na `rootfs/` entry, but full extraction can later process a duplicate top-level\n`rootfs` symlink. Later, the stopped-container file API opens\n`d.RootfsPath()` and passes that file descriptor to `forkfile`, which chroots to\nit.\n\n```\nmetadata.yaml\nrootfs/\nrootfs -> /\n```\n\nIn practice, this allows a malicious actor to access the host's filesystem\nwith root privileges.\n\n\n### PoC\n\nBelow, we map the container's rootfs to `/` on the host, but it can be\nmapped anywhere. We then r",
+"link": "https://github.com/advisories/GHSA-vghh-5rfx-xhq8",
+"cves": [
+"GHSA-vghh-5rfx-xhq8"
+],
+"nick": "",
+"product": "go/github.com/canonical/lxd",
+"fix": "upgrade github.com/canonical/lxd to 0.0.0-20260630083100-c5184be310b1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-09",
+"title": "GPUStack Improper Authentication Vulnerability",
+"text": "GPUStack contains an improper authentication vulnerability which could allow unauthenticated administrative access, including user and model changes, persistent administrator API-key creation, disclosure of worker and cloud-provider secrets, and code execution through POST /v2/inference-backends/from-yaml.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-102895",
+"cves": [
+"CVE-2026-102895"
+],
+"nick": "",
+"product": "GPUStack",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-12",
+"ransomware": false
+},
+"extra_link": "https://github.com/gpustack/gpustack/security/advisories/GHSA-gj9m-f8ph-pmhr"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-09",
+"title": "SignalWire FreeSwitch Code Injection Vulnerability",
+"text": "SignalWire FreeSwitch contains a code injection vulnerability that permits configuration and credential disclosure, arbitrary call control, and command execution.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-116779",
+"cves": [
+"CVE-2026-116779"
+],
+"nick": "",
+"product": "SignalWire FreeSwitch",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-12",
+"ransomware": false
+},
+"extra_link": "https://github.com/signalwire/freeswitch/security/advisories/GHSA-mg63-h38w-8p9p"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-09",
+"title": "OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
+"text": "OpenBSD OpenSSH on Linux contains an unexpected status code or return value vulnerability that could allow for authentication bypass.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-123158",
+"cves": [
+"CVE-2026-123158"
+],
+"nick": "",
+"product": "OpenBSD OpenSSH",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-12",
+"ransomware": false
+},
+"extra_link": "https://www.openssh.org/releasenotes.html"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-09",
+"title": "IBM Aspera Faspex Incorrect Authorization Vulnerability",
+"text": "IBM Aspera Faspex contains an incorrect authorization vulnerability that could allow an authenticated user to craft a specific message to bypass authorization, causing privilege escalations.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-123218",
+"cves": [
+"CVE-2026-123218"
+],
+"nick": "",
+"product": "IBM Aspera Faspex",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-12",
+"ransomware": false
+},
+"extra_link": "https://www.ibm.com/support/pages/node/7295921"
+},
+{
+"src": "Cisco PSIRT",
+"date": "2026-11-09",
+"title": "Cisco Meraki Security Hardening Release: October 2026",
+"text": "As part of Cisco's ongoing commitment to proactive security and product quality, engineering teams conducted a comprehensive internal security review. This review resulted in software hardening releases that address multiple internally discovered vulnerabilities. These vulnerabilities were found during internal testing and are not known to be actively exploited. To assist customers in patching and streamline the disclosure process, Cisco has grouped these issues by their underlying vulnerability class — Common Weakness Enumeration (CWE) — and assigned a single Common Vulnerabilities and Exposures identifier (CVE ID) to each CWE grouping. Cisco has released software updates that address these vulnerabilities. There are no workarounds that address these vulnerabilities. This advisory is avai",
+"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-hardening-meraki-os-drbEX9GH?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Cisco%20Meraki%20Security%20Hardening%20Release:%20October%202026%26vs_k=1",
+"cves": [
+"CVE-2026-76463",
+"CVE-2026-76464"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-09",
+"title": "fastapi-code-generator: Import-time RCE via response status-code key -> unescaped @app.get(..., responses={...}) dict",
+"text": "### Summary\n\nfastapi-code-generator (koxudaxi) emits an operation's extra responses into the route decorator's responses={...} dict, using each response's status-code key as a single-quoted string literal without escaping the '. A ' in a status-code key closes the dict-key string and, via concatenation, injects a live expression that the decorator argument evaluates when main.py is imported (the ASGI server imports it at startup) -- code execution, no request. The status-code key is a pure data field. Verified on\nfastapi-code-generator 0.8.0 / Python 3 / FastAPI.\n\n### Details\n\n```python\n@app.get(\n '/u', response_model=None,\n responses={\n '404' + (__import__(\"os\").system('…') or \"\") + 'x': {'model': Thing}\n },\n)\ndef get_thing() -> None:\n pass\n```\n\nThe responses={...} dict is emitted only wh",
+"link": "https://github.com/advisories/GHSA-6xmv-cjr5-w3q8",
+"cves": [
+"CVE-2026-63469"
+],
+"nick": "",
+"product": "pip/fastapi-code-generator",
+"fix": "upgrade fastapi-code-generator to 0.8.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-09",
+"title": "GPUStack: Authentication bypass via trusted loopback source (reverse-proxy TCP peer or X-GPUStack-Real-IP header) grants unauthenticated admin",
+"text": "### Impact\n\nIn GPUStack before v2.2.0, `get_current_user` (in `gpustack/api/auth.py`) promotes any request whose source is considered loopback to the built-in administrator account when `force_auth_localhost` is `False` (the default). The \"source\" is derived by `client_ip_getter`, which can be made to report `127.0.0.1` without any credentials in two ways:\n\n1. **Same-host reverse proxy (TCP peer).** In the canonical self-hosted shape —\n   GPUStack behind a same-host reverse proxy with `proxy_pass\n   http://127.0.0.1:<port>` — every remote request arrives at GPUStack with TCP\n   peer `127.0.0.1`, so the loopback auto-admin branch fires. No header or\n   credential is required. Verified end-to-end against HEAD `6bee5883`.\n2. **`X-GPUStack-Real-IP` header.** A forged `X-GPUStack-Real-IP: 127.0",
+"link": "https://github.com/advisories/GHSA-gj9m-f8ph-pmhr",
+"cves": [
+"CVE-2026-102895"
+],
+"nick": "",
+"product": "pip/gpustack",
+"fix": "upgrade gpustack to 2.2.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-09",
+"title": "fastapi-code-generator: Call-time RCE via operation summary -> unescaped route-handler docstring",
+"text": "### Summary\n\nfastapi-code-generator (koxudaxi) emits an operation's `summary` as the generated route handler's docstring, using a triple-quoted string without escaping `\"\"\"`. A `\"\"\"` in the summary closes the docstring and, via concatenation, injects a live expression that becomes an expression statement in the handler body -- which runs when the route handler is CALLED (the endpoint is hit). The summary is a pure data field. Verified on fastapi-code-generator 0.8.0 / Python 3 / FastAPI.\n\n### Details\n\n```python\ndef get_thing() -> None:\n (\n \"\"\"\n x\"\"\"\n + (__import__(\"os\").system('…') or \"\")\n + \"\"\"y\n \"\"\"\n )\n pass\n```\n\nThe generator post-processes with black/isort, so a syntax-breaking payload aborts generation; a valid-Python breakout (`\"\"\"+expr+\"\"\"`, kept valid with `(… or \"\")`) is written a",
+"link": "https://github.com/advisories/GHSA-h667-4jj2-cgv4",
+"cves": [
+"CVE-2026-63470"
+],
+"nick": "",
+"product": "pip/fastapi-code-generator",
+"fix": "upgrade fastapi-code-generator to 0.8.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-09",
+"title": "fastapi-code-generator: Import-time RCE via route path -> unescaped @app.get('...') decorator",
+"text": "### Summary\n\nfastapi-code-generator (koxudaxi) emits the OpenAPI path into the generated main.py route decorator as a single-quoted string literal (`@app.get('/u/<path>/x')`) without escaping the `'`. A `'` in the path closes the decorator string and, via concatenation, injects a live expression that the decorator argument evaluates when main.py is imported (the ASGI server imports it at startup) -- code execution, no request needed. The path is a pure data field. Verified on fastapi-code-generator 0.8.0 / Python 3 / FastAPI.\n\n### Details\n\n```python\n@app.get('/u/'+(__import__(\"os\").system('…') or \"\")+'/x', response_model=None)\ndef get_thing() -> None:\n pass\n```\n\nThe generator post-processes output with black/isort, so a syntax-breaking payload aborts generation (DoS); a valid-Python concat",
+"link": "https://github.com/advisories/GHSA-p2mm-64f6-gmpp",
+"cves": [
+"CVE-2026-63471"
+],
+"nick": "",
+"product": "pip/fastapi-code-generator",
+"fix": "upgrade fastapi-code-generator to 0.8.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-09",
+"title": "Kubeflow Pipelines API server lacks authorization for shared pipeline uploads",
+"text": "## Summary\n\nIn multi-user mode, the Kubeflow Pipelines API server's HTTP multipart upload endpoints (`POST /apis/v2beta1/pipelines/upload` and `POST /apis/v2beta1/pipelines/upload_version`) perform no authorization when the target namespace is empty. The authorization helper `canUploadVersionedPipeline` returns `nil`, skipping `SubjectAccessReview`, whenever the resolved namespace is the empty string (`backend/src/apiserver/server/pipeline_upload_server.go:401-403`). An empty namespace is how KFP addresses shared, cluster-wide pipelines and is the default whenever the caller omits the `namespace` query parameter, because `REQUIRE_NAMESPACE_FOR_PIPELINES` defaults to `false` and is unset in every shipped manifest. As a result, an arbitrary low-privilege tenant (or, when the API server is re",
+"link": "https://github.com/advisories/GHSA-rjr3-43j3-4q8g",
+"cves": [
+"CVE-2026-77596"
+],
+"nick": "",
+"product": "go/github.com/kubeflow/pipelines",
+"fix": "upgrade github.com/kubeflow/pipelines to 0.0.0-20260909234119-62516d8c525f",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-09",
+"title": "Pocket ID: Email verification token remains valid after address change, enabling arbitrary verified-email spoofing",
+"text": "## Summary\n\nAn authenticated Pocket ID user can request an email-verification token while their account uses an address they control, change the account email address, and then redeem the previously issued token. The token is bound only to the user ID, not to the address to which it was sent, and changing the address does not revoke outstanding tokens.\n\nAs a result, Pocket ID marks the newly supplied address as verified even though the user never proved control of it. Pocket ID subsequently returns that address with `email_verified: true` in OIDC claims. A relying party that trusts this claim for email-based account linking or provisioning can therefore link the attacker's Pocket ID identity to a victim's existing account, leading to cross-application account takeover.\n\nThis was verified a",
+"link": "https://github.com/advisories/GHSA-rm8c-2cv8-jwf6",
+"cves": [
+"CVE-2026-115770"
+],
+"nick": "",
+"product": "go/github.com/pocket-id/pocket-id/backend",
+"fix": "upgrade github.com/pocket-id/pocket-id/backend to 0.0.0-20260727180059-43aaccd5bfac",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Palo Alto",
+"date": "2026-11-09",
+"title": "CVE-2026-111497 Portfolio Status: Impact of Brotli Vulnerability (CVE-2026-111497) on Palo Alto Networks Products (Severity: CRITICAL)",
+"text": "",
+"link": "https://security.paloaltonetworks.com/CVE-2026-111497",
+"cves": [
+"CVE-2026-111497"
+],
+"nick": "",
+"product": "Palo Alto Portfolio Status",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-10",
+"title": "Barracuda Networks Multiple Products OS Command Injection Vulnerability",
+"text": "Barracuda Networks Email Security Gateway (ESG), Load Balancer, Application Delivery Controller (ADC), Message Archiver (BMA), WAF Control Center (WCC), Web Application Firewall (WAF), and Web Security Gateway (WSG) contain an OS command injection vulnerability. This vulnerability could allow an authenticated administrator to inject OS commands that execute with root privileges when the crafted timezone value is subsequently processed. This vulnerability can be chained with CVE-2026-116606",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-111560",
+"cves": [
+"CVE-2026-111560"
+],
+"nick": "",
+"product": "Barracuda Networks Multiple Products",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-13",
+"ransomware": false
+},
+"extra_link": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-10",
+"title": "Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
+"text": "Openwave Messaging Limited Webtop Media Transcoder contains an incorrect resource transfer between spheres vulnerability that may allow an authenticated user to process and convert unintended document types if bypassing the Webmail experience.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-111793",
+"cves": [
+"CVE-2026-111793"
+],
+"nick": "",
+"product": "Openwave Messaging Limited Webtop Media Transcoder",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-24",
+"ransomware": false
+},
+"extra_link": "https://github.com/GISOpenwave/security-advisories-public/blob/main/CAN-2026-2032674.md"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-10",
+"title": "Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+"text": "Barracuda Networks Email Security Gateway (ESG) contains an authentication bypass using an alternate path or channel that could allow an unauthenticated remote attacker to invoke a configuration-import function and restore a crafted, compatible backup archive, resulting in unauthorized modification of the appliance’s global configuration. This vulnerability can be chained with CVE-2026-111560.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-116606",
+"cves": [
+"CVE-2026-116606"
+],
+"nick": "",
+"product": "Barracuda Email Security Gateway (ESG)",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-13",
+"ransomware": false
+},
+"extra_link": "https://trust.barracuda.com/security/pre-authentication-authorization-bypass-command-injection"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-10",
+"title": "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+"text": "Microsoft Office Outlook contains a missing user interaction for potentially unsafe action vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-124194",
+"cves": [
+"CVE-2026-124194"
+],
+"nick": "",
+"product": "Microsoft Office",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-24",
+"ransomware": false
+},
+"extra_link": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-124194"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-10",
+"title": "Google Chromium Use-After-Free Vulnerability",
+"text": "Google Chromium contains a use-after-free vulnerability in the XML component that could allow a remote attacker to execute arbitrary code inside the sandbox via a specially crafted webpage. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-125350",
+"cves": [
+"CVE-2026-125350"
+],
+"nick": "",
+"product": "Google Chromium",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-24",
+"ransomware": false
+},
+"extra_link": "https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_018223192.html"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-10",
+"title": "Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
+"text": "Cisco BroadWorks contains an improper restriction of XML external entity reference vulnerability that could allow an unauthenticated, remote attacker to read sensitive configuration information on an affected system.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-20320",
+"cves": [
+"CVE-2026-20320"
+],
+"nick": "",
+"product": "Cisco BroadWorks",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-24",
+"ransomware": false
+},
+"extra_link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-bworks-xxe-uwUd7CEt"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-10",
+"title": "Duplicate Advisory: Microsoft Security Advisory CVE-2026-118740 - Aspire Security Feature Bypass Vulnerability",
+"text": "## Duplicate Advisory\n\nThis advisory has been withdrawn because it is a duplicate of GHSA-4g86-54fm-h9h8. This link is maintained to preserve external references.\n\n## Original Description\nMissing authorization in Aspire allows an unauthorized attacker to bypass a security feature over a network. Missing Authorization",
+"link": "https://github.com/advisories/GHSA-2f3w-v7f5-vpgx",
+"cves": [
+"GHSA-2f3w-v7f5-vpgx"
+],
+"nick": "",
+"product": "nuget/Aspire.Dashboard.Sdk.linux-x64",
+"fix": "no patched version yet",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-10",
+"title": "GPUStack: SAML callback trusts an unverified SAMLResponse, allowing authentication bypass and account takeover",
+"text": "### Impact\n\nThe callback Base64-decodes the posted XML, reads NameID and attributes, resolves or provisions the user, and mints a gpustack_session JWT — but never calls OneLogin_Saml2_Auth.process_response(), the step that verifies the signature, issuer, audience, destination, and time conditions.\n\nNo credentials are required, and SAML SSO does not even need to be configured. The callback processes the payload and issues a session regardless of whether SAML is set up, so every deployment is affected, not only SAML-enabled ones. Anyone who can reach the endpoint over the network can authenticate as an arbitrary identity by posting a response that names it:\n\n- If the name matches an existing user (e.g. an administrator), the attacker receives that user's session — full account takeover, incl",
+"link": "https://github.com/advisories/GHSA-62m9-f875-rqw6",
+"cves": [
+"CVE-2026-102894"
+],
+"nick": "",
+"product": "pip/gpustack",
+"fix": "upgrade gpustack to 2.2.2",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-10",
+"title": "bitcoinjs-lib: Undetected merkle node duplication in block root computation validates a forged transaction list",
+"text": "### Summary\n`fastMerkleRoot` pads an odd level by hashing the last node with itself. It does not report that it did so, and `checkTxRoots` never looks for repeated transactions. A peer can therefore duplicate transactions to fill the pad and produce a block with a different transaction list but the same merkle root. The block hash and block id do not change, so the header still carries valid proof of work. In the proof of concept a real mainnet block goes from nine transactions to ten, and separately to twelve, with the same id every time, and `checkTxRoots` accepts all three. Bitcoin Core rejects this case through the `mutated` flag in `ComputeMerkleRoot` and the `bad-txns-duplicate` reason in `CheckBlock`. This is CVE-2012-2459.\n\n### Details\nA bitcoin merkle tree pads an odd level by has",
+"link": "https://github.com/advisories/GHSA-8vv3-6qpc-gpw6",
+"cves": [
+"CVE-2026-107846"
+],
+"nick": "Uint8Array",
+"product": "npm/bitcoinjs-lib",
+"fix": "upgrade bitcoinjs-lib to 5.2.1; upgrade bitcoinjs-lib to 6.1.8",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-10",
+"title": "Mongoose: sanitizeFilter not applied on countDocuments",
+"text": "### Impact\n\n`sanitizeFilter` is Mongoose's mechanism for protecting against query selector injection attacks. In older versions of Mongoose, `sanitizeFilter` was not applied for `countDocuments()` queries.\n\n### Patches\n\nPatches have been released for all supported Mongoose major release lines. Please upgrade to the following versions depending on which major version of Mongoose applications are using.\n\n1. `^9.9.2`\n2. `^8.24.3`\n3. `^7.8.12`\n4. `^6.13.11`\n\n### Workarounds\n\nMiddleware:\n\n```javascript\nmongoose.plugin(function() {\n  schema.pre('countDocuments', function() {\n    // This will always apply `sanitizeFilter` on `countDocuments`\n    mongoose.sanitizeFilter(this.getFilter());\n  });\n});\n``` Improper Neutralization of Special Elements in Data Query Logic",
+"link": "https://github.com/advisories/GHSA-pcrw-h46h-c93h",
+"cves": [
+"CVE-2026-125120"
+],
+"nick": "",
+"product": "npm/mongoose",
+"fix": "upgrade mongoose to 6.13.11; upgrade mongoose to 7.8.12",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-10",
+"title": "node-opcua: Namespace-Level RBAC Fail-Open - Anonymous Write/Call Bypass via Unbound `DefaultRolePermissions",
+"text": "## Summary\n\nAn unauthenticated (**Anonymous**) client can **Write** protected Variables and **Call** privileged Methods on any Node that lacks explicit per-node permissions.\n\nThis follows the inheritance model defined by OPC UA Part 3, §5.2.9, where nodes without an explicit `RolePermissions` attribute inherit the namespace `DefaultRolePermissions`. OPC 10000-3 §4.8.3 mandates a **default-deny** evaluation (`Bad_UserAccessDenied` when the operation bits are not set); `node-opcua` instead **grants all permissions**.\n\nThe root cause is a combination of an authorization **fail-open** and a **disconnect** between the configuration API and the runtime enforcement path.\n\n---\n\n## Affected configuration\nThis advisory covers two cases that are not equally severe:\n1. No RolePermissions declared anyw",
+"link": "https://github.com/advisories/GHSA-xggf-m53x-jc3f",
+"cves": [
+"CVE-2026-95860"
+],
+"nick": "",
+"product": "npm/node-opcua, npm/node-opcua-address-space",
+"fix": "upgrade node-opcua to 2.180.0; upgrade node-opcua-address-space to 2.180.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-10",
+"title": "React: Unauthenticated Remote Code Execution in React Server Components",
+"text": "### Impact\n\nCrafted payloads targeting frameworks supporting React Server Components can lead to remote code execution. This only affects extremely rare cases where responses transport multiple typed arrays and an attacker-controlled value.\n\nUpdating immediately is recommended.\n\nThe vulnerability exists in versions 19.0.0 through 19.0.8, 19.1.0 through 19.1.9, 19.2.0 through 19.2.8 and 19.3.0 of:\n\n- react-server-dom-webpack\n- react-server-dom-parcel\n- react-server-dom-turbopack\n\n### Patches\n\nFixes were back ported to versions 19.0.09, 19.1.10, 19.2.9, and 19.3.1.\n\nIf applications are using any of the above packages please upgrade to any of the fixed versions immediately.\n\nIf an app’s React code does not use a server, the app is not affected by this vulnerability. If an app does not use a f",
+"link": "https://github.com/advisories/GHSA-xqc2-xf4c-x3h3",
+"cves": [
+"CVE-2026-126187"
+],
+"nick": "",
+"product": "npm/react-server-dom-parcel",
+"fix": "upgrade react-server-dom-parcel to 19.0.9; upgrade react-server-dom-parcel to 19.1.10",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Rapid7",
+"date": "2026-11-10",
+"title": "Patch Tuesday - November 2026",
+"text": "Microsoft is publishing 1,092 own-product vulnerabilities on November 2026 Patch Tuesday, including 745 vulnerabilities in Windows. Until a few months ago, these volumes would have been unimaginable, but if anything, this month feels like a slight reprieve. The jury is still out on whether patching many more vulnerabilities will lead to better security outcomes; every code change to resolve a known vulnerability could easily introduce new hidden treasure for researchers or threat actors to unearth in the future. Despite the vast uptick in volume during 2026, there has been no accompanying increase in the number of vulnerabilities known to be exploited in the wild. Microsoft is aware of exploitation in the wild for just one of the vulnerabilities published today, with no known public disclo",
+"link": "https://www.rapid7.com/blog/post/em-patch-tuesday-november-2026",
+"cves": [
+"CVE-2026-124194",
+"CVE-2026-119952"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Tenable",
+"date": "2026-11-10",
+"title": "Microsoft’s November 2026 Patch Tuesday addresses 1093 CVEs (CVE-2026-124194)",
+"text": "63 Critical 1029 Important 1 Moderate 0 Low Microsoft addresses 1093 CVEs in the eleventh Patch Tuesday of 2026. Microsoft patched 1093 CVEs in its November 2026 Patch Tuesday release, with 63 rated critical, 1029 rated as important, and one rated as moderate. This month’s update includes patches for 287 products and components. The following table lists the products with the most CVEs patched this month. A full list of patched products is available in the appendix. Rank Product CVE Count 1 Microsoft Office Word 65 2 Microsoft Office Excel 64 3 SQL Server 53 4 Windows Advanced Rasterization Platform 37 5 Windows Installer 36 6 Windows Graphics Kernel 35 7 Windows Kernel 28 8 Microsoft Office SharePoint 27 9 Windows DNS 22 10 (Tie) Microsoft Office Outlook 20 10 (Tie) Windows Print Spooler ",
+"link": "https://www.tenable.com/blog/microsoft-november-2026-patch-tuesday-addresses-1093-cves-cve-2026-124194",
+"cves": [
+"CVE-2026-124194"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "MEDIUM",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Tenable",
+"date": "2026-11-11",
+"title": "Able2Shell: Frequently asked questions for reported N-able N-central zero-day vulnerabilities",
+"text": "N-able released a hotfix for N-central that fixes seven CVEs after a researcher published proof-of-concept code for 33 alleged zero-day vulnerabilities. The researcher says one attack chain needs no credentials. Change log Update November 16: Added a note that N-able published network indicators of compromise relevant only to customers who have not disabled the Legacy API. Click here to review the change log history Update November 16: Added a note that N-able published network indicators of compromise relevant only to customers who have not disabled the Legacy API. Update November 12: Added the researcher’s new exploit claims against Hotfix 2, N-able’s November 12 statements and huntback’s report of cryptocurrency miners on live N-central servers. Updated the Key Takeaways, the exploitati",
+"link": "https://www.tenable.com/blog/able2shell-frequently-asked-questions-for-reported-n-able-n-central-zero-day-vulnerabilities",
+"cves": [
+"CVE-2026-91000",
+"CVE-2026-125883"
+],
+"nick": "Able2Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": true,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-12",
+"title": "Microsoft Security Advisory CVE-2026-118740 - Aspire Security Feature Bypass Vulnerability",
+"text": "## Executive summary\n\nMicrosoft is releasing this security advisory to provide information about a vulnerability in Aspire. This advisory provides guidance on updating affected applications and components.\n\nAspire Dashboard's unauthenticated NotFound route can permit telemetry deletion in both standalone and AppHost-hosted deployments. In standalone deployments using browser-token authentication, it can also expose the browser token.\n\n## Announcement\n\nAnnouncement for this issue can be found at https://github.com/dotnet/announcements/issues/526\n\n## CVSS Details\n\n- **Version:** 3.1\n- **Severity:** Critical\n- **Score:** 9.1\n- **Vector:** `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N`\n- **Weakness:** CWE-862\n\n## Affected Platforms\n\n- **Platforms:** Any supported OS\n- **Architectures:** x64, A",
+"link": "https://github.com/advisories/GHSA-4g86-54fm-h9h8",
+"cves": [
+"CVE-2026-118740"
+],
+"nick": "",
+"product": "nuget/Aspire.Dashboard.Sdk.linux-x64, nuget/Aspire.Dashboard.Sdk.linux-arm64",
+"fix": "upgrade Aspire.Dashboard.Sdk.linux-x64 to 13.6.5; upgrade Aspire.Dashboard.Sdk.linux-arm64 to 13.6.5",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-12",
+"title": "Active Storage: Possible arbitrary file write and read in image analysis",
+"text": "### Impact\nA Rails application that processes attachments with ImageMagick may allow an unauthenticated attacker to write arbitrary files on the server and, when attachments are stored with the Disk service, to read arbitrary files readable by the application process. Those files typically include `secret_key_base` and credentials for external systems, which may in turn allow escalation to remote code execution or lateral movement to those systems.\n\n### Details\nImageMagick selects a coder from the content of the file it is given, and some coders act on files named inside the image rather than on the image itself. Active Storage constrained none of ImageMagick's coders, and the ImageMagick analyzer runs when a file is attached, so an attacker who can upload a crafted file may be able to inv",
+"link": "https://github.com/advisories/GHSA-f3w6-w445-fwh9",
+"cves": [
+"CVE-2026-122006"
+],
+"nick": "",
+"product": "rubygems/activestorage",
+"fix": "upgrade activestorage to 8.1.4.1; upgrade activestorage to 8.0.5.2",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-12",
+"title": "Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover",
+"text": "A critical flaw in MongoDB Server allows an unauthenticated attacker to send two requests that trigger a crash on the database server. The crash occurs only if that server is later chosen to take over as the main server while it still lacks some recent changes. MongoDB, the company that makes the database, released fixed versions earlier this week. The affected servers are members of a replica",
+"link": "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html",
+"cves": [
+"CVE-2026-118383"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-13",
+"title": "UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+"text": "UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-114713",
+"cves": [
+"CVE-2026-114713"
+],
+"nick": "",
+"product": "UnrealIRCd",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-16",
+"ransomware": false
+},
+"extra_link": "https://forums.unrealircd.org/viewtopic.php?t=9487"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-13",
+"title": "Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
+"text": "Check Point Firewall, Multi-Domain Security Management Server, Scalable Platforms, Security Gateway, and Security Management Server contain an incorrect permissions assignment for critical resources vulnerability when the Gaia OS DynamicCLI daemon runs as root and listens on a world-writable local socket without authenticating connecting processes. An authenticated local user can send a command to the socket and have it executed as root.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-123039",
+"cves": [
+"CVE-2026-123039"
+],
+"nick": "",
+"product": "Check Point Multiple Products",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-16",
+"ransomware": false
+},
+"extra_link": "https://support.checkpoint.com/results/sk/sk1000362"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-13",
+"title": "Rucio: Unauthenticated administrator impersonation through SSH challenge tokens",
+"text": "## Summary\n\nSSH challenge tokens are mistakenly accepted as valid credentials during the authentication token validation process.\n\nWhile an SSH challenge token is intended as a short-lived nonce for use in a subsequent SSH key exchange, the function to validate authentication tokens does not differentiate between these and actual authentication tokens. Because challenge tokens are generated based on an account name provided via headers without requiring prior authentication, an unauthenticated attacker can request a valid \"challenge\" token for any account (including administrative ones) and use it to authenticate against other API endpoints.\n\n## Proof of Concept\n\nThe vulnerability exists because SSH challenge tokens are stored in the same database table as regular authentication tokens and",
+"link": "https://github.com/advisories/GHSA-x585-4vv8-2mh2",
+"cves": [
+"CVE-2026-100397"
+],
+"nick": "",
+"product": "pip/rucio",
+"fix": "upgrade rucio to 35.9.1; upgrade rucio to 38.6.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-13",
+"title": "Hackers Exploit PHP2Shell Flaws in Check Point Gateways to Deploy TSGA Backdoor and Wipe ESXi Files",
+"text": "An unknown threat actor has been observed targeting unpatched Check Point Security Gateways to obtain initial access via the PHP2Shell vulnerabilities and then a previously unreported local privilege escalation flaw in Gaia OS to deploy a backdoor called TSGA. The activity, detailed by Check Point, began on October 30, 2026, and targeted Israeli organizations, with a broader follow-up",
+"link": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html",
+"cves": [],
+"nick": "PHP2Shell",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Rapid7",
+"date": "2026-11-16",
+"title": "Rapid7 Detected Exploitation of CVE-2026-90436 against Atlassian Confluence Data Center, N-able N-central also Exploited",
+"text": "Overview On November 6, 2026, the Apache Software Foundation disclosed CVE-2026-90436 , a critical unsafe reflection vulnerability ( CWE-470 ) in Axis 1.x that allows for unauthenticated remote code execution (RCE). Apache Axis is a Simple Object Access Protocol (SOAP) implementation used for the creation of Java Web services. CISA has assigned CVE-2026-90436 a CVSS score of 9.8 Critical . Since the initial November 6 disclosure, it has transpired that some versions of Atlassian Confluence Data Center and N-able N-central use the affected Axis library and are vulnerable to CVE-2026-90436. Both products require a non-default configuration in order to be vulnerable. CVE-2026-90436 is now being actively exploited in the wild against both known affected products. On November 13, 2026, Rapid7 M",
+"link": "https://www.rapid7.com/blog/post/etr-rapid7-detected-exploitation-of-cve-2026-90436-against-atlassian-confluence-data-center-n-able-n-central-also-exploited",
+"cves": [
+"CVE-2026-90436"
+],
+"nick": "",
+"product": "",
+"fix": "upgrade to 9.2.28",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-16",
+"title": "BO Team Exploits Log4Shell in VMware vCenter, Compromises Russian Firm's Code-Signing Server",
+"text": "An investigation into suspicious activity within a Russian software developer's network has uncovered a months-long compromise of its development infrastructure and a software code-signing server. The activity, documented by Kaspersky's ICS CERT team after it was contacted by the affected developer in June 2025, has been attributed to a threat actor named BO Team (aka Black Owl, Hoody Hyena,",
+"link": "https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html",
+"cves": [],
+"nick": "Log4Shell",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "BleepingComputer",
+"date": "2026-11-17",
+"title": "Critical Java4Shell flaw allows RCE attacks on major Java applications",
+"text": "A critical vulnerability dubbed Java4Shell in OpenJDK, the open-source implementation of Java, can allow unauthenticated attackers to remotely execute code on popular enterprise applications, including Jenkins, Atlassian Jira, Confluence, and Keycloak. [...]",
+"link": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/",
+"cves": [],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-17",
+"title": "Perforce Puppet Enterprise Deserialization of Untrusted Data Vulnerability",
+"text": "Perforce Puppet Enterprise contains a deserialization of untrusted data vulnerability in Puppet’s report-processing code that allows a client with any CA-signed agent certificate to execute arbitrary code on the Puppet Server as the service user by submitting a report containing a crafted rich-data type through a PUT request. If the certificate authority automatically signs requests without strong verification, an unauthenticated network attacker can obtain a valid certificate and exploit the vulnerability.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-115731",
+"cves": [
+"CVE-2026-115731"
+],
+"nick": "",
+"product": "Perforce Puppet Enterprise",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-12-01",
+"ransomware": false
+},
+"extra_link": "https://portal.perforce.com/s/cve/a91Qi000003IaHpIAK/report-deserialization-code-execution"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-17",
+"title": "Phoenix: Format String Injection in applyChatTemplate",
+"text": "- Summary\n\nA format string injection vulnerability in the applyChatTemplate GraphQL endpoint allows an attacker to read server-side environment variables, cryptographic secrets, and internal module attributes directly from the API response. On default Phoenix installations where authentication is disabled the endpoint is reachable with no credentials. On auth-enabled deployments, any account regardless of privilege level is sufficient to exploit it.\n\n- Impact\nServer filesystem paths, loaded Python module names, and internal configuration constants are fully disclosed, an attacker with network access can read the full server `os.environ` including the admin credentials hardcoded in `phoenix.auth`.\n\nSuccessful exploitation allows an attacker to extract PHOENIX_SECRET, the master key used to ",
+"link": "https://github.com/advisories/GHSA-gfv3-m769-5xm3",
+"cves": [
+"CVE-2026-53998"
+],
+"nick": "",
+"product": "pip/arize-phoenix",
+"fix": "upgrade arize-phoenix to 15.7.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Rapid7",
+"date": "2026-11-17",
+"title": "CVE-2026-114938: Reported Critical Pre-authentication Remote Code Execution in Java 17",
+"text": "Overview On November 17, 2026, Oracle released patches for CVE-2026-114938 , a heap-based buffer overflow ( CWE-122 ) in the hardware-accelerated Base64 decoder used by OpenJDK and its downstream distributions, such as Oracle Java SE, and Oracle GraalVM. The vulnerability, dubbed “ Java4Shell ” by finders Calif, can allow an unauthenticated remote attacker to crash a Java application or execute code with the privileges of its Java process. Oracle rates the vulnerability High, with a CVSS v3.1 score of 8.1 and high attack complexity, in its November security advisory . Affected OpenJDK runtimes enable the vulnerable Base64 optimization by default when the Java virtual machine (JVM) can use the required x86-64 CPU features, including AVX-512 VBMI. A Java application exposes the flaw when it ",
+"link": "https://www.rapid7.com/blog/post/etr-cve-2026-114938-reported-critical-pre-authentication-remote-code-execution-java-17",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Tenable",
+"date": "2026-11-17",
+"title": "Oracle November 2026 Critical Security Patch Update Addresses 640 CVEs (CVE-2026-114938)",
+"text": "Oracle addresses 640 CVEs in its November 2026 Critical Security Patch Update with 655 patches, including 62 critical updates. Key Takeaways The November 2026 Critical Security Patch Update (CSPU) contains fixes for 640 unique CVEs in 655 security updates 62 issues (9.5% of all patches) were assigned a critical severity rating Oracle Hyperion received the highest number of patches at 267, accounting for 40.8% of all patches Background On November 17, Oracle released its Critical Security Patch Update (CSPU) for November 2026 . Beginning in May 2026, Oracle introduced CSPUs as a monthly release cycle that sits between the larger quarterly Critical Patch Updates (CPUs), addressing a focused set of high-severity issues on a faster cadence. This CSPU contains fixes for 640 unique CVEs in 655 s",
+"link": "https://www.tenable.com/blog/oracle-november-2026-critical-security-patch-update-addresses-640-cves-cve-2026-114938",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "HIGH",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-17",
+"title": "Oracle to Patch 11 Java Flaws Today as Critical OpenJDK RCE (CVE-2026-114938) Report Emerges",
+"text": "Oracle is preparing to release security patches for 11 vulnerabilities in Java SE on Tuesday, November 17, 2026, all of which may be exploited remotely without authentication, as separate reports warn of a potentially critical remote code execution (RCE) flaw affecting OpenJDK. The 11 vulnerabilities carry a maximum CVSS 3.1 severity score of 8.1, according to Oracle's advance security notice.",
+"link": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "MEDIUM",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Wiz",
+"date": "2026-11-17",
+"title": "CVE-2026-114938 OpenJDK RCE (Java4Shell): Everything You Need to Know",
+"text": "Detect and mitigate Java4Shell (CVE-2026-114938), a critical 9.2 RCE vulnerability affecting OpenJDK and major Java-based applications.",
+"link": "https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Cisco PSIRT",
+"date": "2026-11-18",
+"title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
+"text": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnerability Advisory: 2026/11/17 . For additional information, see the Talos blog post: Talos Threat Advisory CVE-2026-114938: Critical vulnerability in OpenJDK JAVA This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z <",
+"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Fortinet PSIRT",
+"date": "2026-11-18",
+"title": "Java4Shell Vulnerability - CVE-2026-114938",
+"text": "CVSSv3 Score: 8.1 CVE-2026-114938Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Compiler). Supported versions that are affected are Oracle Java SE: 8u511b33-perf, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3; Oracle GraalVM for JDK: 17.0.21.0.3 and 21.0.13.0.3; Oracle GraalVM Enterprise Edition: 21.3.20.0.3. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition. Successful attacks of this vulnerability can result in takeover of Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition. Note: This vulnerability can only be exploited by supplying",
+"link": "https://fortiguard.fortinet.com/psirt/FG-IR-26-278",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "HIGH",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-18",
+"title": "Mustache for Ruby: RCE using built-in method access",
+"text": "> [!NOTE]\n> The vulnerability was fully disclosed to the maintainer in private prior to security advisories were enabled for the project.\n> This advisory presents a limited information for initial release to provide a time window for installing updates. Full information with PoCs would be added later.\n\n## Summary\nMustache template engine for Ruby in versions 1.1.2 and earlier allows remote attackers to achieve arbitrary code execution through accessing specific built-in methods in an attacker-supplied template.\n\n## Details\nMustache is often suggested as a safe simple template language to avoid SSTI vulnerabilities.[^1] [^2]\n\nMustache for Ruby up to version 1.1.2 did not properly restrict method access which allowed chaining multiple built-in methods to achieve arbitrary code execution.\n\n> ",
+"link": "https://github.com/advisories/GHSA-5hrj-7fc3-cmx9",
+"cves": [
+"CVE-2026-130001"
+],
+"nick": "",
+"product": "rubygems/mustache",
+"fix": "upgrade mustache to 1.1.3",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Rapid7",
+"date": "2026-11-18",
+"title": "CVE-2026-123007: Critical NGINX HTTP/2 Integer Underflow Leads to RCE (FIXED)",
+"text": "Overview Today, both Rapid7 and F5 are disclosing CVE-2026-123007 , a critical integer underflow vulnerability affecting nginx HTTP/2, which can allow for unauthenticated remote code execution (RCE) against affected servers under certain conditions. CVE ID Description CWE CVSSv4 CVE-2026-123007 HTTP/2 flow-control memory corruption permitting worker-context RCE CWE-191 (Integer Underflow) 9.2 (Critical) nginx can miscalculate how much response data an HTTP/2 client has allowed it to send. A remote, unauthenticated client can exploit this error by cancelling queued response data, then make nginx use an invalid length when copying a later response. The resulting memory corruption can disclose data, interrupt service, and execute code with the nginx worker process's permissions. Impact Rapid7",
+"link": "https://www.rapid7.com/blog/post/ve-cve-2026-123007-critical-nginx-http-2-integer-underflow-leads-to-rce-fixed",
+"cves": [
+"CVE-2026-123007"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "SecurityWeek",
+"date": "2026-11-18",
+"title": "Java4Shell Vulnerability Puts Enterprise Applications at Risk of Takeover",
+"text": "Calif demonstrated remote code execution in Jira, Jenkins and Keycloak, while VulnCheck says real-world RCE requires per-target work The post Java4Shell Vulnerability Puts Enterprise Applications at Risk of Takeover appeared first on SecurityWeek .",
+"link": "https://www.securityweek.com/java4shell-vulnerability-puts-many-enterprise-applications-at-risk-of-takeover/",
+"cves": [],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Tenable",
+"date": "2026-11-18",
+"title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
+"text": "Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Key takeaways CVE-2026-114938, dubbed Java4Shell, is an OpenJDK memory corruption vulnerability that Oracle scores 8.1 on CVSS 3.1, and Calif says its testing showed attackers could run code without logging in on applications such as Atlassian Jira and Jenkins. As of November 17, Tenable is not aware of any reports that attackers have exploited this flaw, though Calif has published a PoC that triggers the bug without taking control of the system and a second researcher reports building a working exploit. ",
+"link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "MEDIUM",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-18",
+"title": "CISA Urges Immediate Patching of Java4Shell Flaw That Could Allow Remote Code Execution",
+"text": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has urged organizations to immediately patch a newly disclosed critical security flaw impacting Oracle Java. The flaw, tracked as CVE-2026-114938 (CVSS score: 8.1), refers to a case of out-of-bounds write that can lead to denial-of-service (DoS) or remote code execution under certain conditions. \"This critical memory-corruption",
+"link": "https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "HIGH",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-18",
+"title": "Java4Shell Flaw (CVE-2026-114938) Enables Pre-Auth RCE in Jira, Jenkins, Keycloak and More",
+"text": "A Java flaw called Java4Shell can let attackers without an account run their own code on Jira, Jenkins, Keycloak, and three other widely used applications, says Calif, the security research firm that disclosed it this week. The flaw is present in Java 17.0.6 and later, and the vulnerable code runs only on x86-64 Intel and AMD chips that support the AVX-512 VBMI feature. Tracked as",
+"link": "https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Wiz",
+"date": "2026-11-18",
+"title": "Unauthenticated Remote Code Execution in NGINX: CVE-2026-123633 and CVE-2026-123007",
+"text": "Two critical HTTP/2 flaws can allow attackers to compromise NGINX servers, putting the websites, APIs, and sensitive data they handle at risk.",
+"link": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+"cves": [
+"CVE-2026-123633",
+"CVE-2026-123007"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+}
+],
+"cve_cache": {
+"CVE-2026-0257": {
+"product": "Palo Alto Networks Cloud NGFW",
+"title": "PAN-OS: GlobalProtect Authentication Bypass Vulnerabilities"
+},
+"CVE-2026-102764": {
+"product": "BeyondTrust Remote Support",
+"title": "Improper Origin Validation in Internal Messaging Components of BeyondTrust Remote Support"
+},
+"CVE-2026-114938": {
+"product": "Oracle Java SE",
+"title": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 8u511b33-perf, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3; Oracle GraalVM for JDK: 17.0.21.0"
+},
+"CVE-2026-118383": {
+"product": "MongoDB Server",
+"title": "Pre-authentication use-after-free in MongoDB Server replica set primary catch-up"
+},
+"CVE-2026-123007": {
+"product": "F5 NGINX Plus",
+"title": "NGINX ngx_http_v2_module vulnerability"
+},
+"CVE-2026-123633": {
+"product": "F5 NGINX Open Source",
+"title": "NGINX ngx_http_v2_module vulnerability"
+},
+"CVE-2026-20043": {
+"product": "Cisco Cyber Vision",
+"title": "Multiple Cisco Products Snort 3 Software Hardening Release: October 2026"
+},
+"CVE-2026-55040": {
+"product": "Microsoft SharePoint Enterprise Server 2016",
+"title": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
+},
+"CVE-2026-76463": {
+"product": "Cisco Campus Gateway Software",
+"title": "Cisco Meraki Security Hardening Release: October 2026 - Improper Access Control Vulnerabilities"
+},
+"CVE-2026-76473": {
+"product": "Cisco Emergency Responder",
+"title": "Cisco Unified Communications Products Hardening Release: October 2026 - Improper control of a resource through its lifetime."
+},
+"CVE-2026-76490": {
+"product": "Cisco TelePresence Video Communication Server (VCS) Expressway",
+"title": "Cisco Expressway Series Software Hardening Release: October 2026 - Out-of-bounds Write Vulnerabilities"
+},
+"CVE-2026-90436": {
+"product": "Apache Axis 1.x (EOL)",
+"title": "Apache Axis 1.x (EOL): unauthenticated remote class instantiation via SOAP fault exceptionName"
+},
+"CVE-2026-91000": {
+"product": "N-able N-central",
+"title": "Insecure IPC Channels lead to local privilege escalation"
+},
+"CVE-2026-98432": {
+"product": "Linux",
+"title": "ipv4: free inet_opt and ireq_opt after an RCU grace period"
+}
+}
+}

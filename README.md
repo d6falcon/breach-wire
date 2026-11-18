@@ -10,8 +10,19 @@ DATE | STATUS | TTP [ATT&CK] | COMPANY (country, sector) | Stolen: what (volume)
 2026-11-17 | CLAIMED | Exfiltration + extortion [T1657] - Vortex | Apellis Pharmaceuticals (US, Healthcare) | Stolen: data (307.64 GB) | via ransomware.live, RansomLook
 ```
 
+A second, separate feed, **Vuln Wire**, writes the last 30 days of notable vulnerabilities to [vuln-wire.md](vuln-wire.md):
+
+```
+DATE | STATUS | CVE | NAME (nickname: product, type) | TTP [ATT&CK] | Fix | via sources
+2026-11-17 | EXPLOITED (EPSS 0.7%) | CVE-2026-114938 | Java4Shell: Oracle Java SE, RCE | Exploit public-facing application [T1190] | Fix: apply vendor patch; until then remove internet exposure | via Wiz, Rapid7, Tenable
+2026-11-18 | CRITICAL | CVE-2026-130001 | rubygems/mustache, code injection | Exploit public-facing application [T1190] | Fix: upgrade mustache to 1.1.3 | via GitHub Advisory
+```
+
+Sources ([vuln-sources.json](vuln-sources.json)): CISA KEV, GitHub Advisory Database (critical), Wiz, watchTowr, Rapid7, Unit 42, Tenable, Cisco, Fortinet and Palo Alto PSIRTs, ZDI zero-days (CVSS 9+), and the security press, scored with FIRST EPSS. Exploited and zero-day bugs come first; critical and high ones follow.
+
 ## What's new
 
+- **Vuln Wire:** exploited, zero-day and critical vulnerabilities with nicknames (Java4Shell, Node2Shell...), ATT&CK TTP and fix, in its own file.
 - **Runs on GitHub Actions** three times a day, at a different time each day. No laptop needed.
 - **Stays inside the free tier:** about 360 Actions minutes a month, against 2,000 free.
 - **19 sources**, all confirmed working from GitHub's runners.
@@ -43,6 +54,7 @@ To run it locally (Python 3.11+, standard library only):
 
 ```bash
 python3 scripts/breach_wire.py --days 7 --no-claims
+python3 scripts/vuln_wire.py --days 30
 ```
 
 ## Caveats
