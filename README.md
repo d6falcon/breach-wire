@@ -2,7 +2,7 @@
 
 # Breach-Wire
 
-**One line per cyber attack, three times a day.** Breach Wire watches ransomware leak sites, dark-web forums, Telegram, the security press, mainstream news and SEC filings. It writes what it finds to [breach-wire.md](breach-wire.md) as short messages:
+**One line per cyber attack, every 4 hours.** Breach Wire watches ransomware leak sites, dark-web forums, Telegram, the security press, mainstream news and SEC filings. It writes what it finds to [breach-wire.md](breach-wire.md) as short messages:
 
 ```
 DATE | STATUS | TTP [ATT&CK] | COMPANY (country, sector) | Stolen: what (volume) | via sources
@@ -23,8 +23,8 @@ Sources ([vuln-sources.json](vuln-sources.json)): CISA KEV, GitHub Advisory Data
 ## What's new
 
 - **Vuln Wire:** exploited, zero-day and critical vulnerabilities with nicknames (Java4Shell, Node2Shell...), ATT&CK TTP and fix, in its own file.
-- **Runs on GitHub Actions** three times a day, at a different time each day. No laptop needed.
-- **Stays inside the free tier:** about 360 Actions minutes a month, against 2,000 free.
+- **Runs on GitHub Actions** every 4 hours, both feeds together. No laptop needed.
+- **Stays inside the free tier:** about 180–360 Actions minutes a month, against 2,000 free.
 - **19 sources**, all confirmed working from GitHub's runners.
 - **Pure Python**, standard library only: nothing to install.
 
@@ -48,7 +48,7 @@ Sources ([vuln-sources.json](vuln-sources.json)): CISA KEV, GitHub Advisory Data
 
 ## Schedule
 
-The [workflow](.github/workflows/breach-wire.yml) runs in three UTC windows: **06:00–07:30, 13:00–14:30 and 20:00–21:30**. Each day it picks one start time per window. To run it now, go to **Actions → breach-wire → Run workflow**.
+The [workflow](.github/workflows/breach-wire.yml) runs both feeds every 4 hours, at **00:17, 04:17, 08:17, 12:17, 16:17 and 20:17 UTC** (GitHub may start a few minutes late). To run it now, go to **Actions → breach-wire → Run workflow**.
 
 To run it locally (Python 3.11+, standard library only):
 

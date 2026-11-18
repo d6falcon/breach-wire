@@ -1,26 +1,10 @@
 name: breach-wire
 
-# Three runs a day at varying times (UTC). Each window has four candidate slots, 30 minutes apart; one
-# slot per window is picked pseudo-randomly from the date, so the run time changes every day. Unpicked
-# slots exit straight away. (A random sleep would bill every waiting minute; this keeps usage low.)
-#
-#   morning    06:00 06:30 07:00 07:30
-#   afternoon  13:00 13:30 14:00 14:30
-#   evening    20:00 20:30 21:00 21:30
+# Every 4 hours (UTC): 00:17 04:17 08:17 12:17 16:17 20:17. Off the hour because GitHub delays top-of-hour
+# schedules the most. Each run refreshes both feeds and commits them together. ~6 billed minutes a day.
 on:
   schedule:
-    - cron: '0 6 * * *'
-    - cron: '30 6 * * *'
-    - cron: '0 7 * * *'
-    - cron: '30 7 * * *'
-    - cron: '0 13 * * *'
-    - cron: '30 13 * * *'
-    - cron: '0 14 * * *'
-    - cron: '30 14 * * *'
-    - cron: '0 20 * * *'
-    - cron: '30 20 * * *'
-    - cron: '0 21 * * *'
-    - cron: '30 21 * * *'
+    - cron: '17 */4 * * *'
   workflow_dispatch:
 
 permissions:
@@ -35,35 +19,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Pick today's slot
-        id: pick
-        env:
-          SCHEDULE: ${{ github.event.schedule }}
-        run: |
-          if [ -z "$SCHEDULE" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; echo "manual run"; exit 0; fi
-          min=$(echo "$SCHEDULE" | cut -d' ' -f1); hr=$(echo "$SCHEDULE" | cut -d' ' -f2)
-          if [ "$hr" -lt 12 ]; then window=morning; base=6; elif [ "$hr" -lt 17 ]; then window=afternoon; base=13; else window=evening; base=20; fi
-          slot=$(( ((hr - base) * 60 + min) / 30 ))
-          pick=$(( $(printf '%s-%s' "$(date -u +%F)" "$window" | cksum | cut -d' ' -f1) % 4 ))
-          echo "window=$window slot=$slot picked=$pick"
-          if [ "$slot" -eq "$pick" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; else echo "run=false" >> "$GITHUB_OUTPUT"; fi
-
       - uses: actions/checkout@v5
-        if: steps.pick.outputs.run == 'true'
 
       - name: Refresh breach feed
-        if: steps.pick.outputs.run == 'true'
         run: python3 scripts/breach_wire.py
 
       - name: Refresh vulnerability feed
-        if: steps.pick.outputs.run == 'true'
         continue-on-error: true  # a vuln-wire failure must not block the breach feed
         env:
           GITHUB_TOKEN: ${{ github.token }}  # higher GitHub Advisory API rate limit
         run: python3 scripts/vuln_wire.py
 
       - name: Commit and push
-        if: steps.pick.outputs.run == 'true'
         run: |
           git config user.name "d6falcon"
           git config user.email "9648746+d6falcon@users.noreply.github.com"
