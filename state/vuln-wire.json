@@ -1,42 +1,6 @@
 {
 "observations": [
 {
-"src": "GitHub Advisory",
-"date": "2026-10-19",
-"title": "Mercury: Unauthenticated Remote Code Execution in /api/terminals - access control bypass",
-"text": "### Summary\nA missing comma in `mercury_app/block_handler.py`'s `BLOCKED_PATTERNS` list causes the blocklist to fail to cover the `/api/terminals` endpoint. As a result, any unauthenticated attacker can spawn a full, interactive OS-level shell on the host running Mercury.\n\n### Details\nThe blocklist in `mercury_app/block_handler.py` is defined as:\n```\nBLOCKED_PATTERNS = [\n    # JupyterLab UI + API\n    r\"/lab(?!/(?:extensions/|api/settings(?:/|$)|api/translations(?:/|$)))(?:/.*)?\"\n    r\"/api/terminals(?:/.*)?\",\n    r\"/api/shutdown(?:/.*)?\",\n    r\"/files(?:/.*)?\",\n]\n```\nThe missing comma between the first and the second line causes Python to merge the rules, therefore the actual list that is blocked looks like this:\n\n/lab...(?:/.`*`)?/api/terminals(?:/.`*`)? (the first two lines joined togeth",
-"link": "https://github.com/advisories/GHSA-f8c7-rwf9-fmgm",
-"cves": [
-"CVE-2026-111057"
-],
-"nick": "",
-"product": "pip/mercury",
-"fix": "upgrade mercury to 3.2.4",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-19",
-"title": "Mercury: Unauthenticated Remote Code Execution via /api/kernels",
-"text": "Mercury runs a JupyterLab server with **anonymous access by default** (`mercury_app/__main__.py` sets `--IdentityProvider.token=''` when no `--token`/`MERCURY_TOKEN` is given; when tokenless it also sets `--ServerApp.disable_check_xsrf=True`). It relies on a **blocklist** (`mercury_app/block_handler.py` `BLOCKED_PATTERNS`: `/lab`, `/api/terminals`, `/api/shutdown`, `/files`) to keep anonymous users off dangerous Jupyter endpoints.\n\n## The vulnerability\n`/api/kernels` is **NOT** in the blocklist (and cannot be — Mercury needs kernels to run notebooks), and `patch_kernel_websocket_handler()` (`mercury_app/idle_timeout.py`) only tracks the idle-timeout: it wraps `on_message` to call `self.application._timeout_manager.touch()` and then invokes the original handler with **no filtering of `execu",
-"link": "https://github.com/advisories/GHSA-rv4m-xm3f-3ccq",
-"cves": [
-"CVE-2026-111058"
-],
-"nick": "",
-"product": "pip/mercury",
-"fix": "upgrade mercury to 3.2.6",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
 "src": "CISA KEV",
 "date": "2026-10-20",
 "title": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
@@ -2319,6 +2283,90 @@
 "extra_link": ""
 },
 {
+"src": "CISA KEV",
+"date": "2026-11-18",
+"title": "Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
+"text": "Synology DSM contains an improper encoding or escaping of output vulnerability in the system plugin daemon in Synology BeeStation OS (BSM) that could allow a remote attacker to execute arbitrary code via unspecified vectors.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2024-10441",
+"cves": [
+"CVE-2024-10441"
+],
+"nick": "",
+"product": "Synology DiskStation Manager (DSM)",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-21",
+"ransomware": false
+},
+"extra_link": "https://www.synology.com/zh-tw/security/advisory/Synology_SA_24_20"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-18",
+"title": "BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
+"text": "BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-40217",
+"cves": [
+"CVE-2026-40217"
+],
+"nick": "",
+"product": "BerriAI LiteLLM",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-12-02",
+"ransomware": false
+},
+"extra_link": "https://github.com/BerriAI/litellm/security/advisories/GHSA-wxxx-gvqv-xp7p"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-18",
+"title": "Apache Axis Unsafe Reflection Vulnerability",
+"text": "Apache Axis contains an unsafe reflection vulnerability that could allow an unauthenticated remote attacker to execute arbitrary code via a crafted SOAP fault message that causes Axis to load and instantiate an attacker-specified class when a suitable class is available on the application classpath. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-90436",
+"cves": [
+"CVE-2026-90436"
+],
+"nick": "",
+"product": "Apache Axis",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-21",
+"ransomware": false
+},
+"extra_link": "https://lists.apache.org/thread/8slf0j9gz35z56t0glt5h0ncwlbn4bdz"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-18",
+"title": "Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability",
+"text": "Vanderbilt University Research Electronic Data Capture (REDCap) contains a code injection vulnerability which could allow an unauthenticated attacker to execute arbitrary code on the server. An attacker could exploit this via crafted HTTP requests that access an unintended controller route from a public survey context and supply a crafted file-path or stream parameter during data import processing. Exploitation requires knowledge of a valid public survey hash.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-90817",
+"cves": [
+"CVE-2026-90817"
+],
+"nick": "",
+"product": "Vanderbilt University Research Electronic Data Capture (REDCap)",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-21",
+"ransomware": false
+},
+"extra_link": "https://projectredcap.org/resources/community"
+},
+{
 "src": "Cisco PSIRT",
 "date": "2026-11-18",
 "title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
@@ -2373,6 +2421,24 @@
 "extra_link": ""
 },
 {
+"src": "GitHub Advisory",
+"date": "2026-11-18",
+"title": "Atomic Server: Unauthenticated `/setup` invite grants write access to the entire Drive",
+"text": "## Summary\n\natomic-server provisions a well-known invite at `{server}/setup` with `write = true`, `target` = the Drive root, and `usagesLeft = 1`. Invite redemption **ignores the redeemer's identity** (`for_agent: _` in `server/src/plugins/invite.rs:22`), so possession of the URL is the only requirement. An **unauthenticated** attacker who sends `GET /setup?public-key=<attacker_key>` has the server create a new Agent and grant it **write access to the entire Drive**. On a freshly deployed (not-yet-claimed) instance this is a full server takeover with no credentials.\n\n## Severity\n\n**Critical — CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H (9.8).** No authentication required; grants attacker-controlled write over all resources in the Drive.\n\n## Affected component\n\n- `server/src/appstate.rs` —",
+"link": "https://github.com/advisories/GHSA-pfwx-xjp4-qxcj",
+"cves": [
+"CVE-2026-69157"
+],
+"nick": "",
+"product": "rust/atomic-server",
+"fix": "no patched version yet",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
 "src": "Rapid7",
 "date": "2026-11-18",
 "title": "CVE-2026-123007: Critical NGINX HTTP/2 Integer Underflow Leads to RCE (FIXED)",
@@ -2410,7 +2476,7 @@
 "src": "Tenable",
 "date": "2026-11-18",
 "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-"text": "Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Key takeaways CVE-2026-114938, dubbed Java4Shell, is an OpenJDK memory corruption vulnerability that Oracle scores 8.1 on CVSS 3.1, and Calif says its testing showed attackers could run code without logging in on applications such as Atlassian Jira and Jenkins. As of November 17, Tenable is not aware of any reports that attackers have exploited this flaw, though Calif has published a PoC that triggers the bug without taking control of the system and a second researcher reports building a working exploit. ",
+"text": "Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Change log Update November 18: Added reports of exploitation attempts and a working exploit, alerts from CISA and the Canadian Centre for Cyber Security, fixed builds from other Java distributions, mitigation guidance from Keycloak and an example Tenable Hexa AI prompt. Click here to review the change log history Update November 18: Added reports of exploitation attempts and a working exploit, alerts from CISA and the Canadian Centre for Cyber Security, fixed builds from other Java distributions, mitigati",
 "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
 "cves": [
 "CVE-2026-114938"
@@ -2439,6 +2505,24 @@
 "sev": "HIGH",
 "zeroday": false,
 "exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-18",
+"title": "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required",
+"text": "A critical security flaw in Apache Roller, an open-source, Java-based blogging platform, has come under active exploitation in the wild, according to the Apache Software Foundation (ASF) The vulnerability, tracked as CVE-2026-129448 (CVSS score: 9.8), is a case of unauthenticated deserialization in the XML-RPC endpoint that could lead to remote code execution. \"Deserialization of Untrusted",
+"link": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
+"cves": [
+"CVE-2026-129448"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
 "kev": null,
 "extra_link": ""
 },
@@ -2478,6 +2562,42 @@
 "exploited": false,
 "kev": null,
 "extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-19",
+"title": "Miren Runtime: Authentication bypass in RPC layer: unverified TLS client certificates grant cluster superuser access",
+"text": "### Summary\n\n  The Miren Runtime RPC server (QUIC/HTTP3, default port `:8443`) requested TLS\n  client certificates but never verified that a presented certificate chained to\n  the cluster Certificate Authority. Because a client-certificate identity is\n  granted a blanket RBAC bypass, any party able to reach the RPC listener could\n  present a forged, self-signed certificate and be authenticated as a cluster\n  **superuser** — no valid CA signature, credential, or prior authorization\n  required.\n\n### Impact\n\n  This is a complete, unauthenticated authentication bypass against the cluster\n  control plane. An attacker who can reach the RPC port can perform any RPC\n  operation with full privileges: enumerate and manipulate entities, apps,\n  sandboxes, disks, and other cluster resources. This yiel",
+"link": "https://github.com/advisories/GHSA-8fh7-7q4q-cq52",
+"cves": [
+"CVE-2026-75521"
+],
+"nick": "",
+"product": "go/miren.dev/runtime",
+"fix": "upgrade miren.dev/runtime to 0.11.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Tenable",
+"date": "2026-11-19",
+"title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
+"text": "Frequently asked questions about five critical NGINX remote code execution vulnerabilities and five additional flaws fixed in F5’s November 18 out-of-band release. Key takeaways NGINX2Root is associated with five critical remote code execution vulnerabilities in NGINX, and a separate, unpatched Linux kernel local privilege escalation (LPE) flaw that can be chained with the NGINX bugs to gain root. CVE-2026-123007 is the most urgent of the five. It is an unauthenticated RCE flaw in NGINX’s HTTP/2 implementation and requires only HTTP/2 over TLS to be enabled. A PoC is publicly available on GitHub. F5’s November 18 release fixed the five NGINX2Root vulnerabilities and five additional NGINX flaws. Background Tenable’s Research Special Operations (RSO) team has compiled this blog to answer Fre",
+"link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
+"cves": [
+"CVE-2026-123007"
+],
+"nick": "",
+"product": "",
+"fix": "upgrade to 37.0.7.1",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
 }
 ],
 "cve_cache": {
@@ -2504,6 +2624,10 @@
 "CVE-2026-123633": {
 "product": "F5 NGINX Open Source",
 "title": "NGINX ngx_http_v2_module vulnerability"
+},
+"CVE-2026-129448": {
+"product": "Apache Roller",
+"title": "Apache Roller: Unauthenticated deserialization in the XML-RPC endpoint (releases before 6.1.5)"
 },
 "CVE-2026-20043": {
 "product": "Cisco Cyber Vision",
