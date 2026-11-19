@@ -1024,8 +1024,8 @@
 {
 "src": "Unit 42",
 "date": "2026-10-29",
-"title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29)",
-"text": "CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated October 29) appeared first on Unit 42 .",
+"title": "Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated November 19)",
+"text": "CVE-2026-109618 and CVE-2026-109619 are Critical vulnerabilities in PHP, a scripting language used globally for web servers and CMS systems. The post Threat Brief: Critical Vulnerabilities in PHP: CVE-2026-109618, CVE-2026-109619 (Updated November 19) appeared first on Unit 42 .",
 "link": "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
 "cves": [
 "CVE-2026-109618",
@@ -1976,6 +1976,25 @@
 "src": "Tenable",
 "date": "2026-11-11",
 "title": "Able2Shell: Frequently asked questions for reported N-able N-central zero-day vulnerabilities",
+"text": "N-able released a hotfix for N-central that fixes seven CVEs after a researcher published proof-of-concept code for 33 alleged zero-day vulnerabilities. The researcher says one attack chain needs no credentials. Change log Update November 19: Added N-able’s Hotfix 3 (build 2026.4.1.39) and its 17 CVEs, the researcher’s per-CVE proof-of-concept code and CISA’s addition of CVE-2026-90436 to KEV. Updated the Key Takeaways and related answers. Click here to review the change log history Update November 19: Added N-able’s Hotfix 3 (build 2026.4.1.39) and its 17 CVEs, the researcher’s per-CVE proof-of-concept code and CISA’s addition of CVE-2026-90436 to KEV. Updated the Key Takeaways and related answers. Update November 16: Added a note that N-able published network indicators of compromise rel",
+"link": "https://www.tenable.com/blog/able2shell-frequently-asked-questions-for-reported-n-able-n-central-zero-day-vulnerabilities",
+"cves": [
+"CVE-2026-90436",
+"CVE-2026-91000"
+],
+"nick": "Able2Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": true,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Tenable",
+"date": "2026-11-11",
+"title": "Able2Shell: Frequently asked questions for reported N-able N-central zero-day vulnerabilities",
 "text": "N-able released a hotfix for N-central that fixes seven CVEs after a researcher published proof-of-concept code for 33 alleged zero-day vulnerabilities. The researcher says one attack chain needs no credentials. Change log Update November 16: Added a note that N-able published network indicators of compromise relevant only to customers who have not disabled the Legacy API. Click here to review the change log history Update November 16: Added a note that N-able published network indicators of compromise relevant only to customers who have not disabled the Legacy API. Update November 12: Added the researcher’s new exploit claims against Hotfix 2, N-able’s November 12 statements and huntback’s report of cryptocurrency miners on live N-central servers. Updated the Key Takeaways, the exploitati",
 "link": "https://www.tenable.com/blog/able2shell-frequently-asked-questions-for-reported-n-able-n-central-zero-day-vulnerabilities",
 "cves": [
@@ -2367,24 +2386,6 @@
 "extra_link": "https://projectredcap.org/resources/community"
 },
 {
-"src": "Cisco PSIRT",
-"date": "2026-11-18",
-"title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
-"text": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnerability Advisory: 2026/11/17 . For additional information, see the Talos blog post: Talos Threat Advisory CVE-2026-114938: Critical vulnerability in OpenJDK JAVA This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z <",
-"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-"cves": [
-"CVE-2026-114938"
-],
-"nick": "Java4Shell",
-"product": "",
-"fix": "",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
 "src": "Fortinet PSIRT",
 "date": "2026-11-18",
 "title": "Java4Shell Vulnerability - CVE-2026-114938",
@@ -2476,7 +2477,7 @@
 "src": "Tenable",
 "date": "2026-11-18",
 "title": "Java4Shell (CVE-2026-114938): Frequently asked questions about OpenJDK remote code execution vulnerability",
-"text": "Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Change log Update November 18: Added reports of exploitation attempts and a working exploit, alerts from CISA and the Canadian Centre for Cyber Security, fixed builds from other Java distributions, mitigation guidance from Keycloak and an example Tenable Hexa AI prompt. Click here to review the change log history Update November 18: Added reports of exploitation attempts and a working exploit, alerts from CISA and the Canadian Centre for Cyber Security, fixed builds from other Java distributions, mitigati",
+"text": "Java4Shell is a flaw in how Java decodes Base64 data. Calif, which found it, says it can let attackers run code on widely used Java applications without logging in. Oracle released fixed Java builds on November 17, and Calif is withholding its exploits for individual applications for now. Change log Update November 19: Added Tenable's product statement, which lists Tenable Enclave Security and Tenable OT as affected, and updated fixed builds from Linux distributions and other Java vendors. Noted in the Key Takeaways that there is no universal exploit, and added Keycloak's updated container images. Click here to review the change log history Update November 19: Added Tenable's product statement, which lists Tenable Enclave Security and Tenable OT as affected, and updated fixed builds from L",
 "link": "https://www.tenable.com/blog/java4shell-cve-2026-114938-frequently-asked-questions-about-openjdk-rce-vulnerability",
 "cves": [
 "CVE-2026-114938"
@@ -2564,6 +2565,42 @@
 "extra_link": ""
 },
 {
+"src": "Cisco PSIRT",
+"date": "2026-11-19",
+"title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
+"text": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnerability Advisory: 2026/11/17 . For additional information, see the Talos blog post: Talos Threat Advisory CVE-2026-114938: Critical vulnerability in OpenJDK JAVA This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z <",
+"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-19",
+"title": "Todoist MCP Server: Browser DNS rebinding lets websites write and delete Todoist data through local MCP server",
+"text": "The self-hosted `todoist-mcp-http` server accepts browser-origin MCP requests with attacker-controlled `Host` and `Origin` headers. A malicious website can use DNS rebinding to route its own origin to a victim's local `127.0.0.1` MCP server, then invoke Todoist MCP tools without a caller credential.\n\nThis affects `github.com/Doist/todoist-mcp` at commit `d2903e0d945d2a559d71c091337ad6380511e62f`, package version `10.3.1`, when the optional Streamable HTTP server is running. The stdio entrypoint is not browser-reachable. The vulnerable browser-reachable component is `todoist-mcp-http`.\n\nThe documented HTTP server mode runs all MCP tools with the operator's `TODOIST_API_KEY` and binds to loopback by default:\n\n```bash\nTODOIST_API_KEY=your-key npx -p @doist/todoist-mcp todoist-mcp-http\n```\n\n`s",
+"link": "https://github.com/advisories/GHSA-833v-v58w-294h",
+"cves": [
+"CVE-2026-76807"
+],
+"nick": "",
+"product": "npm/@doist/todoist-mcp",
+"fix": "upgrade @doist/todoist-mcp to 10.3.3",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
 "src": "GitHub Advisory",
 "date": "2026-11-19",
 "title": "Miren Runtime: Authentication bypass in RPC layer: unverified TLS client certificates grant cluster superuser access",
@@ -2578,6 +2615,78 @@
 "sev": "CRITICAL",
 "zeroday": false,
 "exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-19",
+"title": "Jane: Instantiation RCE via query parameter name -> raw PHPDoc */ breakout (jane-php/open-api-3)",
+"text": "### Summary\njane-php (open-api-3) builds PHP via nikic/php-parser (AST), so string literals are escaped -- but PHPDoc comment text is emitted RAW. The generated Client/Endpoint method docblocks embed the query parameter name verbatim in a `@param array{ \"<name>\"?: ... }` block. A `*/` in the query name closes the `/** ... */` docblock early and lands in class-body position; because the name is a raw string key (not identifier-mangled), the `*/` and following PHP survive. Injecting `*/ public function __construct(){ <code> } /*` adds an attacker-controlled __construct to the generated Client class, which runs when the client is instantiated -> RCE (CWE-94). Verified 7.11.2/PHP8.1.\n\n### Impact\nGenerating a client from an attacker-influenced OpenAPI document and using the generated SDK (insta",
+"link": "https://github.com/advisories/GHSA-q8v2-3j4h-xg2p",
+"cves": [
+"CVE-2026-63412"
+],
+"nick": "",
+"product": "composer/jane-php/open-api-3",
+"fix": "upgrade jane-php/open-api-3 to 7.12.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-19",
+"title": "Jane: Instantiation RCE via header parameter name -> raw PHPDoc */ breakout (jane-php/open-api-3)",
+"text": "### Summary\njane-php (open-api-3) builds PHP via nikic/php-parser (AST), so string literals are escaped -- but PHPDoc comment text is emitted RAW. The generated Client/Endpoint method docblocks embed the header parameter name verbatim in a `@param array{ \"<name>\"?: ... }` block. A `*/` in the header name closes the `/** ... */` docblock early and lands in class-body position; because the name is a raw string key (not identifier-mangled), the `*/` and following PHP survive. Injecting `*/ public function __construct(){ <code> } /*` adds an attacker-controlled __construct to the generated Client class, which runs when the client is instantiated -> RCE (CWE-94). Verified 7.11.2/PHP8.1.\n\n### Impact\nGenerating a client from an attacker-influenced OpenAPI document and using the generated SDK (ins",
+"link": "https://github.com/advisories/GHSA-x9xr-53qx-9qcf",
+"cves": [
+"CVE-2026-63413"
+],
+"nick": "",
+"product": "composer/jane-php/open-api-3",
+"fix": "upgrade jane-php/open-api-3 to 7.12.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-19",
+"title": "Jane: Instantiation RCE via parameter description -> raw PHPDoc */ breakout (jane-php/open-api-3)",
+"text": "### Summary\njane-php (open-api-3) builds PHP via nikic/php-parser (AST), so string literals are escaped -- but PHPDoc comment text is emitted RAW. The generated Client/Endpoint method docblocks embed the parameter description verbatim in a `@param array{ \"<name>\"?: ... }` block. A `*/` in the parameter description closes the `/** ... */` docblock early and lands in class-body position; because the name is a raw string key (not identifier-mangled), the `*/` and following PHP survive. Injecting `*/ public function __construct(){ <code> } /*` adds an attacker-controlled __construct to the generated Client class, which runs when the client is instantiated -> RCE (CWE-94). Verified 7.11.2/PHP8.1.\n\n### Impact\nGenerating a client from an attacker-influenced OpenAPI document and using the generate",
+"link": "https://github.com/advisories/GHSA-xwcw-j52r-34x4",
+"cves": [
+"CVE-2026-63411"
+],
+"nick": "",
+"product": "composer/jane-php/open-api-3",
+"fix": "upgrade jane-php/open-api-3 to 7.12.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Rapid7",
+"date": "2026-11-19",
+"title": "CVE-2026-123890: Critical Authentication Bypass in VMware vCenter",
+"text": "Overview On November 19, 2026, Broadcom published VMware Security Advisory VMSA-2026-0009 , addressing five vulnerabilities in VMware products. The most severe of these, CVE-2026-123890 , is an authentication bypass using an alternate path or channel ( CWE-288 ) in the VMware Directory Service component of vCenter. Broadcom assigned the vulnerability a critical CVSSv3 score of 9.8 . A malicious actor with network access to an affected vCenter deployment may exploit CVE-2026-123890 without credentials to bypass authentication and gain unauthorized access to the system as the Administrator user. Mandiant privately reported the issue to Broadcom. Also, Mandiant/Google Threat Intelligence confirmed in-the-wild exploitation of CVE-2026-123890 by Chinese state-linked threat actor ARMORY CASTLE a",
+"link": "https://www.rapid7.com/blog/post/etr-cve-2026-123890-critical-authentication-bypass-vmware-vcenter",
+"cves": [
+"CVE-2026-123890"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
 "kev": null,
 "extra_link": ""
 },
@@ -2601,7 +2710,7 @@
 "src": "Tenable",
 "date": "2026-11-19",
 "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
-"text": "Frequently asked questions about five critical NGINX remote code execution vulnerabilities and five additional flaws fixed in F5’s November 18 out-of-band release. Key takeaways NGINX2Root is associated with five critical remote code execution vulnerabilities in NGINX, and a separate, unpatched Linux kernel local privilege escalation (LPE) flaw that can be chained with the NGINX bugs to gain root. CVE-2026-123007 is the most urgent of the five. It is an unauthenticated RCE flaw in NGINX’s HTTP/2 implementation and requires only HTTP/2 over TLS to be enabled. A PoC is publicly available on GitHub. F5’s November 18 release fixed the five NGINX2Root vulnerabilities and five additional NGINX flaws. Background Tenable’s Research Special Operations (RSO) team has compiled this blog to answer Fre",
+"text": "Frequently asked questions about five critical NGINX remote code execution vulnerabilities and five additional flaws fixed in F5’s November 18 out-of-band release. Change log Update November 19: Added the Censys exposure data, test and lab reproductions and refined proof-of-concept details and added Tenable’s Vulnerability Watch classifications. Click here to review the change log history Update November 19: Added the Censys exposure data, test and lab reproductions and refined proof-of-concept details and added Tenable’s Vulnerability Watch classifications. November 18: Initial publication. Key takeaways NGINX2Root is associated with five critical remote code execution (RCE) vulnerabilities in NGINX, and a separate, unpatched Linux kernel local privilege escalation (LPE) flaw that can be ",
 "link": "https://www.tenable.com/blog/nginx2root-cve-2026-123007-frequently-asked-questions-about-five-critical-nginx",
 "cves": [
 "CVE-2026-123007"
@@ -2640,6 +2749,10 @@
 "CVE-2026-123633": {
 "product": "F5 NGINX Open Source",
 "title": "NGINX ngx_http_v2_module vulnerability"
+},
+"CVE-2026-123890": {
+"product": "VMware vCenter",
+"title": "vCenter authentication-bypass vulnerability"
 },
 "CVE-2026-129448": {
 "product": "Apache Roller",
