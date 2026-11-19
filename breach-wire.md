@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-19 01:52 UTC** - last 14 days - 12 confirmed, 33 reported, 255 claimed
+Last run **2026-11-19 13:08 UTC** - last 14 days - 15 confirmed, 36 reported, 278 claimed
 
 | Status | Meaning |
 |---|---|
@@ -14,15 +14,43 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 
 ## 2026-11-19
 
+- 2026-11-19 | **CONFIRMED** | not disclosed | **EU Commission** | Stolen: not disclosed | via [Reuters](https://news.google.com/rss/articles/CBMipwFBVV95cUxNQ2FuVDFlVnk2V2ZQX1cwZDZTVVgtNGcyVkRjdWVPa0dWMnFUVWkxVjU0MmJCZEhqZTNURWtRUlpWTFpHYTJDUS1TckpwbDFOYWl3WjR5Z0hyR0xMRVNQbXNZOWw1dHUtWDMwUl9VTVJRSUVfOWh6cjd1eVBpY3hySU9zbnlvZ2V1UFpBSlFraWZIMTAxTGtXQnVYaGhNLWRkRVhmaE96UQ?oc=5)
+- 2026-11-19 | **CONFIRMED** | not disclosed | **N-able Cloud Server** | Stolen: not disclosed | via [The Hacker News](https://thehackernews.com/2026/11/n-able-confirms-hackers-accessed-cloud.html)
+- 2026-11-19 | **CONFIRMED** | Ransomware \[T1486\] | **NVIDIA** | Stolen: not disclosed | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims/)
+- 2026-11-19 | **REPORTED** | not disclosed | ? "A cyberattack using artificial intelligence targeted the EU in October, official says - AP News" | Stolen: not disclosed | via [AP](https://news.google.com/rss/articles/CBMiswFBVV95cUxQNjFWMWRqdEZvSG5jaEYzNW9NSHd1c2VTUHQzU2FVUXY0cmFKT3BlblZfcHlGM19DZVJiMkpQTXVEeU1URFRwczEyZl8wM0NQZmJ5NTE1VGh6blRlc1lZdWdTSFV0NkhTVVh3cHBaa1Fvc2p5V0lQNlV3TTRzMFNXd2pVYnVzckU0bGZmNkRqQjFxcE1uU2lFSGdsVTlHdzZQaXUyX3BkQkt1V0ZCQXJ1bUlyZw?oc=5)
+- 2026-11-19 | **REPORTED** | Third-party/trusted relationship \[T1199\] | ? "Cyberattack on service provider exposes payee data at 40 Irish credit unions" | Stolen: financial data | via [The Register](https://www.theregister.com/security/2026/11/19/cyberattack-on-service-provider-exposes-payee-data-at-40-irish-credit-unions/5310979)
+- 2026-11-19 | **REPORTED** | not disclosed | **Ethiopian Airlines** | Stolen: not disclosed | via [Reuters](https://news.google.com/rss/articles/CBMiwgFBVV95cUxOYmx6Qks2UXBRdW1pQ3hrNV9zYU56OXZTRlR3cFktQkgxenM1X2tRenJKNzFVTk56SjFIX1V3bUtYdW9tLVhWWkhQZG5obkxhaEhLMTNrREJZOHpzT2Q4eGxqQWh5ZHdabHZCUG5Hekg1c3BsREw3aUdGcXpwRzBHdVlrRFZsTGYwd3dURi1jTVR2dzEyaGNhM01zZ05UT0R6YndjSURPQ2czZ09md3JXaDVIUzBCc2JDX0l0T0hyY0JQZw?oc=5)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (6)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (28)</summary>
 
-- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - krybit | **alumil.com** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/krybit)
-- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **CENTERED CO., LTD** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - krybit | **alumil.com** (GR, Manufacturing) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/krybit), [ransomware.live](https://www.ransomware.live/id/YWx1bWlsLmNvbUBrcnliaXQ=)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Arthrex** | Stolen: data (20.90 GB, 24,655,647 records) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Bond Building** | Stolen: data (144.32 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - aurora | **Boulart Inc** | Stolen: customer data, personal data (PII), employee/HR data, health data (251 GB, 308 records) | via [RansomLook](https://www.ransomlook.io/group/aurora)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Bozzuto** | Stolen: data (203.61 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Buffalo Construction** | Stolen: data (536.99 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **CDM Smith** | Stolen: data (299.80 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **CENTERED CO., LTD** (JP) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom), [ransomware.live](https://www.ransomware.live/id/Q0VOVEVSRUQgQ08uLCBMVEQuQGluY3JhbnNvbQ==)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - hyflock | **Dong Engineering Consulting Company Data Breach** | Stolen: contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/hyflock)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - soul | **Egyptian Steel Company** | Stolen: employee/HR data | via [RansomLook](https://www.ransomlook.io/group/soul)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - cloak | **elementar.de** | Stolen: data (410GB) | via [RansomLook](https://www.ransomlook.io/group/cloak)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **FIDE Partners** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Gensler** | Stolen: customer data (691.71 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - fulcrumsec | **Ginkgo Bioworks** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/fulcrumsec)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **GRAIL, Inc** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Pulsar** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
-- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - krybit | **www.leadersaluminium.ae** | Stolen: contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/krybit)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Kiely Builders** | Stolen: health data (184.77 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - crypto24 | **M.N. Textiles** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/crypto24)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - aurora | **Mor Group** | Stolen: financial data, credentials, databases/backups (420 GB) | via [RansomLook](https://www.ransomlook.io/group/aurora)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Ochsner Health** | Stolen: data (466.44 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Orlando Health** | Stolen: customer data (10.91 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - ransomhouse | **OSWALD Elektromotoren GmbH** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/ransomhouse)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - hyflock | **Piz'wich Data Breach** | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/hyflock)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Pulsar** (US, Technology) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom), [ransomware.live](https://www.ransomware.live/id/UHVsc2FyQGluY3JhbnNvbQ==)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Samtec** | Stolen: data (28.53 GB, 103,494,376 records) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Smith & Green, Attorneys at Law PLLC** (US, Professional Services) | Stolen: customer data, employee/HR data, government IDs, contracts/internal docs (1.41 TB) | via [ransomware.live](https://www.ransomware.live/id/U21pdGggJiBHcmVlbiwgQXR0b3JuZXlzIGF0IExhdyBQTExDQHJoeXNpZGE=), [RansomLook](https://www.ransomlook.io/group/rhysida)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **TrueBlue** | Stolen: customer data (1,094.12 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - krybit | **www.leadersaluminium.ae** (AE, Manufacturing) | Stolen: contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/krybit), [ransomware.live](https://www.ransomware.live/id/d3d3LmxlYWRlcnNhbHVtaW5pdW0uYWVAa3J5Yml0)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - krybit | **www.sleepboxbymiracle.com** (RU, Hospitality) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/d3d3LnNsZWVwYm94YnltaXJhY2xlLmNvbUBrcnliaXQ=), [RansomLook](https://www.ransomlook.io/group/krybit)
 
 </details>
 
@@ -43,7 +71,7 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-18 | **REPORTED** | not disclosed | ? "UK: Transport for London photocard breach exposes 265,000 customers" | Stolen: customer data, personal data (PII) (265,000 customers) | via [DataBreaches.net](https://databreaches.net/2026/11/18/uk-transport-for-london-photocard-breach-exposes-265000-customers/)
 - 2026-11-18 | **REPORTED** | Ransomware \[T1486\] | **Wilmington School District 209U** | Stolen: employee/HR data, student records | via [DataBreaches.net](https://databreaches.net/2026/11/18/il-wilmington-school-district-209u-reports-ransomware-attack-and-possible-data-breach/)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (70)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (71)</summary>
 
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - HYFLOCK | **An independent asset management firm in Casablanca** (MA, Financial Services) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/QW4gaW5kZXBlbmRlbnQgYXNzZXQgbWFuYWdlbWVudCBmaXJtIGluIENhc2FibGFuY2FASFlGTE9DSw==), [RansomLook](https://www.ransomlook.io/group/hyflock)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Ardi Youth Academy** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
@@ -57,31 +85,31 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - direwolf | **CobbleStone Software** (US, Technology) | Stolen: contracts/internal docs | via [ransomware.live](https://www.ransomware.live/id/Q29iYmxlU3RvbmUgU29mdHdhcmVAZGlyZXdvbGY=), [RansomLook](https://www.ransomlook.io/group/direwolf)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - HYFLOCK | **Colombian Real Estate** (CO, Retail & E-Commerce) | Stolen: employee/HR data, financial data, contracts/internal docs (450 employees) | via [ransomware.live](https://www.ransomware.live/id/Q29sb21iaWFuIFJlYWwgRXN0YXRlQEhZRkxPQ0s=)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - hyflock | **Colombian Real Estate Leak** | Stolen: employee/HR data, financial data, contracts/internal docs (450 employees) | via [RansomLook](https://www.ransomlook.io/group/hyflock)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #217** | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #218** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #219** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #220** | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #221** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #222** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #223** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #224** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #225** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #226** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #227** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #228** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #229** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #230** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #231** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #232** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #233** | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #234** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #235** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #236** | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #237** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #238** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #239** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #240** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #241** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #217** (CA) | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjE3QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #218** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjE4QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #219** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjE5QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #220** (CA) | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjIwQE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #221** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjIxQE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #222** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjIyQE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #223** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjIzQE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #224** (CA) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjI0QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #225** (GB) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjI1QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #226** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjI2QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #227** (GB) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjI3QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #228** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjI4QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #229** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjI5QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #230** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjMwQE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #231** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjMxQE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #232** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjMyQE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #233** (MX) | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjMzQE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #234** (GB) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjM0QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #235** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjM1QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #236** (US) | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjM2QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #237** (MX) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjM3QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #238** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjM4QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #239** (GB) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjM5QE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #240** (PH) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjQwQE4wbg==)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #241** (US) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n), [ransomware.live](https://www.ransomware.live/id/Q29tcGFueSAjMjQxQE4wbg==)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - PixelLeaks | **EKwiiK (EazyPay, ekwiik.com)** (KE, Financial Services) | Stolen: customer data, financial data, credentials, funds/crypto | via [ransomware.live](https://www.ransomware.live/id/RUt3aWlLIChFYXp5UGF5LCBla3dpaWsuY29tKUBQaXhlbExlYWtz), [RansomLook](https://www.ransomlook.io/group/pixelleaks)
 - 2026-11-18 | CLAIMED | Data theft, offered for sale/leak | **Everskies** | Stolen: customer data, databases/backups | via [Dark Web Informer](https://darkwebinformer.com/everskies-database-sale-claim-lists-22-07-million-user-records-with-email-data/)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - PixelLeaks | **FAIR Health, Inc. (fairhealth.com)** (US, Healthcare) | Stolen: customer data, personal data (PII), employee/HR data, health data | via [ransomware.live](https://www.ransomware.live/id/RkFJUiBIZWFsdGgsIEluYy4gKGZhaXJoZWFsdGguY29tKUBQaXhlbExlYWtz), [RansomLook](https://www.ransomlook.io/group/pixelleaks)
@@ -110,6 +138,7 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - krybit | **STL International Pte Ltd** (SG, Other) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/krybit), [ransomware.live](https://www.ransomware.live/id/U1RMIEludGVybmF0aW9uYWwgUHRlIEx0ZEBrcnliaXQ=)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - SilentRansomGroup | **T... K** | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/VC4uLiBLLi4uQFNpbGVudFJhbnNvbUdyb3Vw), [RansomLook](https://www.ransomlook.io/group/leakeddata)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - SilentRansomGroup | **Tarter Krinsky & Drogin LLP** (US, Professional Services) | Stolen: financial data, contracts/internal docs | via [ransomware.live](https://www.ransomware.live/id/VGFydGVyIEtyaW5za3kgJiBEcm9naW4gTExQQFNpbGVudFJhbnNvbUdyb3Vw), [RansomLook](https://www.ransomlook.io/group/leakeddata)
+- 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - medusalocker | **Terminais** (MZ, Transportation) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/VGVybWluYWlzQG1lZHVzYWxvY2tlcg==)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - Aoqin | **TopGroup** (AR) | Stolen: customer data, employee/HR data, financial data, contracts/internal docs (327 GB) | via [ransomware.live](https://www.ransomware.live/id/VG9wR3JvdXBAQW9xaW4=), [RansomLook](https://www.ransomlook.io/group/aoqin%20leaks)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - lockbit5 | **umraocashmere.com** (IN, Retail & E-Commerce) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/lockbit5), [ransomware.live](https://www.ransomware.live/id/dW1yYW9jYXNobWVyZS5jb21AbG9ja2JpdDU=)
 - 2026-11-18 | CLAIMED | Exfiltration + extortion \[T1657\] - Helix | **Veritiv** (US, Manufacturing) | Stolen: data (68.65 GB) | via [ransomware.live](https://www.ransomware.live/id/VmVyaXRpdkBIZWxpeA==)

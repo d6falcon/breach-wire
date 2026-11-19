@@ -2582,6 +2582,22 @@
 "extra_link": ""
 },
 {
+"src": "SecurityWeek",
+"date": "2026-11-19",
+"title": "Java4Shell Exploitation Attempts Begin as Vendors Rush Out Advisories",
+"text": "GreyNoise, WatchTowr and Cloudflare report probing and exploit attempts, while Cisco, Elastic, Red Hat and Siemens detail impact. The post Java4Shell Exploitation Attempts Begin as Vendors Rush Out Advisories appeared first on SecurityWeek .",
+"link": "https://www.securityweek.com/java4shell-exploitation-attempts-begin-as-vendors-rush-out-advisories/",
+"cves": [],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
 "src": "Tenable",
 "date": "2026-11-19",
 "title": "NGINX2Root (CVE-2026-123007): Frequently asked questions about five critical NGINX vulnerabilities",
