@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-19 23:03 UTC** - last 14 days - 16 confirmed, 45 reported, 315 claimed
+Last run **2026-11-20 07:16 UTC** - last 14 days - 16 confirmed, 45 reported, 324 claimed
 
 | Status | Meaning |
 |---|---|
@@ -11,6 +11,22 @@ Last run **2026-11-19 23:03 UTC** - last 14 days - 16 confirmed, 45 reported, 31
 | CLAIMED | Ransomware leak site, dark-web forum or Telegram claim. Unverified; groups exaggerate and re-post |
 
 TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: triage hints, not attribution. "What was stolen" lists data categories and volumes only; no leaked values are copied here. `?` = company not parsed from the headline; follow the source.
+
+## 2026-11-20
+
+
+<details><summary>Claimed on leak sites / dark web / Telegram (8)</summary>
+
+- 2026-11-20 | CLAIMED | Exploited public-facing app \[T1190\] - inc ransom | **Boeing** | Stolen: employee/HR data, financial data, credentials, mailboxes | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
+- 2026-11-20 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **eni.it** | Stolen: customer data, personal data (PII), employee/HR data, financial data (18.78 GB) | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
+- 2026-11-20 | CLAIMED | Exfiltration + extortion \[T1657\] - space bears | **Epoch Residential** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/space%20bears)
+- 2026-11-20 | CLAIMED | Exfiltration + extortion \[T1657\] - Handsome Boy Hacking Club | **FIFA (Fédération Internationale de Football Association)** (CH, Other) | Stolen: customer data | via [ransomware.live](https://www.ransomware.live/id/RklGQSAoRsOpZMOpcmF0aW9uIEludGVybmF0aW9uYWxlIGRlIEZvb3RiYWxsIEFzc29jaWF0aW9uKUBIYW5kc29tZSBCb3kgSGFja2luZyBDbHVi)
+- 2026-11-20 | CLAIMED | Exfiltration + extortion \[T1657\] - space bears | **Inlandboatmen’s Union of the Pacific — Marine Division of the ILWU** | Stolen: customer data, employee/HR data | via [RansomLook](https://www.ransomlook.io/group/space%20bears)
+- 2026-11-20 | CLAIMED | Exfiltration + extortion \[T1657\] - space bears | **Rise / A Community Service Partnership** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/space%20bears)
+- 2026-11-20 | CLAIMED | Exfiltration + extortion \[T1657\] - space bears | **SDJ Design Engineering Limited** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/space%20bears)
+- 2026-11-20 | CLAIMED | Exfiltration + extortion \[T1657\] - blackout | **wakao.co.jp** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/blackout)
+
+</details>
 
 ## 2026-11-19
 
@@ -30,13 +46,13 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-19 | **REPORTED** | not disclosed | **Australia's Bell Financial** | Stolen: customer data, financial data | via [Reuters](https://news.google.com/rss/articles/CBMiywFBVV95cUxNUVFVYlJmcE9TbktrajNRbDBfTVhRLU5hMXVBV2RPVHVQeUVLaEdtM2JFRVRRN0Q5MEw5TzBWcEdLQzlXWmZCWHVTSjdmU1p0Y1c4SThaLTlkbVl1Vy1TZVUxWC1HSFFYOUdDSDlTcEE0Q0RzTHExZkZOZTE2d2NNTmw1dFhfeGJrbDhRZFVBZm1mVUMwUEs4Q0pQVVk1U003Y3c2WlpLaGlsSkIxQndyWXF2OUxQV3RPd0hHUl92YnI4bTM2T0dUbFRDTQ?oc=5)
 - 2026-11-19 | **REPORTED** | not disclosed | **Ethiopian Airlines** | Stolen: not disclosed | via [Reuters](https://news.google.com/rss/articles/CBMiwgFBVV95cUxOYmx6Qks2UXBRdW1pQ3hrNV9zYU56OXZTRlR3cFktQkgxenM1X2tRenJKNzFVTk56SjFIX1V3bUtYdW9tLVhWWkhQZG5obkxhaEhLMTNrREJZOHpzT2Q4eGxqQWh5ZHdabHZCUG5Hekg1c3BsREw3aUdGcXpwRzBHdVlrRFZsTGYwd3dURi1jTVR2dzEyaGNhM01zZ05UT0R6YndjSURPQ2czZ09md3JXaDVIUzBCc2JDX0l0T0hyY0JQZw?oc=5)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (65)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (66)</summary>
 
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **Adaris Tech** (ES, Technology) | Stolen: employee/HR data | via [ransomware.live](https://www.ransomware.live/id/QWRhcmlzIFRlY2hAU291bEdyb3Vw)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - krybit | **alumil.com** (GR, Manufacturing) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/krybit), [ransomware.live](https://www.ransomware.live/id/YWx1bWlsLmNvbUBrcnliaXQ=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Arthrex** | Stolen: data (20.90 GB, 24,655,647 records) | via [RansomLook](https://www.ransomlook.io/group/vortex)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **Aurora Health Management** (US, Healthcare) | Stolen: employee/HR data, health data | via [ransomware.live](https://www.ransomware.live/id/QXVyb3JhIEhlYWx0aCBNYW5hZ2VtZW50QFNvdWxHcm91cA==)
-- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - inception | **AutoZone, Inc** | Stolen: credentials, source code (22 GB) | via [RansomLook](https://www.ransomlook.io/group/inception)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - inception | **AutoZone, Inc** (US, Retail & E-Commerce) | Stolen: credentials, source code (22 GB) | via [RansomLook](https://www.ransomlook.io/group/inception), [ransomware.live](https://www.ransomware.live/id/QXV0b1pvbmUsIEluYy5ASW5jZXB0aW9u)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Bond Building** (Other) | Stolen: data (144.32 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex), [ransomware.live](https://www.ransomware.live/id/Qm9uZCBCdWlsZGluZ0BWb3J0ZXg=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - aurora | **Boulart Inc** (Other) | Stolen: customer data, personal data (PII), employee/HR data, health data (251 GB, 308 records) | via [RansomLook](https://www.ransomlook.io/group/aurora), [ransomware.live](https://www.ransomware.live/id/Qm91bGFydCBJbmMuQGF1cm9yYQ==)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - aurora | **Boutinot Limited** (GB, Agriculture and Food Production) | Stolen: employee/HR data, government IDs, financial data, contracts/internal docs (384 GB) | via [ransomware.live](https://www.ransomware.live/id/Qm91dGlub3QgTGltaXRlZEBhdXJvcmE=), [RansomLook](https://www.ransomlook.io/group/aurora)
@@ -52,12 +68,13 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - soul | **Egyptian Steel Company** (EG, Manufacturing) | Stolen: employee/HR data | via [RansomLook](https://www.ransomlook.io/group/soul), [ransomware.live](https://www.ransomware.live/id/RWd5cHRpYW4gU3RlZWwgQ29tcGFueUBTb3VsR3JvdXA=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - cloak | **elementar.de** | Stolen: data (410GB) | via [RansomLook](https://www.ransomlook.io/group/cloak)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **FIDE Partners** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - handsome boy hacking club | **Frontier Communications** | Stolen: customer data, personal data (PII), employee/HR data, financial data | via [RansomLook](https://www.ransomlook.io/group/handsome%20boy%20hacking%20club)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Gensler** (US, Professional Services) | Stolen: customer data (691.71 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex), [ransomware.live](https://www.ransomware.live/id/R2Vuc2xlckBWb3J0ZXg=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - fulcrumsec | **Ginkgo Bioworks** (US, Manufacturing) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/fulcrumsec), [ransomware.live](https://www.ransomware.live/id/R2lua2dvIEJpb3dvcmtzQGZ1bGNydW1zZWM=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **GRAIL, Inc** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **Harbinger Concrete Construction, Inc** (US, Manufacturing) | Stolen: employee/HR data | via [ransomware.live](https://www.ransomware.live/id/SGFyYmluZ2VyIENvbmNyZXRlIENvbnN0cnVjdGlvbiwgSW5jLkBTb3VsR3JvdXA=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Innovative Driven** | Stolen: contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
-- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - leakeddata | **J... W** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/leakeddata)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - leakeddata | **J... W** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/leakeddata), [ransomware.live](https://www.ransomware.live/id/Si4uLiBXLi4uQFNpbGVudFJhbnNvbUdyb3Vw)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Kiely Builders** (IE, Manufacturing) | Stolen: health data (184.77 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex), [ransomware.live](https://www.ransomware.live/id/S2llbHkgQnVpbGRlcnNAVm9ydGV4)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SilentRansomGroup | **Kutak Rock LLP** (US, Professional Services) | Stolen: health data, financial data, contracts/internal docs | via [ransomware.live](https://www.ransomware.live/id/S3V0YWsgUm9jayBMTFBAU2lsZW50UmFuc29tR3JvdXA=), [RansomLook](https://www.ransomlook.io/group/leakeddata)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **Laempe Reich** (US, Other) | Stolen: employee/HR data | via [ransomware.live](https://www.ransomware.live/id/TGFlbXBlIFJlaWNoQFNvdWxHcm91cA==)
@@ -83,16 +100,16 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - hyflock | **Piz'wich Data Breach** (FR, Hospitality) | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/hyflock), [ransomware.live](https://www.ransomware.live/id/UGl6J3dpY2ggRGF0YSBCcmVhY2hASFlGTE9DSw==)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Pulsar** (US, Technology) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom), [ransomware.live](https://www.ransomware.live/id/UHVsc2FyQGluY3JhbnNvbQ==)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Rober & Phillips** | Stolen: customer data, government IDs, financial data (722.7 GB) | via [ransomware.live](https://www.ransomware.live/id/Um9iZXIgJiBQaGlsbGlwc0ByaHlzaWRh), [RansomLook](https://www.ransomlook.io/group/rhysida)
-- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Rudolph F. Jass, Jr., PLLC** | Stolen: government IDs, financial data (68.1 GB) | via [RansomLook](https://www.ransomlook.io/group/rhysida)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Rudolph F. Jass, Jr., PLLC** (US, Professional Services) | Stolen: government IDs, financial data (68.1 GB) | via [RansomLook](https://www.ransomlook.io/group/rhysida), [ransomware.live](https://www.ransomware.live/id/UnVkb2xwaCBGLiBKYXNzLCBKci4sIFBMTENAcmh5c2lkYQ==)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **Samtec** | Stolen: data (28.53 GB, 103,494,376 records) | via [RansomLook](https://www.ransomlook.io/group/vortex)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **SHOPBOT TOOLS, INC** (US, Retail & E-Commerce) | Stolen: employee/HR data | via [ransomware.live](https://www.ransomware.live/id/U0hPUEJPVCBUT09MUywgSU5DLkBTb3VsR3JvdXA=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **Sky Solutions** (PA, Technology) | Stolen: employee/HR data | via [ransomware.live](https://www.ransomware.live/id/U2t5IFNvbHV0aW9uc0BTb3VsR3JvdXA=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Smith & Green, Attorneys at Law PLLC** (US, Professional Services) | Stolen: customer data, employee/HR data, government IDs, contracts/internal docs (1.41 TB) | via [ransomware.live](https://www.ransomware.live/id/U21pdGggJiBHcmVlbiwgQXR0b3JuZXlzIGF0IExhdyBQTExDQHJoeXNpZGE=), [RansomLook](https://www.ransomlook.io/group/rhysida)
-- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - Handsome Boy Hacking Club | **Smith & Wesson** (US, Manufacturing) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/U21pdGggJiBXZXNzb25ASGFuZHNvbWUgQm95IEhhY2tpbmcgQ2x1Yg==)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - Handsome Boy Hacking Club | **Smith & Wesson** (US, Manufacturing) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/U21pdGggJiBXZXNzb25ASGFuZHNvbWUgQm95IEhhY2tpbmcgQ2x1Yg==), [RansomLook](https://www.ransomlook.io/group/handsome%20boy%20hacking%20club)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **The Vant Group** (US, Professional Services) | Stolen: customer data, employee/HR data, financial data | via [ransomware.live](https://www.ransomware.live/id/VGhlIFZhbnQgR3JvdXBAU291bEdyb3Vw)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - vortex | **TrueBlue** (US, Professional Services) | Stolen: customer data (1,094.12 GB) | via [RansomLook](https://www.ransomlook.io/group/vortex), [ransomware.live](https://www.ransomware.live/id/VHJ1ZUJsdWVAVm9ydGV4)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - Vortex | **TrueBlue - 1,094.12 GB** (US, Professional Services) | Stolen: customer data (1,094.12 GB) | via [ransomware.live](https://www.ransomware.live/id/VHJ1ZUJsdWUgLSAxLDA5NC4xMiBHQkBWb3J0ZXg=)
-- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - Handsome Boy Hacking Club | **UCHealth** (US, Healthcare) | Stolen: health data | via [ransomware.live](https://www.ransomware.live/id/VUNIZWFsdGhASGFuZHNvbWUgQm95IEhhY2tpbmcgQ2x1Yg==)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - Handsome Boy Hacking Club | **UCHealth** (US, Healthcare) | Stolen: health data | via [ransomware.live](https://www.ransomware.live/id/VUNIZWFsdGhASGFuZHNvbWUgQm95IEhhY2tpbmcgQ2x1Yg==), [RansomLook](https://www.ransomlook.io/group/handsome%20boy%20hacking%20club)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **United Medical Doctors** (US, Healthcare) | Stolen: employee/HR data, health data | via [ransomware.live](https://www.ransomware.live/id/VW5pdGVkIE1lZGljYWwgRG9jdG9yc0BTb3VsR3JvdXA=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **Wiggins, Childs, Pantazis, Fisher, & Goldfarb LLC** (US, Professional Services) | Stolen: employee/HR data, contracts/internal docs | via [ransomware.live](https://www.ransomware.live/id/V2lnZ2lucywgQ2hpbGRzLCBQYW50YXppcywgRmlzaGVyLCAmIEdvbGRmYXJiIExMQ0BTb3VsR3JvdXA=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - krybit | **www.leadersaluminium.ae** (AE, Manufacturing) | Stolen: contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/krybit), [ransomware.live](https://www.ransomware.live/id/d3d3LmxlYWRlcnNhbHVtaW5pdW0uYWVAa3J5Yml0)

@@ -1,204 +1,6 @@
 {
 "observations": [
 {
-"src": "CISA KEV",
-"date": "2026-10-20",
-"title": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
-"text": "EG Secure Solutions SiteGuard Server Edition contains an OS command injection vulnerability which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product.",
-"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-106931",
-"cves": [
-"CVE-2026-106931"
-],
-"nick": "",
-"product": "EG Secure Solutions SiteGuard Server Edition",
-"fix": "",
-"sev": "",
-"zeroday": false,
-"exploited": true,
-"kev": {
-"due": "2026-10-23",
-"ransomware": false
-},
-"extra_link": "https://www.eg-secure.co.jp/siteguard/news/alert-202610-1"
-},
-{
-"src": "CISA KEV",
-"date": "2026-10-20",
-"title": "Siemens Software Center Uncontrolled Search Path Element Vulnerability",
-"text": "Siemens Software Center contains an uncontrolled search path element vulnerability that could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with the privileges of the affected application.",
-"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-110936",
-"cves": [
-"CVE-2026-110936"
-],
-"nick": "",
-"product": "Siemens Software Center",
-"fix": "",
-"sev": "",
-"zeroday": false,
-"exploited": true,
-"kev": {
-"due": "2026-11-03",
-"ransomware": false
-},
-"extra_link": "https://productcert.siemens.com/productcert/html/ssa-580366.html"
-},
-{
-"src": "CISA KEV",
-"date": "2026-10-20",
-"title": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
-"text": "Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination. This vulnerability can be chained with CVE-2026-96654, CVE-2026-96655, and CVE-2026-96656.",
-"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-96652",
-"cves": [
-"CVE-2026-96652"
-],
-"nick": "",
-"product": "Plex Media Server",
-"fix": "",
-"sev": "",
-"zeroday": false,
-"exploited": true,
-"kev": {
-"due": "2026-11-03",
-"ransomware": false
-},
-"extra_link": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
-},
-{
-"src": "CISA KEV",
-"date": "2026-10-20",
-"title": "Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
-"text": "Plex Media Server contains an improper neutralization of encoded URI schemes in a web page vulnerability that could allow an attacker to call other plugins' functions and supply their own parameters. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96655, and CVE-2026-96656.",
-"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-96654",
-"cves": [
-"CVE-2026-96654"
-],
-"nick": "",
-"product": "Plex Media Server",
-"fix": "",
-"sev": "",
-"zeroday": false,
-"exploited": true,
-"kev": {
-"due": "2026-10-23",
-"ransomware": false
-},
-"extra_link": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
-},
-{
-"src": "CISA KEV",
-"date": "2026-10-20",
-"title": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
-"text": "Plex Media Server contains a server-side request forgery (SSRF) vulnerability that could allow an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96656.",
-"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-96655",
-"cves": [
-"CVE-2026-96655"
-],
-"nick": "",
-"product": "Plex Media Server",
-"fix": "",
-"sev": "",
-"zeroday": false,
-"exploited": true,
-"kev": {
-"due": "2026-11-03",
-"ransomware": false
-},
-"extra_link": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
-},
-{
-"src": "CISA KEV",
-"date": "2026-10-20",
-"title": "Plex Media Server External Control of File Name or Path Vulnerability",
-"text": "Plex Media Server contains an external control of file name or path vulnerability which can allow an admin user to write arbitrary files that may be executed on load. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96655.",
-"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-96656",
-"cves": [
-"CVE-2026-96656"
-],
-"nick": "",
-"product": "Plex Media Server",
-"fix": "",
-"sev": "",
-"zeroday": false,
-"exploited": true,
-"kev": {
-"due": "2026-10-23",
-"ransomware": false
-},
-"extra_link": "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319"
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-20",
-"title": "certifi bundles emSign root CAs with compromised intermediate CA keys",
-"text": "Certifi versions before 2026.10.18 include the `emSign ECC Root CA - G3` root certificate in their bundled CA store. Eight eMudhra intermediate CA certificates that chain to this root have compromised private keys and the CA has revoked them. \n\nAn attacker with one of the compromised keys can issue valid-looking certificates for any hostname. If the attacker is also on-path, they can intercept or modify TLS traffic from clients that trust the certifi bundle. Examples include `requests`, `urllib3` and `pip`, and the Python.org macOS installer.\n\nCertifi 2026.10.18 removed all emSign roots from the bundle. Certifi 2026.10.19 restored the emSign roots that are not affected. Upgrade to 2026.10.19 or later, and rebuild container images that vendor certifi. Improper Certificate Validation",
-"link": "https://github.com/advisories/GHSA-6q48-6c7w-9gw2",
-"cves": [
-"GHSA-6q48-6c7w-9gw2"
-],
-"nick": "",
-"product": "pip/certifi",
-"fix": "upgrade certifi to 2026.10.18",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-20",
-"title": "Pillow: Heap buffer overflow in ImagingJpegDecode",
-"text": "## Summary\n\n`JpegImageFile.draft()` — which `Image.thumbnail()` calls automatically — requests 1/2, 1/4 or 1/8 scaled JPEG output and shrinks `self._size` and the tile extents to match, so `_setimage()` allocates a single-row decode buffer of `ceil(W/s)` samples. `ImagingJpegDecode()` sets `cinfo.scale_num`/`scale_denom`, calls `jpeg_start_decompress()`, and then reads scanlines into that buffer without ever comparing `cinfo.output_width`, `cinfo.output_height` or `cinfo.out_color_components` against `state->xsize`, `state->ysize` and `state->bits`.\n\nlibjpeg-turbo 3.x decodes lossless (SOF3) JPEG, but hardwires lossless streams to no scaling — the requested `scale_denom` is silently discarded. It therefore returns full-width `W`-sample rows into a buffer sized for `ceil(W/s)`. Each `jpeg_r",
-"link": "https://github.com/advisories/GHSA-8g5g-8vmr-9782",
-"cves": [
-"CVE-2026-112403"
-],
-"nick": "",
-"product": "pip/Pillow",
-"fix": "upgrade Pillow to 13.0.0",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-20",
-"title": "uv's bundled CA store trusts an emSign root whose intermediate CA keys are compromised",
-"text": "By default, uv verifies TLS connections against a vendored copy of the `webpki-root-certs` bundle. Versions before 0.13.4 include the `emSign ECC Root CA - G3` root. Eight eMudhra intermediate CA certificates that chain to that root have compromised private keys, and the CA has revoked them.\n\nAn attacker with one of the compromised keys can issue certificates that uv accepts for any hostname, and can be used to issue certificates to enable MITM attacks.\n\nuv 0.13.4 removes the root from its vendored bundle, following `webpki-root-certs` 1.0.10. Upgrade to 0.13.4 or later. Improper Certificate Validation",
-"link": "https://github.com/advisories/GHSA-hq85-5cpj-mr62",
-"cves": [
-"GHSA-hq85-5cpj-mr62"
-],
-"nick": "",
-"product": "pip/uv",
-"fix": "upgrade uv to 0.13.4",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "Unit 42",
-"date": "2026-10-20",
-"title": "Active Exploitation of May 2026 PAN-OS CVE-2026-0257 (Updated October 20)",
-"text": "Ransomware operators including Spikey Scorpius (aka Qilin) and Tarnished Scorpius (aka Inc) are exploiting PAN-OS vulnerability CVE-2026-0257. The post Active Exploitation of May 2026 PAN-OS CVE-2026-0257 (Updated October 20) appeared first on Unit 42 .",
-"link": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/",
-"cves": [
-"CVE-2026-0257"
-],
-"nick": "",
-"product": "",
-"fix": "",
-"sev": "",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
 "src": "GitHub Advisory",
 "date": "2026-10-21",
 "title": "Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO",
@@ -2639,6 +2441,24 @@
 {
 "src": "GitHub Advisory",
 "date": "2026-11-19",
+"title": "NLTK incomplete fix: additional JVM/JAR sandbox bypass through unvalidated launcher tokens in java() command arguments",
+"text": "## Summary\n\nNLTK 3.10.3 contains security hardening intended to close JVM argument-injection and untrusted JAR/classpath execution paths in `nltk.internals.java()`, including the issue published as GHSA-m4rf-3fr8-xwx3.\n\nThe patched `options` channel correctly rejects Java argument-file references such as `@/path/to/args` and launcher modes such as `-jar`. However, an additional argument channel remains: the caller-provided `cmd` sequence is appended to the Java command after the validated option and classpath channels, without enforcing that its first item is a Java main-class name.\n\nI am reporting this as an additional post-fix bypass / incomplete-fix path affecting the 3.10.3 remediation, rather than as an unrelated vulnerability family.\n\nAs a result, the same launcher token that is reje",
+"link": "https://github.com/advisories/GHSA-x8q7-6c7m-52gw",
+"cves": [
+"CVE-2026-128138"
+],
+"nick": "",
+"product": "pip/nltk",
+"fix": "upgrade nltk to 3.10.4",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-19",
 "title": "Jane: Instantiation RCE via header parameter name -> raw PHPDoc */ breakout (jane-php/open-api-3)",
 "text": "### Summary\njane-php (open-api-3) builds PHP via nikic/php-parser (AST), so string literals are escaped -- but PHPDoc comment text is emitted RAW. The generated Client/Endpoint method docblocks embed the header parameter name verbatim in a `@param array{ \"<name>\"?: ... }` block. A `*/` in the header name closes the `/** ... */` docblock early and lands in class-body position; because the name is a raw string key (not identifier-mangled), the `*/` and following PHP survive. Injecting `*/ public function __construct(){ <code> } /*` adds an attacker-controlled __construct to the generated Client class, which runs when the client is instantiated -> RCE (CWE-94). Verified 7.11.2/PHP8.1.\n\n### Impact\nGenerating a client from an attacker-influenced OpenAPI document and using the generated SDK (ins",
 "link": "https://github.com/advisories/GHSA-x9xr-53qx-9qcf",
@@ -2666,6 +2486,24 @@
 "nick": "",
 "product": "composer/jane-php/open-api-3",
 "fix": "upgrade jane-php/open-api-3 to 7.12.0",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Palo Alto",
+"date": "2026-11-19",
+"title": "CVE-2026-114938 Portfolio Status: Impact of Java Vulnerability (CVE-2026-114938) on Palo Alto Networks Products (Severity: CRITICAL)",
+"text": "",
+"link": "https://security.paloaltonetworks.com/CVE-2026-114938",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "",
+"product": "Palo Alto Portfolio Status",
+"fix": "",
 "sev": "CRITICAL",
 "zeroday": false,
 "exploited": false,
@@ -2723,13 +2561,171 @@
 "exploited": true,
 "kev": null,
 "extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-20",
+"title": "Refitter allows arbitrary code execution through unescaped OpenAPI paths",
+"text": "### Summary\n\nRefitter emits each OpenAPI path (the paths-object key) verbatim into a Refit `[Get(\"<path>\")]`\nattribute string, without escaping `\"` or restricting characters. A crafted single-line, /-prefixed\npath survives Refitter's default OpenAPI validation yet closes the attribute string and the enclosing\ninterface + namespace, injects a top-level `file class` with a `[ModuleInitializer]` method, and\nreopens a namespace + interface so the file stays valid. .NET runs `[ModuleInitializer]` methods when\nthe generated assembly is loaded, so the attacker's code executes at application startup. Verified on\nRefitter 2.0.0 / .NET 8.\n\n### Details\n\n```\n[Get(\"/p\")] Task<string> Dummy(); } }\nfile class Evil { [System.Runtime.CompilerServices.ModuleInitializer]\n  internal static void Init(){ /* att",
+"link": "https://github.com/advisories/GHSA-3fhm-p725-h3g3",
+"cves": [
+"CVE-2026-63345"
+],
+"nick": "",
+"product": "nuget/Refitter",
+"fix": "upgrade Refitter to 2.1.2",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-20",
+"title": "Refitter allows code execution through unescaped OpenAPI header parameter names",
+"text": "### Summary\n\nRefitter emits the spec's header parameter name (parameters[].name with in: header) verbatim into a Refit `[Header(\"<name>\")]` attribute string without escaping\n`\"`. A crafted value survives Refitter's default OpenAPI validation, breaks out of the attribute and\nthe enclosing interface + namespace, injects a top-level `file class` with a `[ModuleInitializer]`\nmethod, and reopens so the file stays valid. .NET runs `[ModuleInitializer]` methods at assembly\nload, so the attacker's code executes at application startup. Verified on Refitter 2.0.0 / .NET 8.\n\nNotable: the breakout starts from a PARAMETER-LIST position (it closes the params and method first).\nThe malicious input is a header parameter name. No `--skip-validation` is required. The query\n`AliasAs` and value sinks (enum, d",
+"link": "https://github.com/advisories/GHSA-58x9-vjvp-6mx8",
+"cves": [
+"CVE-2026-63346"
+],
+"nick": "",
+"product": "nuget/Refitter",
+"fix": "upgrade Refitter to 2.1.2",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-20",
+"title": "Jupyter MCP Server: Browser DNS rebinding can hijack the Jupyter backend through management routes",
+"text": "Standalone `streamable-http` mode in `datalayer/jupyter-mcp-server` rejects forged `Host` and `Origin` headers on `/mcp`, but custom management routes mounted on the same application do not get the same browser-origin protection. A malicious website can keep an attacker origin while its hostname resolves to `127.0.0.1` or a private target address, then send `PUT /api/connect` to replace the MCP server's active Jupyter backend. The route accepts the browser-shaped request and makes the server start a kernel client against attacker-controlled infrastructure.\n\nThe protected `/mcp` endpoint shows the intended browser-origin boundary. With `MCP_TOKEN` configured, `/mcp` rejects forged browser headers:\n\n```text\nPOST /mcp with Authorization: Bearer SCAN_MCP_TOKEN\nHost: attacker.example:8142\nOrigi",
+"link": "https://github.com/advisories/GHSA-9x8x-crjq-g64h",
+"cves": [
+"CVE-2026-77359"
+],
+"nick": "",
+"product": "pip/jupyter-mcp-server",
+"fix": "upgrade jupyter-mcp-server to 1.0.3",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-20",
+"title": "Daptin: Unauthenticated SQL Injection via the `sort` query parameter on every entity list endpoint",
+"text": "### Summary\n\nAn unauthenticated attacker can inject arbitrary SQL through the `sort` query parameter accepted by\nDaptin's generic entity list endpoint (`GET /api/<entity>`), which every table in a Daptin instance\nexposes. The parameter is concatenated into raw SQL identifiers with no validation that the\nreferenced column exists, unlike a sibling code path in the same file that received exactly this\nvalidation as the fix for a previously published advisory\n([GHSA-rw2c-8rfq-gwfv](https://github.com/daptin/daptin/security/advisories/GHSA-rw2c-8rfq-gwfv)).\nImpact ranges from unauthenticated denial of service (a single crafted request 500s the query) to\nblind/error-based extraction of data from tables the requester has no permission to read.\n\n### Details\n\n`PaginatedFindAllWithoutFilters` in `se",
+"link": "https://github.com/advisories/GHSA-hq2p-f2vj-v3cm",
+"cves": [
+"CVE-2026-77367"
+],
+"nick": "",
+"product": "go/github.com/daptin/daptin",
+"fix": "upgrade github.com/daptin/daptin to 0.12.30",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-20",
+"title": "Etherpad: Pre-auth arbitrary file read",
+"text": "### Summary\n\nAn unauthenticated path‑traversal / arbitrary file read vulnerability in Etherpad's /static/* handler allows any remote, unauthenticated user to read any file on the server's filesystem (e.g. GET /static/plugins/ep_etherpad-lite/static/..%5C..%5C..%5C..%5C..%5C..%5C..%5Cetc/passwd returns /etc/passwd) available to the user running the etherpad software. Because the endpoint is mounted before the authentication middleware, no credentials, session, or configuration change are required. The read primitive could escalate to a full server compromise: on a typical deployment by disclosing settings.json / credentials.json / /proc/self/environ, which contain the admin password, giving an attacker an admin session and, through the admin plugin installer, remote code execution.\n\n### Det",
+"link": "https://github.com/advisories/GHSA-mc8w-wjhw-45x5",
+"cves": [
+"CVE-2026-114516"
+],
+"nick": "",
+"product": "npm/ep_etherpad-lite",
+"fix": "upgrade ep_etherpad-lite to 3.3.3",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-20",
+"title": "Refitter allows arbitrary code execution through unescaped OpenAPI content-type values",
+"text": "### Summary\n\nRefitter emits the spec's content-type key (content map key in requestBody/responses) verbatim into a Refit `[Headers(\"Accept: <ct>\", \"Content-Type: <ct>\")]` attribute string without escaping\n`\"`. A crafted value survives Refitter's default OpenAPI validation, breaks out of the attribute and\nthe enclosing interface + namespace, injects a top-level `file class` with a `[ModuleInitializer]`\nmethod, and reopens so the file stays valid. .NET runs `[ModuleInitializer]` methods at assembly\nload, so the attacker's code executes at application startup. Verified on Refitter 2.0.0 / .NET 8.\n\nThe malicious input is a content-type KEY such as: content: { 'application/<breakout>': {schema} }.\nNo `--skip-validation` is required.\n\n### PoC\n\n`reproduce.sh` (+ `make_spec.py`) attached: generate",
+"link": "https://github.com/advisories/GHSA-p32v-8v8j-j534",
+"cves": [
+"CVE-2026-63344"
+],
+"nick": "",
+"product": "nuget/Refitter",
+"fix": "upgrade Refitter to 2.1.2",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-20",
+"title": "Flyto2 Core: Arbitrary file write via unguarded data.*/file.* modules (incomplete fix of CVE-2026-67429)",
+"text": "# [CRITICAL] Arbitrary file write via unguarded `data.*` / `file.*` write modules — incomplete fix of GHSA-2956\n\n- **CWE:** CWE-22 (Path Traversal) / CWE-73 (External Control of File Name or Path); impact reaches CWE-94 (code execution via file overwrite).\n- **CVSS v3.1:** `AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H` = **9.3 Critical** (S:C because a write escapes the intended sandbox confinement into the host filesystem / other components).\n  - AV:N — reachable via the MCP server / recipe engine (`execute_module`). AC:L — deterministic. PR:L — any client able to run a module/recipe (the same attacker model as GHSA-2956; unauthenticated on the HTTP MCP surface per CVE-2026-55786). UI:N. S:C — escapes `FLYTO_SANDBOX_DIR`. C/I/A:H — arbitrary-content write to any absolute path → overwrite app code ",
+"link": "https://github.com/advisories/GHSA-p34x-fmph-9fjx",
+"cves": [
+"CVE-2026-77312"
+],
+"nick": "",
+"product": "pip/flyto-core",
+"fix": "upgrade flyto-core to 2.26.8",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-20",
+"title": "Daptin: Broken Access Control (IDOR) in the generic YJS collaboration endpoint",
+"text": "### Summary\n\nDaptin registers a generic WebSocket endpoint, `GET /yjs/:documentName`, for real-time collaborative\ndocument editing (YJS/CRDT). Unlike its purpose-built sibling route, this generic endpoint performs\nno per-resource authorization check - it only verifies that *some* user session exists. Because the\ndocument store parses `:documentName` as `typename.referenceId.columnName` and fetches that row's\nreal column content unconditionally, any authenticated user (including a brand-new, zero-privilege,\nself-registered account) can read - and, since YJS sync is bidirectional, also write - the content\nof any `file.*`-typed column on any row of any table, including tables that are admin-only by\ndefault.\n\n### Details\n\n`InitializeYjsResources` (`server/endpoint_yjs.go`) registers two routes",
+"link": "https://github.com/advisories/GHSA-wj7x-58c2-5793",
+"cves": [
+"CVE-2026-77369"
+],
+"nick": "",
+"product": "go/github.com/daptin/daptin",
+"fix": "upgrade github.com/daptin/daptin to 0.12.30",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-20",
+"title": "China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data",
+"text": "The suspected China-nexus cyber espionage group known as Armory Castle (formerly UNC5221) has been attributed to the zero-day exploitation of a critical security flaw in VMware vCenter Server in early September 2026. The vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8), is a case of authentication bypass in the VMware Directory Service that could be exploited to gain unauthorized",
+"link": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
+"cves": [
+"CVE-2026-123890"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": true,
+"exploited": false,
+"kev": null,
+"extra_link": ""
 }
 ],
 "cve_cache": {
-"CVE-2026-0257": {
-"product": "Palo Alto Networks Cloud NGFW",
-"title": "PAN-OS: GlobalProtect Authentication Bypass Vulnerabilities"
-},
 "CVE-2026-102764": {
 "product": "BeyondTrust Remote Support",
 "title": "Improper Origin Validation in Internal Messaging Components of BeyondTrust Remote Support"
