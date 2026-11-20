@@ -2563,6 +2563,22 @@
 "extra_link": ""
 },
 {
+"src": "The Hacker News",
+"date": "2026-11-19",
+"title": "Ruby Ships Fixes for 7 Flaws, Including Critical Ruby2Shell, Said to Hit Default Rails Apps Pre-Auth",
+"text": "Ruby contains seven memory-safety flaws in its regular expression engine and its string case-conversion code. For five of them, its maintainers say, proof-of-concept exploits, or PoCs, have shown that crafted input can run code on the machine. \"We are aware of PoCs that prove some of them can be used to trigger remote code execution,\" the maintainers said. The project released fixed versions",
+"link": "https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html",
+"cves": [],
+"nick": "Ruby2Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
 "src": "GitHub Advisory",
 "date": "2026-11-20",
 "title": "Refitter allows arbitrary code execution through unescaped OpenAPI paths",
@@ -2574,6 +2590,24 @@
 "nick": "",
 "product": "nuget/Refitter",
 "fix": "upgrade Refitter to 2.1.2",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-20",
+"title": "Fabio: Access-control bypass through unnormalized request paths",
+"text": "## Summary\n\nRoute selection uses the raw un-normalized request path, and the per-route ACL and basic-auth gates hang off that selection, so a dot-segment, encoded-dot, or double-slash variant of a protected path selects a different route, skips both gates, and is forwarded to the backend which normalizes and serves the protected resource. Unauthenticated; complete bypass of the access control the operator configured. Confirmed at HEAD b841544. Direct peers: Traefik CVE-2023-47106, Envoy CVE-2019-9901.\n\n## The defect\n\nfabio never normalizes the request path. A repository-wide search for path.Clean returns zero results. Route selection uses the raw path (route/table.go line 487: `if target = t.lookup(h, req.URL.Path, pick, match); target != nil {`). Both access-control gates are properties o",
+"link": "https://github.com/advisories/GHSA-4hrh-34w3-5ww8",
+"cves": [
+"CVE-2026-104099"
+],
+"nick": "",
+"product": "go/github.com/fabiolb/fabio",
+"fix": "upgrade github.com/fabiolb/fabio to 1.7.3",
 "sev": "CRITICAL",
 "zeroday": false,
 "exploited": false,
@@ -2707,6 +2741,43 @@
 "extra_link": ""
 },
 {
+"src": "SecurityWeek",
+"date": "2026-11-20",
+"title": "Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE",
+"text": "Tracked as CVE-2026-132825, the bug is a heap-based buffer overflow that could lead to remote code execution (RCE). The post Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE appeared first on SecurityWeek .",
+"link": "https://www.securityweek.com/ruby-patches-ruby2shell-vulnerability-that-could-lead-to-rce/",
+"cves": [
+"CVE-2026-132825"
+],
+"nick": "Ruby2Shell",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Tenable",
+"date": "2026-11-20",
+"title": "How exposure management can help public sector prepare for PHP2Shell-like vulnerabilities",
+"text": "PHP2Shell showed how fast a runtime-level flaw can go from disclosure to confirmed exploitation. Here’s how federal, state, local, and education teams can prepare for PHP2Shell-like flaws. Key takeaways PHP2Shell went from disclosure to confirmed exploitation within days. With AI shortening the disclosure-to-exploitation window, new critical flaws will likely move just as fast. Most security teams’ primary challenge with PHP2Shell was knowing where the vulnerabilities were in their environment. Teams that already knew where PHP ran across their IT infrastructure, web applications, and cloud assets were in a position to act quickly. Initial access flaws will continue to impact your network edge, so work backward from the foothold. Map what an attacker could reach after breaching an edge dev",
+"link": "https://www.tenable.com/blog/public-sector-exposure-management-php2shell",
+"cves": [
+"CVE-2026-109618",
+"CVE-2026-109619"
+],
+"nick": "PHP2Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
 "src": "The Hacker News",
 "date": "2026-11-20",
 "title": "China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data",
@@ -2720,6 +2791,24 @@
 "fix": "",
 "sev": "CRITICAL",
 "zeroday": true,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-20",
+"title": "Linux KVM Flaw CVE-2026-99312 Lets Guest VMs Access Host Memory on AMD Hosts",
+"text": "A flaw in KVM, the hypervisor built into the Linux kernel, let researchers read about 127 GB of a cloud server's memory from inside a virtual machine of their own on DigitalOcean. On a shared server, that memory can include other customers' virtual machines. The flaw, tracked as CVE-2026-99312, affects only hosts with AMD processors and nested virtualization enabled. Fixed kernels shipped",
+"link": "https://thehackernews.com/2026/11/new-linux-kvm-flaw-cve-2026-99312-lets.html",
+"cves": [
+"CVE-2026-99312"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
 "exploited": false,
 "kev": null,
 "extra_link": ""
@@ -2754,6 +2843,10 @@
 "product": "Apache Roller",
 "title": "Apache Roller: Unauthenticated deserialization in the XML-RPC endpoint (releases before 6.1.5)"
 },
+"CVE-2026-132825": {
+"product": "ruby-lang Ruby",
+"title": "Ruby before 3.3.14, 3.4.13, and 4.0.10 has a heap-based buffer overflow during case conversion. One byte can be written outside a buffer for, for example, ISO-8859-1 or Windows-1252."
+},
 "CVE-2026-20043": {
 "product": "Cisco Cyber Vision",
 "title": "Multiple Cisco Products Snort 3 Software Hardening Release: October 2026"
@@ -2785,6 +2878,10 @@
 "CVE-2026-98432": {
 "product": "Linux",
 "title": "ipv4: free inet_opt and ireq_opt after an RCU grace period"
+},
+"CVE-2026-99312": {
+"product": "Linux",
+"title": "KVM: x86: Unconditionally reset MMU context when emulating INIT"
 }
 }
 }
