@@ -1,94 +1,6 @@
 {
 "observations": [
 {
-"src": "GitHub Advisory",
-"date": "2026-10-21",
-"title": "Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO",
-"text": "```\n============================================================================\nHeap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO\nLocation: src/libImaging/TiffDecode.c:94  in _tiffWriteProc()\nCommit:   a707c6b21c313880d0771e54965d142dd42358b6\n============================================================================\n```\n\nPillow can write attacker-chosen data past the end of a heap buffer when it saves a TIFF image to an in-memory destination such as `io.BytesIO` rather than to a file. The same code also copies leftover heap memory from the process into the saved file. Anyone who can supply an image to a service that opens it and re-saves it as TIFF this way can trigger this with default settings. The attached reproducer crashes the process, and the overflow could potent",
-"link": "https://github.com/advisories/GHSA-332p-7hrc-92wf",
-"cves": [
-"CVE-2026-112393"
-],
-"nick": "",
-"product": "pip/Pillow",
-"fix": "upgrade Pillow to 13.0.0",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-21",
-"title": "Storybook: Missing origin validation in Storybook preview allows code injection from malicious websites",
-"text": "**Summary:** A malicious website may be able to cause unauthorized file changes in a developer’s project while an affected Storybook development server is running. Under additional conditions, a changed file could be executed by a local runtime with the developer’s privileges. We are not aware of exploitation in the wild.\n\n## Who is impacted?\n\nYou are impacted if you run a Storybook dev server in the affected versions.\n\nYou are not impacted if:\n\n- You run a dev server that you never open in a web browser (e.g. headless automation, MCP clients)\n- You run or visit a built version of Storybook\n\nRecent versions of Chrome and Firefox may ask for permission before a website can connect to a `localhost` service. This reduces the risk, but does not remove it. Do not grant this permission to websit",
-"link": "https://github.com/advisories/GHSA-f2ph-cmg5-wxc8",
-"cves": [
-"CVE-2026-114125"
-],
-"nick": "",
-"product": "npm/storybook",
-"fix": "upgrade storybook to 8.6.19; upgrade storybook to 9.1.21",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-21",
-"title": "Duplicate Advisory: vLLM: Request-controlled mm_processor_kwargs.code_revision allows remote code execution",
-"text": "## Duplicate Advisory\n\nThis advisory has been withdrawn because it is a duplicate of GHSA-h3rc-6mm3-gc2m. This link is maintained to preserve external references.\n\n## Original Description\nvLLM from 0.7.3 before 0.31.0 forwards the request-supplied mm_processor_kwargs.code_revision to Transformers AutoProcessor.from_pretrained, letting clients select which revision of a model's dynamic processor code is imported when trust_remote_code is enabled. An attacker controlling a revision in the served model repository can send a multimodal request to the unauthenticated /tokenize endpoint to execute arbitrary Python in the vLLM API process. Improper Control of Generation of Code",
-"link": "https://github.com/advisories/GHSA-f623-hjm8-5wg5",
-"cves": [
-"GHSA-f623-hjm8-5wg5"
-],
-"nick": "",
-"product": "pip/vllm",
-"fix": "upgrade vllm to 0.31.0",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-21",
-"title": "Pillow: Argument Injection in Ghostscript call, potentially leading into RCE",
-"text": "### Summary\n`PIL.EpsImagePlugin.Ghostscript()` builds the Ghostscript command line using the input file path (`fp.name`) **without sanitization**, placing it at `-f <infile>`. A filename beginning with `-` is interpreted by Ghostscript as an option, giving command-line argument injection; chainable to RCE (see Impact). Reproduces with Pillow's default invocation (with `-dSAFER` enabled).\n\n### Details\n_Give all details on the vulnerability. Pointing to the incriminated source code is very helpful for the maintainer._\n\n#### Type\nCWE-88 (Argument Injection) (→ CWE-78 (OS Command Injection) optionally, with attacker controlled text file)\n\n#### Vulnerable Codes\n\n```python\ninfile_temp = None\nif hasattr(fp, \"name\") and os.path.exists(fp.name):\n    infile = fp.name                      # user-cont",
-"link": "https://github.com/advisories/GHSA-w889-685w-c8fh",
-"cves": [
-"CVE-2026-112900"
-],
-"nick": "",
-"product": "pip/Pillow",
-"fix": "upgrade Pillow to 13.0.0",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "Wiz",
-"date": "2026-10-21",
-"title": "PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet",
-"text": "Core PHP engine flaws enable remote code execution and Heartbleed-style memory disclosure across the web.",
-"link": "https://www.wiz.io/blog/php2shell-php-rce",
-"cves": [],
-"nick": "PHP2Shell",
-"product": "",
-"fix": "",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
 "src": "Cisco PSIRT",
 "date": "2026-10-22",
 "title": "Multiple Cisco Products Snort 3 Security Hardening Release: October 2026",
@@ -2367,24 +2279,6 @@
 "extra_link": ""
 },
 {
-"src": "Cisco PSIRT",
-"date": "2026-11-19",
-"title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
-"text": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnerability Advisory: 2026/11/17 . For additional information, see the Talos blog post: Talos Threat Advisory CVE-2026-114938: Critical vulnerability in OpenJDK JAVA This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z <",
-"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-"cves": [
-"CVE-2026-114938"
-],
-"nick": "Java4Shell",
-"product": "",
-"fix": "",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
 "src": "GitHub Advisory",
 "date": "2026-11-19",
 "title": "Todoist MCP Server: Browser DNS rebinding lets websites write and delete Todoist data through local MCP server",
@@ -2493,24 +2387,6 @@
 "extra_link": ""
 },
 {
-"src": "Palo Alto",
-"date": "2026-11-19",
-"title": "CVE-2026-114938 Portfolio Status: Impact of Java Vulnerability (CVE-2026-114938) on Palo Alto Networks Products (Severity: CRITICAL)",
-"text": "",
-"link": "https://security.paloaltonetworks.com/CVE-2026-114938",
-"cves": [
-"CVE-2026-114938"
-],
-"nick": "",
-"product": "Palo Alto Portfolio Status",
-"fix": "",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
 "src": "Rapid7",
 "date": "2026-11-19",
 "title": "CVE-2026-123890: Critical Authentication Bypass in VMware vCenter",
@@ -2573,6 +2449,127 @@
 "product": "",
 "fix": "",
 "sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-20",
+"title": "SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability",
+"text": "SAP NetWeaver Enterprise Portal contains an improper neutralization of special elements in data query logic vulnerability that allows an unauthenticated attacker to disclose or modify server information via injected JNDI environment properties or a URL used during JNDI lookup operations.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2025-42884",
+"cves": [
+"CVE-2025-42884"
+],
+"nick": "",
+"product": "SAP NetWeaver",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-23",
+"ransomware": false
+},
+"extra_link": "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/bulletin-2025.html"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-20",
+"title": "VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+"text": "Broadcom VMware vCenter contains an authentication bypass using an alternate path or channel vulnerability in the VMware Directory Service that allows an unauthenticated attacker with network access to vCenter to bypass authentication and gain unauthorized access to the system.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-123890",
+"cves": [
+"CVE-2026-123890"
+],
+"nick": "",
+"product": "Broadcom VMware vCenter",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-23",
+"ransomware": false
+},
+"extra_link": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39495"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-20",
+"title": "Apache Roller Deserialization of Untrusted Data Vulnerability",
+"text": "Apache Roller contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via the XML-RPC endpoint, which accepts and deserializes vendor extension types before authentication. This CVE covers the same underlying vulnerability as CVE-2026-82384 but applies to a broader range of affected versions.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-129448",
+"cves": [
+"CVE-2026-129448"
+],
+"nick": "",
+"product": "Apache Roller",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-23",
+"ransomware": false
+},
+"extra_link": "https://lists.apache.org/thread/cc0jck13nb9vvcmzxzwotr6n16mx28z9"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-20",
+"title": "Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
+"text": "Cisco Expressway Series contains a use of hard-coded credentials vulnerability that allows an unauthenticated, remote attacker with persistent cookies and network access to execute commands as root on a clustered device via the database service.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-76466",
+"cves": [
+"CVE-2026-76466"
+],
+"nick": "",
+"product": "Cisco Expressway Series",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-23",
+"ransomware": false
+},
+"extra_link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t"
+},
+{
+"src": "Cisco PSIRT",
+"date": "2026-11-20",
+"title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
+"text": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnerability Advisory: 2026/11/17 . For additional information, see the Talos blog post: Talos Threat Advisory CVE-2026-114938: Critical vulnerability in OpenJDK JAVA This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z <",
+"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Fortinet PSIRT",
+"date": "2026-11-20",
+"title": "NGINX vulnerabilities",
+"text": "CVSSv3 Score: 8.1 CVE-2026-123007 (high)This vulnerability affects NGINX OSS versions 1.31.0 - 1.31.8, 1.9.5 - 1.30.6.CVE-2026-123633 (high)This vulnerability affects NGINX OSS versions 1.31.0 - 1.31.8, 1.19.7 - 1.30.6.CVE-2026-121810 (high)This vulnerability affects NGINX OSS versions 1.31.0 - 1.31.8, 1.25.0 - 1.30.6.CVE-2026-123634 (high)This vulnerability affects NGINX OSS versions 1.31.0 - 1.31.8, 1.0.0 - 1.30.6.CVE-2026-113425 (high)This vulnerability affects NGINX OSS versions 1.31.0 - 1.31.8, 0.5.33 - 1.30.6.CVE-2026-118899 (high)This vulnerability affects NGINX OSS versions 1.31.0 - 1.31.8, 1.13.0 - 1.30.6.CVE-2026-120967 (medium)This vulnerability affects NGINX OSS versions 1.31.0 - 1.31.8, 1.25.5 - 1.30.6.CVE-2026-120993 (medium)This vulnerability affects NGINX OSS versions 1.31.",
+"link": "https://fortiguard.fortinet.com/psirt/FG-IR-26-279",
+"cves": [
+"CVE-2026-123007",
+"CVE-2026-123633"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "HIGH",
 "zeroday": false,
 "exploited": false,
 "kev": null,
@@ -2734,6 +2731,43 @@
 "nick": "",
 "product": "go/github.com/daptin/daptin",
 "fix": "upgrade github.com/daptin/daptin to 0.12.30",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Palo Alto",
+"date": "2026-11-20",
+"title": "CVE-2026-114938 Portfolio Status: Impact of Java Vulnerability (CVE-2026-114938) on Palo Alto Networks Products (Severity: CRITICAL)",
+"text": "",
+"link": "https://security.paloaltonetworks.com/CVE-2026-114938",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "",
+"product": "Palo Alto Portfolio Status",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Palo Alto",
+"date": "2026-11-20",
+"title": "CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities (CVE-2026-123633, CVE-2026-123007) on Palo Alto Networks Products (Severity: CRITICAL)",
+"text": "",
+"link": "https://security.paloaltonetworks.com/CVE-2026-123633",
+"cves": [
+"CVE-2026-123633",
+"CVE-2026-123007"
+],
+"nick": "",
+"product": "Palo Alto Portfolio Status",
+"fix": "",
 "sev": "CRITICAL",
 "zeroday": false,
 "exploited": false,
