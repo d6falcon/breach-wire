@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-21 12:39 UTC** - last 14 days - 22 confirmed, 57 reported, 371 claimed
+Last run **2026-11-21 21:39 UTC** - last 14 days - 23 confirmed, 61 reported, 384 claimed
 
 | Status | Meaning |
 |---|---|
@@ -14,14 +14,32 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 
 ## 2026-11-21
 
+- 2026-11-21 | **CONFIRMED** | not disclosed | **Austrian Foreign Ministry** | Stolen: personal data (PII), employee/HR data | via [Security Affairs](https://securityaffairs.com/203680/hacking/cyberattack-on-austrian-foreign-ministry-exposes-diplomatic-staff-data.html)
+- 2026-11-21 | **REPORTED** | not disclosed | ? "FBI hacked again; criminal information database targeted" | Stolen: databases/backups | via [DataBreaches.net](https://databreaches.net/2026/11/21/fbi-hacked-again-criminal-information-database-targeted/)
+- 2026-11-21 | **REPORTED** | not disclosed | ? "FBI reportedly hacked again, this time targeting nationwide police database" | Stolen: databases/backups | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/fbi-reportedly-hacked-again-this-time-targeting-nationwide-police-database/)
+- 2026-11-21 | **REPORTED** | not disclosed | ? "SG: YMCA’s Youth For Causes portal, associated database hit by cybersecurity breach" | Stolen: personal data (PII), databases/backups | via [DataBreaches.net](https://databreaches.net/2026/11/21/sg-ymcas-youth-for-causes-portal-associated-database-hit-by-cybersecurity-breach/)
+- 2026-11-21 | **REPORTED** | not disclosed | **Algonquin Dam** | Stolen: employee/HR data | via [DataBreaches.net](https://databreaches.net/2026/11/21/officials-probe-attempted-cyberattack-on-algonquin-dam/)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (6)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (19)</summary>
 
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **County government within a U.S. state** (US, Government & Defense) | Stolen: employee/HR data, financial data | via [ransomware.live](https://www.ransomware.live/id/Q291bnR5IGdvdmVybm1lbnQgd2l0aGluIGEgVS5TLiBzdGF0ZUBTb3VsR3JvdXA=), [RansomLook](https://www.ransomlook.io/group/soul)
 - 2026-11-21 | CLAIMED | Exploited public-facing app \[T1190\] - Barracuda | **Dallas Fort Worth Fertility Associates** (US, Healthcare) | Stolen: health data, databases/backups | via [ransomware.live](https://www.ransomware.live/id/RGFsbGFzIEZvcnQgV29ydGggRmVydGlsaXR5IEFzc29jaWF0ZXNAQmFycmFjdWRh)
-- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - lockbit5 | **genica.com.ve** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/lockbit5)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - safepay | **factotal.com** | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/safepay)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - lockbit5 | **genica.com.ve** (VE, Other) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/lockbit5), [ransomware.live](https://www.ransomware.live/id/Z2VuaWNhLmNvbS52ZUBsb2NrYml0NQ==)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **ION Asset Architecture UK LTD** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - osiris | **Kang Chiao International School (Linkou)** (TW, Education) | Stolen: employee/HR data | via [ransomware.live](https://www.ransomware.live/id/S2FuZyBDaGlhbyBJbnRlcm5hdGlvbmFsIFNjaG9vbCAoTGlua291KUBvc2lyaXM=)
 - 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **Law Office of Ronald D. Weiss, P.C** (US, Professional Services) | Stolen: financial data | via [ransomware.live](https://www.ransomware.live/id/TGF3IE9mZmljZSBvZiBSb25hbGQgRC4gV2Vpc3MsIFAuQ0BwZWFy), [RansomLook](https://www.ransomlook.io/group/pear)
 - 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - Inception | **Lucid Motors** (US, Manufacturing) | Stolen: employee/HR data, government IDs, financial data, student records (58 GB) | via [ransomware.live](https://www.ransomware.live/id/THVjaWQgTW90b3JzQEluY2VwdGlvbg==), [RansomLook](https://www.ransomlook.io/group/inception)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - safepay | **offshore-ocs.com** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/safepay)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - safepay | **pacifico.com.ar** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/safepay)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - safepay | **qrc-solutions.com** | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/safepay)
 - 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - Eclipse | **Realta Technologies** (IE, Technology) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/UmVhbHRhIFRlY2hub2xvZ2llc0BFY2xpcHNl), [RansomLook](https://www.ransomlook.io/group/eclipse)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - incransom | **Regions Behavioral Hospital** (US, Healthcare) | Stolen: health data | via [ransomware.live](https://www.ransomware.live/id/UmVnaW9ucyBCZWhhdmlvcmFsIEhvc3BpdGFsQGluY3JhbnNvbQ==), [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - safepay | **relax.es** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/safepay)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - safepay | **santak.com.sg** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/safepay)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - safepay | **themedical.co.il** | Stolen: customer data, health data | via [RansomLook](https://www.ransomlook.io/group/safepay)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - safepay | **threeroyal.com** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/safepay)
+- 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - safepay | **tiic.com.ph** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/safepay)
 - 2026-11-21 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **Vegely Welding Inc** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pear)
 
 </details>
