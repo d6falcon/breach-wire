@@ -1,151 +1,6 @@
 {
 "observations": [
 {
-"src": "Cisco PSIRT",
-"date": "2026-10-22",
-"title": "Multiple Cisco Products Snort 3 Security Hardening Release: October 2026",
-"text": "As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco owned Open Source Snort 3 Software engineering team has conducted a comprehensive internal security review. This review resulted in software hardening releases that address multiple internally discovered vulnerabilities. The vulnerabilities tracked by CVE-2026-20043 are related to issues concerning out-of-bounds writes that are grouped under the Common Weakness Enumeration (CWE) Base CWE-787. As part of Cisco's ongoing commitment to proactive security and product quality, the Cisco-owned Open Source Snort 3 engineering team has conducted a comprehensive internal security review. This review resulted in software hardening releases that address multiple internally discovered vulnerabilities. These vuln",
-"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-hardening-snort3-ybgmhTQe?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Multiple%20Cisco%20Products%20Snort%203%20Security%20Hardening%20Release:%20October%202026%26vs_k=1",
-"cves": [
-"CVE-2026-20043",
-"CVE-2026-20236"
-],
-"nick": "",
-"product": "",
-"fix": "",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": true,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-22",
-"title": "Next.js: Unauthenticated Remote Code Execution in Image Optimization API when SVG files are used",
-"text": "## Impact\n\nA memory-related vulnerability has been discovered in an upstream library used for Image Optimization can lead to possible remote code execution (RCE) when Next.js runs on glibc-based Linux.\n\n## Workaround\n\nEnsure the version of `sharp` used by Next.js is greater than or equal to `0.35.5`. Fresh installs automatically get a fixed version of `sharp`.\nUpgrading Next.js to the patched versions will ensure package managers automatically provide a fixed version of `sharp` to Next.js. Dependency on Vulnerable Third-Party Component",
-"link": "https://github.com/advisories/GHSA-2464-fhr4-w9xw",
-"cves": [
-"GHSA-2464-fhr4-w9xw"
-],
-"nick": "",
-"product": "npm/next",
-"fix": "upgrade next to 15.5.28; upgrade next to 16.4.1",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-22",
-"title": "Next.js: Unauthenticated Remote Code Execution in `use cache` functions returning typed arrays",
-"text": "## Impact\n\nA vulnerability in applications using App router with Cache Component can lead to remote code execution. The application needs to have a `use cache` function that returns multiple typed arrays.\n\n## Workaround\n\nThere is no known workaround for affected applications with such `use cache` functions. You should upgrade immediately even if your application does not have similar functions. Deserialization of Untrusted Data",
-"link": "https://github.com/advisories/GHSA-673q-mjm6-r5xr",
-"cves": [
-"GHSA-673q-mjm6-r5xr"
-],
-"nick": "",
-"product": "npm/next",
-"fix": "upgrade next to 16.4.1",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-22",
-"title": "mem0ai Databricks vector store vulnerable to SQL injection",
-"text": "mem0 0.1.117 before 1.0.8 contains an sql injection vulnerability in mem0/vector_stores/databricks.py that allows attackers to inject SQL by influencing stored memory content. Attackers can supply crafted memory text, metadata, or message names that reach unescaped insert() and update() string interpolation to execute injected SQL on the configured Databricks SQL warehouse. Improper Neutralization of Special Elements used in an SQL Command",
-"link": "https://github.com/advisories/GHSA-7587-9684-52r6",
-"cves": [
-"CVE-2026-115324"
-],
-"nick": "",
-"product": "pip/mem0ai",
-"fix": "upgrade mem0ai to 1.0.8",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-22",
-"title": "Brotli: Out-of-bounds write in the Brotli decoder (\"Node2Shell\") also affects the PyPI Brotli package",
-"text": "A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in Google Brotli versions 1.0.3 through 1.2.0 on all platforms allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream.\n\nUsers need to update any Brotli libraries or binaries between 1.0.3 through 1.2.0 to the latest available version: 1.0.10 or 1.1.1 or 1.2.1. Unchecked Return Value",
-"link": "https://github.com/advisories/GHSA-9v8h-qqgm-4m35",
-"cves": [
-"CVE-2026-111497"
-],
-"nick": "Node2Shell",
-"product": "pip/brotli, pip/brotlicffi",
-"fix": "upgrade brotli to 1.2.1; upgrade brotlicffi to 1.2.1.0",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-22",
-"title": "DOMPurify SAFE_FOR_TEMPLATES bypass: split template expressions survive in attached shadow root content on DOM output modes",
-"text": "## Summary\n\nWhen DOMPurify is configured with `SAFE_FOR_TEMPLATES: true` together with a DOM-returning mode (`RETURN_DOM: true`, `RETURN_DOM_FRAGMENT: true`, or `IN_PLACE: true`), template expressions such as `{{...}}`, `${...}`, and `<%...%>` survive sanitization inside the text content of an attached shadow root. The post-walk safety net `_scrubTemplateExpressions` (`src/purify.ts:1717`) was extended to recurse into `<template>.content`, but it never recurses into attached shadow roots. An attacker who can supply a DOM node carrying a shadow root (the `IN_PLACE` and shadow-aware `RETURN_DOM` surfaces) can split an expression across text nodes separated by disallowed elements; after those elements are removed the fragments become adjacent and serialize into a complete expression that a do",
-"link": "https://github.com/advisories/GHSA-cg2g-xh64-v4q7",
-"cves": [
-"GHSA-cg2g-xh64-v4q7"
-],
-"nick": "",
-"product": "npm/dompurify",
-"fix": "upgrade dompurify to 3.4.17",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-22",
-"title": "Sentry-Javascript: Middleware Bypass when using Tunnel route",
-"text": "### Impact\n\nThe `tunnelRoute` option makes the SDK send browser events to a path on your own Next.js server (for example `/monitoring`), where a rewrite forwards them to Sentry to prevent ad blockers from blocking them. To keep those envelope requests from being rejected by your middleware, the SDK skips middleware for them.\n\nThe middleware skip was wider than the rewrite. The rewrite only serves requests to the tunnel path itself with the `o` and `p` parameters set. The skip applied to anything under the tunnel path. Requests in that gap go to your application instead of Sentry, and your middleware never runs on them.\n\nSkipping middleware does not grant the request any privileges. Routes that check the session server-side are still protected.\n\nYou are affected only if **all** of the follo",
-"link": "https://github.com/advisories/GHSA-mchm-gjx6-7h55",
-"cves": [
-"CVE-2026-114139"
-],
-"nick": "",
-"product": "npm/@sentry/nextjs",
-"fix": "upgrade @sentry/nextjs to 9.47.2; upgrade @sentry/nextjs to 10.75.2",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
-"src": "GitHub Advisory",
-"date": "2026-10-22",
-"title": "Pillow multi-frame loaders can reuse stale native image storage after mode transitions",
-"text": "### Summary\nPillow multi-frame image loaders can retain native `ImagingCore` storage allocated for one frame while changing the Python-side image `mode` and decoder tiles for a later frame.\n\nIf frame 0 allocates storage for a narrow mode such as `L`, and a later frame of the same dimensions switches to a wider mode such as `RGB` or `CMYK`, Pillow may decode wider pixels into the stale narrow native buffer. This causes native\nout-of-bounds writes and process crashes. In the MPO/JPEG path, I also demonstrated command execution in matching Python/Pillow runtime profiles through Pillow's documented `ImageSequence.Iterator` + `frame.load()` path.\n\n### Details\nThe root cause appears to be that `ImageFile.load_prepare()` only reallocates native storage when `_im is None`. It does not verify that ",
-"link": "https://github.com/advisories/GHSA-v9pv-5gc8-w2m6",
-"cves": [
-"CVE-2026-96639"
-],
-"nick": "",
-"product": "pip/Pillow",
-"fix": "upgrade Pillow to 13.0.0",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
 "src": "CISA KEV",
 "date": "2026-10-23",
 "title": "Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
@@ -2853,6 +2708,10 @@
 "product": "BeyondTrust Remote Support",
 "title": "Improper Origin Validation in Internal Messaging Components of BeyondTrust Remote Support"
 },
+"CVE-2026-105482": {
+"product": "nodejs node",
+"title": "A flaw in Node.js DNS resolution allows hostnames containing a NUL byte to be silently truncated by the dns.resolve*() functions and dns.reverse(). This is an incomplete fix of CVE-2026-48930, which only covered dns.lookup() and the net/tls host options.\r\n\r\nBecause the name is passed to c-ares as a "
+},
 "CVE-2026-114938": {
 "product": "Oracle Java SE",
 "title": "Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: Compiler).  Supported versions that are affected are Oracle Java SE: 8u511b33-perf, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, 27.0.1.0.3; Oracle GraalVM for JDK: 17.0.21.0"
@@ -2880,10 +2739,6 @@
 "CVE-2026-132825": {
 "product": "ruby-lang Ruby",
 "title": "Ruby before 3.3.14, 3.4.13, and 4.0.10 has a heap-based buffer overflow during case conversion. One byte can be written outside a buffer for, for example, ISO-8859-1 or Windows-1252."
-},
-"CVE-2026-20043": {
-"product": "Cisco Cyber Vision",
-"title": "Multiple Cisco Products Snort 3 Software Hardening Release: October 2026"
 },
 "CVE-2026-55040": {
 "product": "Microsoft SharePoint Enterprise Server 2016",
