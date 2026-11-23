@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-22 16:17 UTC** - last 14 days - 23 confirmed, 64 reported, 396 claimed
+Last run **2026-11-23 00:54 UTC** - last 14 days - 24 confirmed, 64 reported, 403 claimed
 
 | Status | Meaning |
 |---|---|
@@ -12,30 +12,45 @@ Last run **2026-11-22 16:17 UTC** - last 14 days - 23 confirmed, 64 reported, 39
 
 TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: triage hints, not attribution. "What was stolen" lists data categories and volumes only; no leaked values are copied here. `?` = company not parsed from the headline; follow the source.
 
+## 2026-11-23
+
+
+<details><summary>Claimed on leak sites / dark web / Telegram (3)</summary>
+
+- 2026-11-23 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #242** | Stolen: health data | via [RansomLook](https://www.ransomlook.io/group/n0n)
+- 2026-11-23 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Company #243** | Stolen: health data | via [RansomLook](https://www.ransomlook.io/group/n0n)
+- 2026-11-23 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **cybage-software-pvt-ltd** | Stolen: personal data (PII), employee/HR data, contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
+
+</details>
+
 ## 2026-11-22
 
+- 2026-11-22 | **CONFIRMED** | not disclosed | **Cursor** | Stolen: credentials (5,000 users) | via [TG cyber_security_channel](https://t.me/Cyber_Security_Channel/114118)
 - 2026-11-22 | **REPORTED** | not disclosed | ? "Huge European telecom leak exposes Swedbank, SEB, airBaltic and dozens of other companies’ clients" | Stolen: customer data, financial data, databases/backups | via [DataBreaches.net](https://databreaches.net/2026/11/22/huge-european-telecom-leak-exposes-swedbank-seb-airbaltic-and-dozens-of-other-companies-clients/)
 - 2026-11-22 | **REPORTED** | not disclosed | **Cleverbridge** | Stolen: customer data, financial data | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (11)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (15)</summary>
 
 - 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - HYFLOCK | **A Ransomware Attack on a Company Ranked Among the Top 30 in the Fortune 500** (US) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/QSBSYW5zb213YXJlIEF0dGFjayBvbiBhIENvbXBhbnkgUmFua2VkIEFtb25nIHRoZSBUb3AgMzAgaW4gdGhlIEZvcnR1bmUgNTAwQEhZRkxPQ0s=), [RansomLook](https://www.ransomlook.io/group/hyflock)
 - 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - Climax Inc | **Ban Lee Heng Motor (Melaka) Sdn. Bhd** (Malaysia) | Stolen: not disclosed | via [TG RansomFeedNews](https://t.me/RansomFeedNews/17493)
 - 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - HYFLOCK | **Data Breach at O&M University in the Dominican Republic** (DO, Education) | Stolen: health data, financial data | via [ransomware.live](https://www.ransomware.live/id/RGF0YSBCcmVhY2ggYXQgTyZNIFVuaXZlcnNpdHkgaW4gdGhlIERvbWluaWNhbiBSZXB1YmxpY0BIWUZMT0NL), [RansomLook](https://www.ransomlook.io/group/hyflock)
 - 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - n0n | **Dynamic Education Services** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/n0n)
-- 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - direwolf | **EconSys** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/direwolf)
+- 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **East Jerusalem food distribution firm** | Stolen: customer data, financial data, contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
+- 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - direwolf | **EconSys** (Technology) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/direwolf), [ransomware.live](https://www.ransomware.live/id/RWNvblN5c0BkaXJld29sZg==)
+- 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Indian railway Tatkal booking agency** | Stolen: customer data, financial data, databases/backups | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
 - 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Invicta Watch Group** (US, Retail & E-Commerce) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/SW52aWN0YSBXYXRjaCBHcm91cEBxaWxpbg==), [RansomLook](https://www.ransomlook.io/group/qilin)
+- 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **L&T Technology Services** | Stolen: personal data (PII), employee/HR data, contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
 - 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Law Offices of Cynthia A. de Petris** (US, Professional Services) | Stolen: customer data, personal data (PII), government IDs, financial data (54.4 GB) | via [ransomware.live](https://www.ransomware.live/id/TGF3IE9mZmljZXMgb2YgQ3ludGhpYSBBLiBkZSBQZXRyaXNAcmh5c2lkYQ==), [RansomLook](https://www.ransomlook.io/group/rhysida)
 - 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **persistent.com** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
 - 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - the gentlemen | **Queens Public Library** | Stolen: employee/HR data | via [RansomLook](https://www.ransomlook.io/group/the%20gentlemen)
-- 2026-11-22 | CLAIMED | Ransomware \[T1486\] - hyflock | **Samsung Group: 1TB Data Breach from Ransomware Attack** | Stolen: health data, financial data, credentials (1 TB) | via [RansomLook](https://www.ransomlook.io/group/hyflock)
+- 2026-11-22 | CLAIMED | Ransomware \[T1486\] - hyflock | **Samsung Group: 1TB Data Breach from Ransomware Attack** (KR, Technology) | Stolen: health data, financial data, credentials (1 TB) | via [RansomLook](https://www.ransomlook.io/group/hyflock), [ransomware.live](https://www.ransomware.live/id/U2Ftc3VuZyBHcm91cDogMVRCIERhdGEgQnJlYWNoIGZyb20gUmFuc29td2FyZSBBdHRhY2tASFlGTE9DSw==)
 - 2026-11-22 | CLAIMED | Ransomware \[T1486\] - EndZone | **UCA General Insurance Services, Inc** (PH, Financial Services) | Stolen: data (250 GB) | via [ransomware.live](https://www.ransomware.live/id/VUNBIEdlbmVyYWwgSW5zdXJhbmNlIFNlcnZpY2VzLCBJbmNARW5kWm9uZQ==), [RansomLook](https://www.ransomlook.io/group/endzone)
+- 2026-11-22 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Viapan Group** (HU, Other) | Stolen: not disclosed | via [ransomware.live](https://www.ransomware.live/id/VmlhcGFuIEdyb3VwQHFpbGlu), [RansomLook](https://www.ransomlook.io/group/qilin)
 
 </details>
 
 ## 2026-11-21
 
-- 2026-11-21 | **CONFIRMED** | not disclosed | **Austrian Foreign Ministry** | Stolen: personal data (PII), employee/HR data | via [Security Affairs](https://securityaffairs.com/203680/hacking/cyberattack-on-austrian-foreign-ministry-exposes-diplomatic-staff-data.html)
 - 2026-11-21 | **REPORTED** | not disclosed | ? "FBI hacked again; criminal information database targeted" | Stolen: databases/backups | via [DataBreaches.net](https://databreaches.net/2026/11/21/fbi-hacked-again-criminal-information-database-targeted/)
 - 2026-11-21 | **REPORTED** | not disclosed | ? "FBI reportedly hacked again, this time targeting nationwide police database" | Stolen: databases/backups | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/fbi-reportedly-hacked-again-this-time-targeting-nationwide-police-database/)
 - 2026-11-21 | **REPORTED** | not disclosed | ? "SG: YMCA’s Youth For Causes portal, associated database hit by cybersecurity breach" | Stolen: personal data (PII), databases/backups | via [DataBreaches.net](https://databreaches.net/2026/11/21/sg-ymcas-youth-for-causes-portal-associated-database-hit-by-cybersecurity-breach/)
@@ -72,6 +87,7 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-20 | **CONFIRMED** | not disclosed | ? "Container Store restores systems after cyberattack" | Stolen: not disclosed | via [The Record](https://therecord.media/container-store-restores-systems-cyberattack)
 - 2026-11-20 | **CONFIRMED** | Exploited public-facing app \[T1190\] | ? "Hackers Exploit Critical Cisco Expressway Flaw, Breach Four Devices and Reach Internal Network" | Stolen: not disclosed | via [The Hacker News](https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html)
 - 2026-11-20 | **CONFIRMED** | Third-party/trusted relationship \[T1199\] | ? "JPMorgan, Visa and Mastercard Report Third-Party Data Breaches After N0n Claims" | Stolen: customer data | via [Security Affairs](https://securityaffairs.com/203614/data-breach/jpmorgan-visa-and-mastercard-report-third-party-data-breaches-after-n0n-claims.html)
+- 2026-11-20 | **CONFIRMED** | not disclosed | **Austrian Foreign Ministry** | Stolen: personal data (PII), employee/HR data | via [Security Affairs](https://securityaffairs.com/203680/hacking/cyberattack-on-austrian-foreign-ministry-exposes-diplomatic-staff-data.html), [Reuters](https://news.google.com/rss/articles/CBMivgFBVV95cUxNcE56eG5ZXzQyMWY4cF81S3JHYmFJelVENzhXTDBMRFFCZEhOUndXYjA5ZHFOUi11NndFTng5N1NaWkliaXV0X0NCOXh2b2diZnJlWTdvQnpYc3VzeFZWcF9jaW5SZVJudW1uQXBlbjIxUHB1eWNsbGYyT0doOVM0REpvcFZZUGNJNmVPa3pXQlFQVGczM0pVTk9WRW95NlhVQVlfcmRRbGlRajBWbkVLMEFac0pDWE1xZkVoeUxR?oc=5)
 - 2026-11-20 | **CONFIRMED** | not disclosed | **Bell Canada** | Stolen: customer data | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/), [DataBreaches.net](https://databreaches.net/2026/11/20/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/)
 - 2026-11-20 | **CONFIRMED** | not disclosed | **Department of Agriculture** | Stolen: employee/HR data, financial data | via [DataBreaches.net](https://databreaches.net/2026/11/20/u-s-department-of-agriculture-grapples-with-security-breach-as-it-staff-take-multiple-systems-offline/), [Reuters](https://news.google.com/rss/articles/CBMiwwFBVV95cUxPUXZEVUk4YzBsSEdWSzNZc0RDelRmeWRPc0ZWY1NGd2FOM19DVTZyU3Q4UGIzM3FoenNsX3N1N2h2TEx1MHNZUDBhdF9WSDdiMUJVZzg2UThoRVkycnJQRkZJZU96NHdDQmkyX3QySXFia3RiMFBkTUgxWWVwVVU3eWFWZzhtZWU0ODlVM0JZVkNDZEVCc3FDU1BEMDh5WWlVaGxlSUpSd0ItUVRjOFVsOWdYMHhHNHc1X3IwY29uNFBaT0k?oc=5)
 - 2026-11-20 | **CONFIRMED** | Third-party/trusted relationship \[T1199\] | **Quantum Systems** | Stolen: customer data | via [TG cyber_security_channel](https://t.me/Cyber_Security_Channel/114117)
