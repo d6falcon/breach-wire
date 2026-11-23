@@ -1737,7 +1737,7 @@
 "exploited": true,
 "kev": {
 "due": "2026-11-21",
-"ransomware": false
+"ransomware": true
 },
 "extra_link": "https://www.synology.com/zh-tw/security/advisory/Synology_SA_24_20"
 },
@@ -2551,6 +2551,40 @@
 "exploited": false,
 "kev": null,
 "extra_link": ""
+},
+{
+"src": "SecurityWeek",
+"date": "2026-11-23",
+"title": "phpAfterShell Vulnerability Revives PHP2Shell’s Attack Path",
+"text": "If a session overwrite operation is interrupted, an attacker who controls the fresh data could trigger data deserialization and RCE. The post phpAfterShell Vulnerability Revives PHP2Shell’s Attack Path appeared first on SecurityWeek .",
+"link": "https://www.securityweek.com/phpaftershell-vulnerability-revives-php2shells-attack-path/",
+"cves": [],
+"nick": "PHP2Shell",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-23",
+"title": "Hackers Exploit Critical ASP.NET Anti-CSRF Library Flaw Allowing Unauthenticated RCE",
+"text": "Cybersecurity researchers have urged users to discontinue using a legacy ASP.NET anti-CSRF library named Idunno.AntiCsrf (\"Idunno.AntiCsrf.dll\") following the discovery of a critical vulnerability that has been exploited in the wild. The vulnerability, tracked as CVE-2026-131914, carries a CVSS score of 9.3 out of 10.0. The issue affects versions 0.9.1.0 and 0.9.1 Beta, and relates to an",
+"link": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html",
+"cves": [
+"CVE-2026-131914"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
 }
 ],
 "cve_cache": {
@@ -2585,6 +2619,10 @@
 "CVE-2026-129448": {
 "product": "Apache Roller",
 "title": "Apache Roller: Unauthenticated deserialization in the XML-RPC endpoint (releases before 6.1.5)"
+},
+"CVE-2026-131914": {
+"product": "Idunno AntiCsrf",
+"title": "Deserialization of untrusted data in CodePlex AntiCSRF"
 },
 "CVE-2026-132825": {
 "product": "ruby-lang Ruby",
