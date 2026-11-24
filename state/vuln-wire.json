@@ -2244,24 +2244,6 @@
 "extra_link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t"
 },
 {
-"src": "Cisco PSIRT",
-"date": "2026-11-20",
-"title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
-"text": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnerability Advisory: 2026/11/17 . For additional information, see the Talos blog post: Talos Threat Advisory CVE-2026-114938: Critical vulnerability in OpenJDK JAVA This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z <",
-"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
-"cves": [
-"CVE-2026-114938"
-],
-"nick": "Java4Shell",
-"product": "",
-"fix": "",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
 "src": "Fortinet PSIRT",
 "date": "2026-11-20",
 "title": "NGINX vulnerabilities",
@@ -2553,6 +2535,84 @@
 "extra_link": ""
 },
 {
+"src": "CISA KEV",
+"date": "2026-11-23",
+"title": "Project MONAI MONAI Label Path Traversal Vulnerability",
+"text": "Project MONAI MONAI Label contains a path traversal vulnerability that allows an unauthenticated remote attacker to write arbitrary files outside the intended datastore directory, potentially resulting in remote code execution.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-133968",
+"cves": [
+"CVE-2026-133968"
+],
+"nick": "",
+"product": "Project MONAI MONAI Label",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-26",
+"ransomware": false
+},
+"extra_link": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-23",
+"title": "N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
+"text": "N-able MailAssure (SpamExperts) contains a server-side request forgery vulnerability in the LDAP synchronization connection check that allows an authenticated API user to connect to arbitrary internal hosts and ports, determine which are reachable, and send crafted data to internal services.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-134624",
+"cves": [
+"CVE-2026-134624"
+],
+"nick": "",
+"product": "N-able MailAssure",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-26",
+"ransomware": false
+},
+"extra_link": "https://me.n-able.com/s/security-advisory/aArVy0000002mrlKAA"
+},
+{
+"src": "Cisco PSIRT",
+"date": "2026-11-23",
+"title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
+"text": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnerability Advisory: 2026/11/17 . For additional information, see the Talos blog post: Talos Threat Advisory CVE-2026-114938: Critical vulnerability in OpenJDK JAVA This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z <",
+"link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+"cves": [
+"CVE-2026-114938"
+],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-23",
+"title": "Xen Orchestra: Empty-object login token",
+"text": "### Summary\n\nREST cookie parsing turns `authenticationToken=j:%7B%7D` into `{}`. REST authentication passes that object to the XO token provider without requiring a string. The token collection treats `{}` as an unfiltered lookup and returns its first token; the provider authenticates as that token's owner if it is unexpired. The authenticated `/rest/v0/users/me/authentication_tokens` route then returns reusable login token IDs.\n\n\n### Details\n\n1. In `packages/xo-server/src/api/session.mjs`, function  `signIn(credentials)` has **no `params` schema** (unlike the deprecated `signInWithToken`, which declares `token: { type: 'string' }`), so `credentials.token` can be any JSON value.\n2. `packages/xo-server/src/xo-mixins/authentication.mjs`, token provider:\n   ```js\n   this.registerAuthenticatio",
+"link": "https://github.com/advisories/GHSA-2r3w-c2vx-fv5g",
+"cves": [
+"CVE-2026-133469"
+],
+"nick": "",
+"product": "npm/xo-server",
+"fix": "no patched version yet",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
 "src": "SecurityWeek",
 "date": "2026-11-23",
 "title": "phpAfterShell Vulnerability Revives PHP2Shell’s Attack Path",
@@ -2583,6 +2643,22 @@
 "sev": "CRITICAL",
 "zeroday": false,
 "exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-23",
+"title": "⚡ Weekly Recap: VMware 0-Day, Java4Shell, NGINX2Root, Ruby2Shell, and a Whole Lot of Shell Trouble",
+"text": "A stolen key. A trusted message. A routine update. None of these looks like the start of a major security problem. That's partly why they work. Attackers don't always need to break down a door. Sometimes they just use one that's already open. This week's stories show how quickly a small opening can turn into a much bigger mess. One breach helps attackers reach another target. Tools people rely",
+"link": "https://thehackernews.com/2026/11/weekly-recap-vmware-0-day-java4shell.html",
+"cves": [],
+"nick": "Java4Shell",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": true,
+"exploited": false,
 "kev": null,
 "extra_link": ""
 }
