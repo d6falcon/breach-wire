@@ -2443,25 +2443,6 @@
 "extra_link": ""
 },
 {
-"src": "Palo Alto",
-"date": "2026-11-20",
-"title": "CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities (CVE-2026-123633, CVE-2026-123007) on Palo Alto Networks Products (Severity: CRITICAL)",
-"text": "",
-"link": "https://security.paloaltonetworks.com/CVE-2026-123633",
-"cves": [
-"CVE-2026-123633",
-"CVE-2026-123007"
-],
-"nick": "",
-"product": "Palo Alto Portfolio Status",
-"fix": "",
-"sev": "CRITICAL",
-"zeroday": false,
-"exploited": false,
-"kev": null,
-"extra_link": ""
-},
-{
 "src": "SecurityWeek",
 "date": "2026-11-20",
 "title": "Ruby Patches Ruby2Shell Vulnerability That Could Lead to RCE",
@@ -2663,6 +2644,106 @@
 "extra_link": ""
 },
 {
+"src": "CISA KEV",
+"date": "2026-11-24",
+"title": "Idunno AntiCsrf Deserialization of Untrusted Data Vulnerability",
+"text": "Idunno AntiCsrf contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via object injection. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-131914",
+"cves": [
+"CVE-2026-131914"
+],
+"nick": "",
+"product": "Idunno AntiCsrf",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-27",
+"ransomware": false
+},
+"extra_link": "https://github.com/mandiant/Vulnerability-Disclosures/blob/master/2026/MNDT-2026-0048.md"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-24",
+"title": "Drupal Core Remote Code Execution Vulnerability",
+"text": "Drupal Core contains a not failing securely vulnerability that could allow an unauthenticated attacker to take over an existing site or execute arbitrary code via the Drupal installer. Under specific conditions, the attacker can use install.php to attempt to reinstall Drupal on the site.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-132165",
+"cves": [
+"CVE-2026-132165"
+],
+"nick": "",
+"product": "Drupal Core",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-27",
+"ransomware": false
+},
+"extra_link": "https://www.drupal.org/sa-core-2026-017"
+},
+{
+"src": "CISA KEV",
+"date": "2026-11-24",
+"title": "Optimizely Web Experimentation External Control of Critical State Data Vulnerability",
+"text": "Optimizely Web Experimentation contains an external control of critical state data vulnerability in its account signup flow that could allow an attacker to impersonate existing customer users and modify Project JavaScript. Successful exploitation can result in attacker-controlled JavaScript being distributed through Optimizely-hosted assets and executed in browsers visiting affected customer websites.",
+"link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-132224",
+"cves": [
+"CVE-2026-132224"
+],
+"nick": "",
+"product": "Optimizely Web Experimentation",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": {
+"due": "2026-11-27",
+"ransomware": false
+},
+"extra_link": "https://pages.optimizely.com/rs/947-RKE-048/images/Security%20Incident%20Report%20-%20Optimizely%20Web%20Experimentation%20-%20Nov%2017%202026.pdf"
+},
+{
+"src": "GitHub Advisory",
+"date": "2026-11-24",
+"title": "ruflo MCP bridge allows unauthenticated remote code execution in default Docker Compose deployments",
+"text": "The MCP bridge shipping in ruflo/docker-compose.yml exposed POST /mcp with no authentication. The docker-compose defaults bound the bridge and MongoDB to all interfaces. Combined, an unauthenticated network attacker could invoke tools/call → terminal_execute inside the bridge container, obtain a shell as node (uid 1000), read every provider API key from the container env, spawn attacker-controlled swarms on the victim's keys, and persist a poisoned pattern into the AgentDB learning store that steers future AI outputs for all users of the instance.\n\nThe tool blocklist that mentions terminal_execute was enforced only in the autopilot flow. POST /mcp and POST /mcp/:group bypassed it.\n\nFixed in ADR-166 Phase 1-3 (branch security/adr-166-mcp-bridge-rce, PR #2521):\n- Bind loopback by default; fa",
+"link": "https://github.com/advisories/GHSA-c4hm-4h84-2cf3",
+"cves": [
+"CVE-2026-59726"
+],
+"nick": "",
+"product": "npm/ruflo",
+"fix": "upgrade ruflo to 3.16.3",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Palo Alto",
+"date": "2026-11-24",
+"title": "CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities (CVE-2026-123633, CVE-2026-123007) on Palo Alto Networks Products (Severity: CRITICAL)",
+"text": "",
+"link": "https://security.paloaltonetworks.com/CVE-2026-123633",
+"cves": [
+"CVE-2026-123633",
+"CVE-2026-123007"
+],
+"nick": "",
+"product": "Palo Alto Portfolio Status",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
 "src": "Rapid7",
 "date": "2026-11-24",
 "title": "Rapid7 Analysis: VMware vCenter SRP Authentication Bypass to Root (CVE-2026-123890)",
@@ -2701,6 +2782,22 @@
 {
 "src": "The Hacker News",
 "date": "2026-11-24",
+"title": "Iran-Aligned Volant Manticore Uses IPFS-Based KuboShell Backdoor in Espionage Campaigns",
+"text": "A previously undocumented Iran-aligned cyber espionage group called Volant Manticore has targeted telecommunications companies, airlines, and critical infrastructure in Cyprus. Central to the group's operations is a backdoor called KuboShell that uses the InterPlanetary File System (IPFS) for command-and-control (C2) and deploys Homa, a post-compromise framework that's a reimplementation of",
+"link": "https://thehackernews.com/2026/11/iran-aligned-volant-manticore-uses-ipfs.html",
+"cves": [],
+"nick": "KuboShell",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-24",
 "title": "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation",
 "text": "Broadcom has shipped patches to address 23 vulnerabilities impacting VMware ESX, vCenter, Workstation, Fusion, and Avi Load Balancer, including one critical bug that could be abused to bypass authentication. The critical vulnerability, tracked as CVE-2026-123903, is rated 9.8 out of 10.0 on the CVSS scoring system. It resides in the VMware Directory Service (\"vmdir\"). \"A malicious actor with",
 "link": "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html",
@@ -2711,6 +2808,78 @@
 "product": "",
 "fix": "",
 "sev": "CRITICAL",
+"zeroday": true,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "Unit 42",
+"date": "2026-11-24",
+"title": "NGINX HTTP/2 Use-After-Free: CVE-2026-123633",
+"text": "Technical analysis of CVE-2026-123633, an NGINX HTTP/2 use-after-free flaw, with details on affected versions, sanitizer tests, and patch guidance. The post NGINX HTTP/2 Use-After-Free: CVE-2026-123633 appeared first on Unit 42 .",
+"link": "https://unit42.paloaltonetworks.com/cve-2026-123633-nginx-http2-vulnerability/",
+"cves": [
+"CVE-2026-123633"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "ZDI",
+"date": "2026-11-24",
+"title": "ZDI-26-1060: (0Day) Super Magic PHPSandbox Command Injection Sandbox Escape Vulnerability",
+"text": "This vulnerability allows remote attackers to bypass the sandbox on affected installations of Super Magic. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 9.8. The following CVEs are assigned: CVE-2026-136434.",
+"link": "http://www.zerodayinitiative.com/advisories/ZDI-26-1060/",
+"cves": [
+"CVE-2026-136434"
+],
+"nick": "",
+"product": "",
+"fix": "no patch at disclosure: restrict access, apply vendor guidance",
+"sev": "",
+"zeroday": true,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "ZDI",
+"date": "2026-11-24",
+"title": "ZDI-26-1067: (0Day) Bytebase DBHub MCP Incorrect Authorization Authentication Bypass Vulnerability",
+"text": "This vulnerability allows remote attackers to bypass authentication on affected installations of Bytebase DBHub. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 9.8. The following CVEs are assigned: CVE-2026-136441.",
+"link": "http://www.zerodayinitiative.com/advisories/ZDI-26-1067/",
+"cves": [
+"CVE-2026-136441"
+],
+"nick": "",
+"product": "",
+"fix": "no patch at disclosure: restrict access, apply vendor guidance",
+"sev": "",
+"zeroday": true,
+"exploited": false,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "ZDI",
+"date": "2026-11-24",
+"title": "ZDI-26-1068: (0Day) Firebird SQL SRP Authentication Bypass Vulnerability",
+"text": "This vulnerability allows remote attackers to bypass authentication on affected installations of Firebird SQL. Authentication is not required to exploit this vulnerability. The ZDI has assigned a CVSS rating of 9.1. The following CVEs are assigned: CVE-2026-61580.",
+"link": "http://www.zerodayinitiative.com/advisories/ZDI-26-1068/",
+"cves": [
+"CVE-2026-61580"
+],
+"nick": "",
+"product": "",
+"fix": "no patch at disclosure: restrict access, apply vendor guidance",
+"sev": "",
 "zeroday": true,
 "exploited": false,
 "kev": null,
@@ -2759,10 +2928,19 @@
 "product": "ruby-lang Ruby",
 "title": "Ruby before 3.3.14, 3.4.13, and 4.0.10 has a heap-based buffer overflow during case conversion. One byte can be written outside a buffer for, for example, ISO-8859-1 or Windows-1252."
 },
+"CVE-2026-136434": {
+"product": "Super Magic",
+"title": "Super Magic PHPSandbox Command Injection Sandbox Escape Vulnerability"
+},
+"CVE-2026-136441": {
+"product": "Bytebase DBHub",
+"title": "Bytebase DBHub MCP Incorrect Authorization Authentication Bypass Vulnerability"
+},
 "CVE-2026-55040": {
 "product": "Microsoft SharePoint Enterprise Server 2016",
 "title": "Microsoft SharePoint Server Security Feature Bypass Vulnerability"
 },
+"CVE-2026-61580": {},
 "CVE-2026-76463": {
 "product": "Cisco Campus Gateway Software",
 "title": "Cisco Meraki Security Hardening Release: October 2026 - Improper Access Control Vulnerabilities"
