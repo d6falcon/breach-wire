@@ -2884,6 +2884,42 @@
 "exploited": false,
 "kev": null,
 "extra_link": ""
+},
+{
+"src": "Rapid7",
+"date": "2026-11-25",
+"title": "CVE-2026-123903: Critical VMware Directory Service Authentication Bypass affects vCenter",
+"text": "Overview On November 24, 2026, Broadcom released VMware Security Advisory VMSA-2026-0011 to address several new vulnerabilities, including CVE-2026-123903 , a critical authentication bypass in the VMware Directory Service component of vCenter. Broadcom assigned it a CVSSv3.1 score of 9.8 Critical . An attacker who can reach an affected vCenter’s VMware Directory Service (vmdir) over the network can gain access without authenticating. Broadcom's supplemental FAQ distinguishes CVE-2026-123903 from an older vulnerability CVE-2026-123890 , which Rapid7 covered previously when CVE-2026-123890 was reported as being exploited in the wild. Both of these vulnerabilities affect the VMware Directory Service in vCenter and can give an attacker access to the vCenter without credentials. CVE-2026-123890",
+"link": "https://www.rapid7.com/blog/post/etr-cve-2026-123903-critical-vmware-directory-service-authentication-bypass-affects-vcenter",
+"cves": [
+"CVE-2026-123903"
+],
+"nick": "",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": true,
+"kev": null,
+"extra_link": ""
+},
+{
+"src": "The Hacker News",
+"date": "2026-11-25",
+"title": "Drupal Fail2Install Exploit Details Emerge as Critical RCE Flaw Faces Active Exploitation",
+"text": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a critical flaw impacting Drupal to its Known Exploited Vulnerabilities (KEV) catalog, requiring federal agencies to apply the fixes by November 27, 2026. The vulnerability, tracked as CVE-2026-132165 aka Fail2Install (CVSS score: 9.8), is a case of remote code execution (RCE) impacting Drupal core. \"Drupal Core",
+"link": "https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html",
+"cves": [
+"CVE-2026-132165"
+],
+"nick": "Fail2Install",
+"product": "",
+"fix": "",
+"sev": "CRITICAL",
+"zeroday": false,
+"exploited": false,
+"kev": null,
+"extra_link": ""
 }
 ],
 "cve_cache": {
