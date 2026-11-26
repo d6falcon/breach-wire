@@ -1,10 +1,10 @@
 name: breach-wire
 
-# Every 4 hours (UTC): 00:17 04:17 08:17 12:17 16:17 20:17. Off the hour because GitHub delays top-of-hour
+# Every 4 hours (UTC) starting at: 00:30. Off the hour because GitHub delays top-of-hour
 # schedules the most. Each run refreshes both feeds and commits them together. ~6 billed minutes a day.
 on:
   schedule:
-    - cron: '17 */4 * * *'
+    - cron: '30 */4 * * *'
   workflow_dispatch:
 
 permissions:
