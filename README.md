@@ -48,7 +48,7 @@ Sources ([vuln-sources.json](vuln-sources.json)): CISA KEV, GitHub Advisory Data
 
 ## Schedule
 
-The [workflow](.github/workflows/breach-wire.yml) runs both feeds every 4 hours, at **00:17, 04:17, 08:17, 12:17, 16:17 and 20:17 UTC** (GitHub may start a few minutes late). To run it now, go to **Actions → breach-wire → Run workflow**.
+The [workflow](.github/workflows/breach-wire.yml) runs both feeds every 4 hours, starting at the top of the hour at **00:30 UTC** (GitHub may start a few minutes late). To run it now, go to **Actions → breach-wire → Run workflow**.
 
 To run it locally (Python 3.11+, standard library only):
 
