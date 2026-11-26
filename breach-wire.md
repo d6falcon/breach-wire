@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-26 19:37 UTC** - last 14 days - 49 confirmed, 98 reported, 646 claimed
+Last run **2026-11-26 20:31 UTC** - last 14 days - 49 confirmed, 98 reported, 649 claimed
 
 | Status | Meaning |
 |---|---|
@@ -19,16 +19,18 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-26 | **REPORTED** | not disclosed | ? "EXCLUSIVE: StanChart's crypto unit Zodia Custody hit by security breach, some client data exposed - Reuters" | Stolen: customer data, funds/crypto | via [Reuters](https://news.google.com/rss/articles/CBMizgFBVV95cUxPNGJWWkQ2MFZyZFRTMl9HcGFjU1V0WmZsNGt3MWpJZmNJdUlUNmRtNGpKR3pjRE1YeUx3ZkFKa1NPbFJlUWtOR19yV3FWOG1sY3RrdTFINnhwcnVnZUtrZy1VWmJWa0lQZ1Fla1NSY3dINllTT2FUOGs1MnAzSU03WWtQT2RtUkhrS1M1TFE3bHNKcXBXMXp5OWtxWWFiSGF5dlBOeHJHWGw5Z1ZwclNlSExxUUlNR0FHeTZ0VzhVSmoxQ1p5VUlkdXNydzFTUQ?oc=5)
 - 2026-11-26 | **REPORTED** | not disclosed | ? "Wyoming uranium operation shuts down after cyberattack" | Stolen: not disclosed | via [The Register](https://www.theregister.com/security/2026/11/26/wyoming-uranium-operation-shuts-down-after-cyberattack/5312323)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (29)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (32)</summary>
 
-- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - aurora | **AIM Consulting SA** | Stolen: customer data, employee/HR data, financial data, source code (2.9 GB) | via [RansomLook](https://www.ransomlook.io/group/aurora)
-- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - aurora | **Arlberger Bergbahnen AG** | Stolen: customer data, personal data (PII), employee/HR data, health data (144 GB) | via [RansomLook](https://www.ransomlook.io/group/aurora)
+- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - aurora | **AIM Consulting SA** (Professional Services) | Stolen: customer data, employee/HR data, financial data, source code (2.9 GB) | via [RansomLook](https://www.ransomlook.io/group/aurora), [ransomware.live](https://www.ransomware.live/id/QUlNIENvbnN1bHRpbmcgU0FAYXVyb3Jh)
+- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - the gentlemen | **Aptean** | Stolen: customer data, employee/HR data, financial data (5K employees) | via [RansomLook](https://www.ransomlook.io/group/the%20gentlemen)
+- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - aurora | **Arlberger Bergbahnen AG** (AT, Hospitality) | Stolen: customer data, personal data (PII), employee/HR data, health data (144 GB) | via [RansomLook](https://www.ransomlook.io/group/aurora), [ransomware.live](https://www.ransomware.live/id/QXJsYmVyZ2VyIEJlcmdiYWhuZW4gQUdAYXVyb3Jh)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - puppeteer | **dygav.es** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/puppeteer)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - orova | **E Xing Precision Design** (SG, Manufacturing) | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/orova), [ransomware.live](https://www.ransomware.live/id/RSBYaW5nIFByZWNpc2lvbiBEZXNpZ25AT3JvdmE=)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Estate planning, trust administration and probate law firm** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - metaencryptor | **Exceptional Healthcare Inc** (US, Healthcare) | Stolen: health data (690 GB) | via [RansomLook](https://www.ransomlook.io/group/metaencryptor), [ransomware.live](https://www.ransomware.live/id/RXhjZXB0aW9uYWwgSGVhbHRoY2FyZSBJbmMuQG1ldGFlbmNyeXB0b3I=)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Financial advisory practice** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Financial services** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
+- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - anubis | **FYE** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/anubis)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - inception | **GoDaddy** | Stolen: personal data (PII), employee/HR data (37.5 GB) | via [RansomLook](https://www.ransomlook.io/group/inception)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - dark project | **Golden State College & Milan Institute** | Stolen: customer data, personal data (PII), employee/HR data, financial data (420 GB) | via [RansomLook](https://www.ransomlook.io/group/dark%20project)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Groupe Antilles-Glaces** (GP, Agriculture and Food Production) | Stolen: personal data (PII), employee/HR data, financial data, contracts/internal docs | via [ransomware.live](https://www.ransomware.live/id/R3JvdXBlIEFudGlsbGVzLUdsYWNlc0ByaHlzaWRh), [RansomLook](https://www.ransomlook.io/group/rhysida)
@@ -46,7 +48,8 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Power semiconductors** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Reflex Electromechanical & Trade Co. Ltd** | Stolen: customer data, financial data, contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - puppeteer | **signaturelex.com** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/puppeteer)
-- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Sweet Darling Sales** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin)
+- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Sweet Darling Sales** (US, Retail & E-Commerce) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin), [ransomware.live](https://www.ransomware.live/id/U3dlZXQgRGFybGluZyBTYWxlc0BxaWxpbg==)
+- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - the gentlemen | **SynCardia Systems** | Stolen: health data, financial data (1.5 TB) | via [RansomLook](https://www.ransomlook.io/group/the%20gentlemen)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - orova | **Technology Investment Joint Stock CompanyTACORP** (VN, Technology) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/orova), [ransomware.live](https://www.ransomware.live/id/VGVjaG5vbG9neSBJbnZlc3RtZW50IEpvaW50IFN0b2NrIENvbXBhbnlUQUNPUlBAT3JvdmE=)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - inception | **Verisk** (US, Financial Services) | Stolen: customer data, contracts/internal docs (1.01 TB, 854.6 million rows, 110 GB) | via [RansomLook](https://www.ransomlook.io/group/inception), [ransomware.live](https://www.ransomware.live/id/VmVyaXNrQEluY2VwdGlvbg==)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - orova | **Visual Birds Studio** (IN, Technology) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/orova), [ransomware.live](https://www.ransomware.live/id/VmlzdWFsIEJpcmRzIFN0dWRpb0BPcm92YQ==)
