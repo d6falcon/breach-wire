@@ -48,7 +48,31 @@ Sources ([vuln-sources.json](vuln-sources.json)): CISA KEV, GitHub Advisory Data
 
 ## Schedule
 
-The [workflow](.github/workflows/breach-wire.yml) runs both feeds every 4 hours, starting at the top of the hour at **00:30 UTC** (GitHub may start a few minutes late). To run it now, go to **Actions → breach-wire → Run workflow**.
+The [workflow](.github/workflows/breach-wire.yml) runs both feeds every 4 hours from **00:30 UTC**. To run it now, go to **Actions → breach-wire → Run workflow**.
+
+GitHub's own cron is best effort: it ran this workflow only 2–3 times a day, often hours late. So an external scheduler starts it on time and GitHub's cron stays as a fallback.
+
+| Setting | Value |
+|---|---|
+| Token | GitHub fine-grained token: **Only select repositories → breach-wire**, permission **Actions: Read and write**. Nothing else |
+| Scheduler | Any free HTTP cron, e.g. [cron-job.org](https://cron-job.org): every 4 hours at :30, timezone UTC, notify on failure |
+| Request | `POST https://api.github.com/repos/d6falcon/breach-wire/actions/workflows/breach-wire.yml/dispatches` |
+| Headers | `Authorization: Bearer <token>` · `Accept: application/vnd.github+json` · `X-GitHub-Api-Version: 2022-11-28` |
+| Body | `{"ref":"main"}` |
+| Success | HTTP `204`. The run appears in Actions as *Manually run by d6falcon* |
+
+Test it from a shell before saving the job:
+
+```bash
+curl -sS -o /dev/null -w '%{http_code}\n' -X POST \
+  -H "Authorization: Bearer $BREACH_WIRE_TOKEN" \
+  -H "Accept: application/vnd.github+json" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/repos/d6falcon/breach-wire/actions/workflows/breach-wire.yml/dispatches \
+  -d '{"ref":"main"}'
+```
+
+The token has no access to the code. It can only start, re-run, cancel and read this repo's workflow runs. Give it an expiry and renew it before it lapses, or the scheduler starts failing (it emails you).
 
 To run it locally (Python 3.11+, standard library only):
 

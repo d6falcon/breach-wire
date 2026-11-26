@@ -1,11 +1,13 @@
 name: breach-wire
 
-# Every 4 hours (UTC) starting at: 00:30. Off the hour because GitHub delays top-of-hour
-# schedules the most. Each run refreshes both feeds and commits them together. ~6 billed minutes a day.
+# Runs every 4 hours (UTC): 00:30 04:30 08:30 12:30 16:30 20:30.
+# GitHub's own schedule is best effort and in practice fired ~2-3 times a day, hours late. The main trigger
+# is therefore an external cron calling workflow_dispatch on time (README, "Schedule"); the cron below is
+# only a fallback. Each run refreshes both feeds and commits them together. ~6-9 billed minutes a day.
 on:
+  workflow_dispatch:  # external cron: POST /repos/d6falcon/breach-wire/actions/workflows/breach-wire.yml/dispatches
   schedule:
-    - cron: '30 */4 * * *'
-  workflow_dispatch:
+    - cron: '30 */4 * * *'  # fallback if the external trigger is down
 
 permissions:
   contents: write
