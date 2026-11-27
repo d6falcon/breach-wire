@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-26 21:48 UTC** - last 14 days - 49 confirmed, 98 reported, 649 claimed
+Last run **2026-11-27 00:31 UTC** - last 14 days - 49 confirmed, 98 reported, 655 claimed
 
 | Status | Meaning |
 |---|---|
@@ -12,6 +12,19 @@ Last run **2026-11-26 21:48 UTC** - last 14 days - 49 confirmed, 98 reported, 64
 
 TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: triage hints, not attribution. "What was stolen" lists data categories and volumes only; no leaked values are copied here. `?` = company not parsed from the headline; follow the source.
 
+## 2026-11-27
+
+
+<details><summary>Claimed on leak sites / dark web / Telegram (5)</summary>
+
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Keyes Financial Strategies Inc** | Stolen: customer data, employee/HR data, financial data, contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **LockeBridge Capital Partners** | Stolen: customer data, financial data, contracts/internal docs | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **MHC Financial Inc** | Stolen: customer data, financial data | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Monolithic Power Systems** | Stolen: customer data, employee/HR data, financial data | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **The Law Firm of Kavesh, Minor & Otis, Inc** | Stolen: customer data, financial data | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
+
+</details>
+
 ## 2026-11-26
 
 - 2026-11-26 | **CONFIRMED** | not disclosed | **FIFA** | Stolen: not disclosed | via [DataBreaches.net](https://databreaches.net/2026/11/26/fifa-says-it-has-been-victim-of-a-cyberattack-accessing-personal-and-business-information/), [AP](https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRmU3QldMZEZZTlB4bkUxZHRGMDc3MWlldjlWVG9jN2UyVFZUekZ4eDVKdmVLdTFkazFnQ3MtTUNwakJhVE95WXhmZEFzajlwc0dlOEpsUkVpSzFBZGp4YmZra08yMEh1SGw1WF91N25qaWRkN3E2OGlRcEl0Q2c5YjkydjQzVE5X?oc=5), [SecurityWeek](https://www.securityweek.com/fifa-says-it-has-been-victim-of-a-cyberattack-accessing-personal-and-business-information/)
@@ -19,7 +32,7 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-26 | **REPORTED** | not disclosed | ? "EXCLUSIVE: StanChart's crypto unit Zodia Custody hit by security breach, some client data exposed - Reuters" | Stolen: customer data, funds/crypto | via [Reuters](https://news.google.com/rss/articles/CBMizgFBVV95cUxPNGJWWkQ2MFZyZFRTMl9HcGFjU1V0WmZsNGt3MWpJZmNJdUlUNmRtNGpKR3pjRE1YeUx3ZkFKa1NPbFJlUWtOR19yV3FWOG1sY3RrdTFINnhwcnVnZUtrZy1VWmJWa0lQZ1Fla1NSY3dINllTT2FUOGs1MnAzSU03WWtQT2RtUkhrS1M1TFE3bHNKcXBXMXp5OWtxWWFiSGF5dlBOeHJHWGw5Z1ZwclNlSExxUUlNR0FHeTZ0VzhVSmoxQ1p5VUlkdXNydzFTUQ?oc=5)
 - 2026-11-26 | **REPORTED** | not disclosed | ? "Wyoming uranium operation shuts down after cyberattack" | Stolen: not disclosed | via [The Register](https://www.theregister.com/security/2026/11/26/wyoming-uranium-operation-shuts-down-after-cyberattack/5312323)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (32)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (33)</summary>
 
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - aurora | **AIM Consulting SA** (Professional Services) | Stolen: customer data, employee/HR data, financial data, source code (2.9 GB) | via [RansomLook](https://www.ransomlook.io/group/aurora), [ransomware.live](https://www.ransomware.live/id/QUlNIENvbnN1bHRpbmcgU0FAYXVyb3Jh)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - the gentlemen | **Aptean** | Stolen: customer data, employee/HR data, financial data (5K employees) | via [RansomLook](https://www.ransomlook.io/group/the%20gentlemen)
@@ -27,11 +40,12 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - puppeteer | **dygav.es** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/puppeteer)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - orova | **E Xing Precision Design** (SG, Manufacturing) | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/orova), [ransomware.live](https://www.ransomware.live/id/RSBYaW5nIFByZWNpc2lvbiBEZXNpZ25AT3JvdmE=)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Estate planning, trust administration and probate law firm** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
+- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - whitearmor | **Eversource** | Stolen: customer data, personal data (PII), financial data | via [RansomLook](https://www.ransomlook.io/group/whitearmor)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - metaencryptor | **Exceptional Healthcare Inc** (US, Healthcare) | Stolen: health data (690 GB) | via [RansomLook](https://www.ransomlook.io/group/metaencryptor), [ransomware.live](https://www.ransomware.live/id/RXhjZXB0aW9uYWwgSGVhbHRoY2FyZSBJbmMuQG1ldGFlbmNyeXB0b3I=)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Financial advisory practice** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - pixelleaks | **Financial services** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pixelleaks)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - anubis | **FYE** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/anubis)
-- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - inception | **GoDaddy** | Stolen: personal data (PII), employee/HR data (37.5 GB) | via [RansomLook](https://www.ransomlook.io/group/inception)
+- 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - inception | **GoDaddy** (US, Technology) | Stolen: personal data (PII), employee/HR data (37.5 GB) | via [RansomLook](https://www.ransomlook.io/group/inception), [ransomware.live](https://www.ransomware.live/id/R29EYWRkeUBJbmNlcHRpb24=)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - dark project | **Golden State College & Milan Institute** | Stolen: customer data, personal data (PII), employee/HR data, financial data (420 GB) | via [RansomLook](https://www.ransomlook.io/group/dark%20project)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Groupe Antilles-Glaces** (GP, Agriculture and Food Production) | Stolen: personal data (PII), employee/HR data, financial data, contracts/internal docs | via [ransomware.live](https://www.ransomware.live/id/R3JvdXBlIEFudGlsbGVzLUdsYWNlc0ByaHlzaWRh), [RansomLook](https://www.ransomlook.io/group/rhysida)
 - 2026-11-26 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Grua, Freeman, Tupper & Young, PLC** (Professional Services) | Stolen: customer data, employee/HR data, financial data, contracts/internal docs | via [ransomware.live](https://www.ransomware.live/id/R3J1YSwgRnJlZW1hbiwgVHVwcGVyICYgWW91bmcsIFBMQ0ByaHlzaWRh), [RansomLook](https://www.ransomlook.io/group/rhysida)
