@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-27 12:31 UTC** - last 14 days - 52 confirmed, 104 reported, 665 claimed
+Last run **2026-11-27 16:31 UTC** - last 14 days - 56 confirmed, 108 reported, 674 claimed
 
 | Status | Meaning |
 |---|---|
@@ -14,26 +14,43 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 
 ## 2026-11-27
 
+- 2026-11-27 | **CONFIRMED** | not disclosed | ? "Barclays’ US banking arm confirms data breach" | Stolen: customer data, financial data | via [DataBreaches.net](https://databreaches.net/2026/11/27/barclays-us-banking-arm-confirms-data-breach/)
 - 2026-11-27 | **CONFIRMED** | Ransomware \[T1486\] | ? "From earlier – Maersk Confirms Data Breach As WhiteArmor Ransomware Demands $5 Million" | Stolen: credentials (100 GB) | via [TG cyber_security_channel](https://t.me/Cyber_Security_Channel/114120)
+- 2026-11-27 | **CONFIRMED** | not disclosed | ? "Japan’s education ministry discloses breach of government procurement system" | Stolen: not disclosed | via [The Record](https://therecord.media/japan-education-ministry-cyberattack)
+- 2026-11-27 | **CONFIRMED** | not disclosed | ? "Software giant SAP confirms cyber incident amid reports of source code breach" | Stolen: source code | via [The Record](https://therecord.media/sap-germany-cyberattack-github)
+- 2026-11-27 | **CONFIRMED** | not disclosed | **Korea Scientists and Engineers Mutual-aid Association** | Stolen: customer data (210,000 records) | via [DataBreaches.net](https://databreaches.net/2026/11/27/korea-scientists-and-engineers-mutual-aid-association-hit-by-hack-210000-records-leaked/)
 - 2026-11-27 | **CONFIRMED** | Third-party/trusted relationship \[T1199\] | **SAP** | Stolen: employee/HR data, source code, customer data | via [SecurityWeek](https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/), [BleepingComputer](https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/), [Security Affairs](https://securityaffairs.com/204121/data-breach/sap-security-incident-stolen-tokens-raise-supply-chain-concerns.html)
 - 2026-11-27 | **CONFIRMED** | not disclosed | **Switzerland** | Stolen: not disclosed | via [The Hacker News](https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html)
 - 2026-11-27 | **REPORTED** | not disclosed | ? "British government takes services offline following ‘cyber incident’" | Stolen: not disclosed | via [The Record](https://therecord.media/uk-department-work-pensions-cyber-incident)
 - 2026-11-27 | **REPORTED** | not disclosed | ? "British social security system techies yank services offline following 'cyber incident'" | Stolen: government IDs, funds/crypto | via [The Register](https://www.theregister.com/security/2026/11/27/british-social-security-system-techies-yank-services-offline-following-cyber-incident/5312522)
 - 2026-11-27 | **REPORTED** | not disclosed | ? "Cyberattack disrupts global news distribution platform at France’s AFP" | Stolen: not disclosed | via [The Record](https://therecord.media/france-afp-hit-by-cyberattack)
 - 2026-11-27 | **REPORTED** | not disclosed | ? "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters" | Stolen: not disclosed | via [Reuters](https://news.google.com/rss/articles/CBMiqwFBVV95cUxPQnhWb2oyc2Qta3k0bUhwbGZTcWZMREZ0VU41eVNZWDJZTDlBcmMxZzFrLXlmVGJpUHBRbVdBRlNoQU9lWUlIcVpMcXQwWWpyYVJ2eDJQa1ZvNFU5MUFHLWdpQW1BVloyUW5lTUlVSlFpLXJwVHNLMl9fQnBFTTNnemY4Q0JiUkN3SXFndG1pX1l1TmdySFJDOHJlWC1fMnE3cjlaVFB5M1hWbU0?oc=5)
+- 2026-11-27 | **REPORTED** | not disclosed | ? "Global news agency AFP reports cyberattack, shuts down content platform" | Stolen: employee/HR data | via [DataBreaches.net](https://databreaches.net/2026/11/27/global-news-agency-afp-reports-cyberattack-shuts-down-content-platform/)
 - 2026-11-27 | **REPORTED** | not disclosed | ? "SAP flags security incident, says no evidence of unauthorized access to customer data - Reuters" | Stolen: customer data | via [Reuters](https://news.google.com/rss/articles/CBMiwwFBVV95cUxNN095Q1ozZFFLS1labVpzakhmSEJWeWljRVN2RmxUWlBPOUVvNU5kQVB0NVpOTmhDRjZndEw4RFJwMDd4cWVOWTR1djR1R1BfOEtyVUU3cUQ0a0ZqdTNlZUNJV1V1bXBNSkF2WUNLOUR2ejFqcTJXdlRYd0c3cHlsOUh2cndMWHNOczJjdG0xam9ULUhfU0hPaDJrbUFOWGp1SFJyaWxyNURyaHd1Q2kweGJ2N0trMHRPWVFlM0E1UEJBZWc?oc=5)
+- 2026-11-27 | **REPORTED** | not disclosed | ? "US Air Force cloud platform reportedly hacked in latest federal breach" | Stolen: not disclosed | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/us-air-force-cloud-platform-reportedly-hacked-in-latest-federal-breach/)
+- 2026-11-27 | **REPORTED** | not disclosed | **Air Force Cloud One** | Stolen: employee/HR data | via [DataBreaches.net](https://databreaches.net/2026/11/27/hackers-breach-us-air-force-cloud-one-platform-putting-military-data-at-risk/), [Security Affairs](https://securityaffairs.com/204136/security/air-force-cloud-one-breach-updates-blocked-migration-paused-scope-unknown.html)
 - 2026-11-27 | **REPORTED** | Exploited public-facing app \[T1190\] | **Hex Package Manager** | Stolen: databases/backups | via [SecurityWeek](https://www.securityweek.com/hex-package-manager-warns-of-potential-data-breach/)
+- 2026-11-27 | **REPORTED** | not disclosed | **The Biggest** | Stolen: not disclosed | via [DataBreaches.net](https://databreaches.net/2026/11/27/the-biggest-data-breach-settlements-of-2026/)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (9)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (18)</summary>
 
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **avispl** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **blackstone-consulting** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Brit Ltd / Brit Insurance** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - majinahanashi | **Chub Cay Resort & Marina** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/majinahanashi)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - majinahanashi | **Diamond Technical Services** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/majinahanashi)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - bravox | **Elektro-Ruppen 🇨🇭** (CH, Energy & Utilities) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/bravox), [ransomware.live](https://www.ransomware.live/id/RWxla3Ryby1SdXBwZW5AYnJhdm94)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - soul | **Ferrometalco** | Stolen: employee/HR data | via [RansomLook](https://www.ransomlook.io/group/soul)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - the gentlemen | **Friedl Richardson** | Stolen: employee/HR data, health data | via [RansomLook](https://www.ransomlook.io/group/the%20gentlemen)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - majinahanashi | **NetX Inc** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/majinahanashi)
-- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **pregis** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **pregis** (US, Manufacturing) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647), [ransomware.live](https://www.ransomware.live/id/cHJlZ2lzQGlhaDY0Nzc=)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **resers** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **rogers-group** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - space bears | **SternKlinik** (DE, Healthcare) | Stolen: employee/HR data, health data | via [RansomLook](https://www.ransomlook.io/group/space%20bears), [ransomware.live](https://www.ransomware.live/id/U3Rlcm5LbGluaWsgKG1lZGkteiBCcmVtZW4gR21iSClAc3BhY2ViZWFycw==)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **supplyone** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Thomas More University** (BE, Education) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin), [ransomware.live](https://www.ransomware.live/id/VGhvbWFzIE1vcmUgVW5pdmVyc2l0eUBxaWxpbg==)
-- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **VC ERP Consulting Pvt. Ltd** | Stolen: customer data, personal data (PII), employee/HR data, financial data (19.6 GB, 1,922,290 customers) | via [RansomLook](https://www.ransomlook.io/group/rhysida)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - soul | **US CNC Machine Company** | Stolen: employee/HR data | via [RansomLook](https://www.ransomlook.io/group/soul)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **VC ERP Consulting Pvt. Ltd** (IN, Professional Services) | Stolen: customer data, personal data (PII), employee/HR data, financial data (19.6 GB, 1,922,290 customers) | via [RansomLook](https://www.ransomlook.io/group/rhysida), [ransomware.live](https://www.ransomware.live/id/VkMgRVJQIENvbnN1bHRpbmcgUHZ0LiBMdGQuQHJoeXNpZGE=)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - direwolf | **Wolters Kluwer** (NL, Professional Services) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/direwolf), [ransomware.live](https://www.ransomware.live/id/V29sdGVycyBLbHV3ZXJAZGlyZXdvbGY=)
 
 </details>
@@ -573,7 +590,7 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - crypto24 | **M.N. Textiles** (PK, Manufacturing) | Stolen: databases/backups | via [RansomLook](https://www.ransomlook.io/group/crypto24), [ransomware.live](https://www.ransomware.live/id/TS5OLiBUZXh0aWxlcyAoUHZ0KSBMdGRAY3J5cHRvMjQ=)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **Maglin, Miskiv & Associates** (US, Professional Services) | Stolen: employee/HR data, financial data | via [ransomware.live](https://www.ransomware.live/id/TWFnbGluLCBNaXNraXYgJiBBc3NvY2lhdGVzQFNvdWxHcm91cA==)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **Massey, Stotser & Nichols** (US, Professional Services) | Stolen: employee/HR data, contracts/internal docs | via [ransomware.live](https://www.ransomware.live/id/TWFzc2V5LCBTdG90c2VyICYgTmljaG9sc0BTb3VsR3JvdXA=)
-- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - Deadlock | **MedMira Inc** (CA, Healthcare) | Stolen: customer data (153 GB) | via [ransomware.live](https://www.ransomware.live/id/TWVkTWlyYSBJbmNARGVhZGxvY2s=)
+- 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - Deadlock | **MedMira Inc** (CA, Healthcare) | Stolen: customer data (153 GB) | via [ransomware.live](https://www.ransomware.live/id/TWVkTWlyYSBJbmNARGVhZGxvY2s=), [RansomLook](https://www.ransomlook.io/group/deadlock)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **Merritt Woodwork** (US, Manufacturing) | Stolen: employee/HR data | via [ransomware.live](https://www.ransomware.live/id/TWVycml0dCBXb29kd29ya0BTb3VsR3JvdXA=), [TG RansomFeedNews](https://t.me/RansomFeedNews/17482)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **METO Systems** (US, Technology) | Stolen: employee/HR data | via [ransomware.live](https://www.ransomware.live/id/TUVUTyBTeXN0ZW1zQFNvdWxHcm91cA==)
 - 2026-11-19 | CLAIMED | Exfiltration + extortion \[T1657\] - SoulGroup | **Metro Tulsa Foot** (US, Healthcare) | Stolen: employee/HR data | via [ransomware.live](https://www.ransomware.live/id/TWV0cm8gVHVsc2EgRm9vdEBTb3VsR3JvdXA=)
