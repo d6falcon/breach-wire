@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-27 04:31 UTC** - last 14 days - 50 confirmed, 98 reported, 659 claimed
+Last run **2026-11-27 08:31 UTC** - last 14 days - 52 confirmed, 100 reported, 662 claimed
 
 | Status | Meaning |
 |---|---|
@@ -15,12 +15,19 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 ## 2026-11-27
 
 - 2026-11-27 | **CONFIRMED** | Ransomware \[T1486\] | ? "From earlier – Maersk Confirms Data Breach As WhiteArmor Ransomware Demands $5 Million" | Stolen: credentials (100 GB) | via [TG cyber_security_channel](https://t.me/Cyber_Security_Channel/114120)
+- 2026-11-27 | **CONFIRMED** | not disclosed | **SAP** | Stolen: employee/HR data, source code | via [SecurityWeek](https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/)
+- 2026-11-27 | **CONFIRMED** | not disclosed | **Switzerland** | Stolen: not disclosed | via [The Hacker News](https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html)
+- 2026-11-27 | **REPORTED** | not disclosed | ? "SAP flags security incident, says no evidence of unauthorized access to customer data - Reuters" | Stolen: customer data | via [Reuters](https://news.google.com/rss/articles/CBMiwwFBVV95cUxNN095Q1ozZFFLS1labVpzakhmSEJWeWljRVN2RmxUWlBPOUVvNU5kQVB0NVpOTmhDRjZndEw4RFJwMDd4cWVOWTR1djR1R1BfOEtyVUU3cUQ0a0ZqdTNlZUNJV1V1bXBNSkF2WUNLOUR2ejFqcTJXdlRYd0c3cHlsOUh2cndMWHNOczJjdG0xam9ULUhfU0hPaDJrbUFOWGp1SFJyaWxyNURyaHd1Q2kweGJ2N0trMHRPWVFlM0E1UEJBZWc?oc=5)
+- 2026-11-27 | **REPORTED** | Exploited public-facing app \[T1190\] | **Hex Package Manager** | Stolen: databases/backups | via [SecurityWeek](https://www.securityweek.com/hex-package-manager-warns-of-potential-data-breach/)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (3)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (6)</summary>
 
-- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - bravox | **Elektro-Ruppen 🇨🇭** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/bravox)
-- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - space bears | **SternKlinik** | Stolen: employee/HR data, health data | via [RansomLook](https://www.ransomlook.io/group/space%20bears)
-- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - direwolf | **Wolters Kluwer** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/direwolf)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - majinahanashi | **Chub Cay Resort & Marina** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/majinahanashi)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - majinahanashi | **Diamond Technical Services** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/majinahanashi)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - bravox | **Elektro-Ruppen 🇨🇭** (CH, Energy & Utilities) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/bravox), [ransomware.live](https://www.ransomware.live/id/RWxla3Ryby1SdXBwZW5AYnJhdm94)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - space bears | **SternKlinik** (DE, Healthcare) | Stolen: employee/HR data, health data | via [RansomLook](https://www.ransomlook.io/group/space%20bears), [ransomware.live](https://www.ransomware.live/id/U3Rlcm5LbGluaWsgKG1lZGkteiBCcmVtZW4gR21iSClAc3BhY2ViZWFycw==)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Thomas More University** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - direwolf | **Wolters Kluwer** (NL, Professional Services) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/direwolf), [ransomware.live](https://www.ransomware.live/id/V29sdGVycyBLbHV3ZXJAZGlyZXdvbGY=)
 
 </details>
 
