@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-27 08:31 UTC** - last 14 days - 52 confirmed, 100 reported, 662 claimed
+Last run **2026-11-27 08:52 UTC** - last 14 days - 52 confirmed, 100 reported, 662 claimed
 
 | Status | Meaning |
 |---|---|
