@@ -2,7 +2,7 @@
 
 One line per vulnerability: **date | status | CVE | name | TTP | fix | sources**. Last 30 days.
 
-Last run **2026-11-27 16:31 UTC** - 52 exploited or zero-day, 57 critical or high
+Last run **2026-11-27 20:31 UTC** - 54 exploited or zero-day, 57 critical or high
 
 | Status | Meaning |
 |---|---|
@@ -12,8 +12,10 @@ Last run **2026-11-27 16:31 UTC** - 52 exploited or zero-day, 57 critical or hig
 
 EPSS is FIRST.org's probability of exploitation in the next 30 days. TTPs are MITRE ATT&CK Enterprise IDs inferred from the vulnerability type: triage hints, not attribution. Nicknames (e.g. Java4Shell) come from the sources. Fix versions are taken from the advisories; check the linked source before patching.
 
-## Exploited or zero-day (52)
+## Exploited or zero-day (54)
 
+- 2026-11-27 | **EXPLOITED** (KEV) | CVE-2026-120705 | OSGeo GeoServer, RCE | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; until then remove internet exposure (allow-list or VPN) and check for compromise; CISA KEV due 2026-11-30 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-120705), [Vendor advisory](https://geoserver.org/vulnerability/2026/11/23/cve-update.html)
+- 2026-11-27 | **EXPLOITED** (KEV) | CVE-2026-129243 | OSGeo GeoServer, RCE | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; until then remove internet exposure (allow-list or VPN) and check for compromise; CISA KEV due 2026-11-30 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-129243), [Vendor advisory](https://geoserver.org/vulnerability/2026/11/23/cve-update.html)
 - 2026-11-25 | **EXPLOITED** (KEV, EPSS 6%) | CVE-2026-133323 | Mitel MiCollab, command injection | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; until then remove internet exposure (allow-list or VPN) and check for compromise; CISA KEV due 2026-11-28 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-133323), [Vendor advisory](https://www.mitel.com/support/security-advisories/mitel-product-security-advisory-misa-2026-0012)
 - 2026-11-25 | **EXPLOITED** (KEV, EPSS 4%) | CVE-2025-41450 | Danfoss AK-SM 800A Series, auth bypass | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; restrict the management interface to trusted networks, then rotate sessions and credentials; CISA KEV due 2026-12-09 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2025-41450), [Vendor advisory](https://www.danfoss.com/en/service-and-support/coordinated-vulnerability-disclosure/danfoss-security-advisories/dsa-2025-03-01)
 - 2026-11-25 | **EXPLOITED** (KEV, EPSS 2%) | CVE-2023-25915 | Danfoss AK-SM 800A Series | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; until then remove internet exposure (allow-list or VPN) and check for compromise; CISA KEV due 2026-11-28 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2023-25915), [Vendor advisory](https://www.danfoss.com/en/service-and-support/coordinated-vulnerability-disclosure/danfoss-security-advisories/dsa-2023-08-01)
