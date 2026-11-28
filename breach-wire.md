@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-28 00:31 UTC** - last 14 days - 57 confirmed, 110 reported, 679 claimed
+Last run **2026-11-28 04:31 UTC** - last 14 days - 57 confirmed, 112 reported, 680 claimed
 
 | Status | Meaning |
 |---|---|
@@ -11,6 +11,17 @@ Last run **2026-11-28 00:31 UTC** - last 14 days - 57 confirmed, 110 reported, 6
 | CLAIMED | Ransomware leak site, dark-web forum or Telegram claim. Unverified; groups exaggerate and re-post |
 
 TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: triage hints, not attribution. "What was stolen" lists data categories and volumes only; no leaked values are copied here. `?` = company not parsed from the headline; follow the source.
+
+## 2026-11-28
+
+- 2026-11-28 | **REPORTED** | not disclosed | ? "Cyber incident disrupting services for Pacific Blue Cross members" | Stolen: customer data, health data | via [DataBreaches.net](https://databreaches.net/2026/11/27/cyber-incident-disrupting-services-for-pacific-blue-cross-members/)
+- 2026-11-28 | **REPORTED** | not disclosed | ? "How gamers are using AI and leaked files to clone Grand Theft Auto 6" | Stolen: health data | via [BBC](https://www.bbc.co.uk/news/articles/c64gn8pe5eeqo?at_medium=RSS&at_campaign=rss)
+
+<details><summary>Claimed on leak sites / dark web / Telegram (1)</summary>
+
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Thomas More University of Applied Sciences** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin)
+
+</details>
 
 ## 2026-11-27
 
@@ -42,7 +53,7 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **blackstone-consulting** (US, Professional Services) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647), [ransomware.live](https://www.ransomware.live/id/YmxhY2tzdG9uZS1jb25zdWx0aW5nQGlhaDY0Nzc=), [TG RansomFeedNews](https://t.me/RansomFeedNews/17731)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Brit Ltd / Brit Insurance** (GB, Financial Services) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom), [ransomware.live](https://www.ransomware.live/id/QnJpdCBMdGQgLyBCcml0IEluc3VyYW5jZSAoYnJpdGluc3VyYW5jZS5jb20pQGluY3JhbnNvbQ==), [TG RansomFeedNews](https://t.me/RansomFeedNews/17738)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - majinahanashi | **Chub Cay Resort & Marina** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/majinahanashi)
-- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Cinelandia S.p.A** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Cinelandia S.p.A** (IT, Hospitality) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom), [ransomware.live](https://www.ransomware.live/id/Q2luZWxhbmRpYSBTLnAuQUBpbmNyYW5zb20=)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - anubis | **Delco Trailers** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/anubis)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - majinahanashi | **Diamond Technical Services** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/majinahanashi)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - bravox | **Elektro-Ruppen 🇨🇭** (CH, Energy & Utilities) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/bravox), [ransomware.live](https://www.ransomware.live/id/RWxla3Ryby1SdXBwZW5AYnJhdm94), [TG RansomFeedNews](https://t.me/RansomFeedNews/17714)
@@ -53,7 +64,7 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **resers** (Agriculture and Food Production) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647), [ransomware.live](https://www.ransomware.live/id/cmVzZXJzQGlhaDY0Nzc=), [TG RansomFeedNews](https://t.me/RansomFeedNews/17729)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - Barracuda | **RHRS Law Firm** (Professional Services) | Stolen: customer data, personal data (PII) | via [ransomware.live](https://www.ransomware.live/id/UkhSUyBMYXcgRmlybUBCYXJyYWN1ZGE=)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **rogers-group** (CA, Other) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647), [ransomware.live](https://www.ransomware.live/id/cm9nZXJzLWdyb3VwQGlhaDY0Nzc=), [TG RansomFeedNews](https://t.me/RansomFeedNews/17732)
-- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Samlut and Company, P.A** | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Samlut and Company, P.A** (US, Professional Services) | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom), [ransomware.live](https://www.ransomware.live/id/U2FtbHV0IGFuZCBDb21wYW55LCBQLkEuQGluY3JhbnNvbQ==)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - space bears | **SternKlinik** (DE, Healthcare) | Stolen: employee/HR data, health data | via [RansomLook](https://www.ransomlook.io/group/space%20bears), [ransomware.live](https://www.ransomware.live/id/U3Rlcm5LbGluaWsgKG1lZGkteiBCcmVtZW4gR21iSClAc3BhY2ViZWFycw==), [TG RansomFeedNews](https://t.me/RansomFeedNews/17716)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **supplyone** (Other) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647), [ransomware.live](https://www.ransomware.live/id/c3VwcGx5b25lQGlhaDY0Nzc=), [TG RansomFeedNews](https://t.me/RansomFeedNews/17730)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Thomas More University** (BE, Education) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin), [ransomware.live](https://www.ransomware.live/id/VGhvbWFzIE1vcmUgVW5pdmVyc2l0eUBxaWxpbg==), [TG RansomFeedNews](https://t.me/RansomFeedNews/17713)
