@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-28 08:31 UTC** - last 14 days - 58 confirmed, 112 reported, 680 claimed
+Last run **2026-11-28 12:31 UTC** - last 14 days - 58 confirmed, 114 reported, 685 claimed
 
 | Status | Meaning |
 |---|---|
@@ -17,10 +17,17 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-28 | **CONFIRMED** | not disclosed | ? "Pensions and benefits services still down after 'cyber incident'" | Stolen: not disclosed | via [BBC](https://www.bbc.co.uk/news/articles/cm1wrgqyq4d8o?at_medium=RSS&at_campaign=rss)
 - 2026-11-28 | **REPORTED** | not disclosed | ? "Cyber incident disrupting services for Pacific Blue Cross members" | Stolen: customer data, health data | via [DataBreaches.net](https://databreaches.net/2026/11/27/cyber-incident-disrupting-services-for-pacific-blue-cross-members/)
 - 2026-11-28 | **REPORTED** | not disclosed | ? "How gamers are using AI and leaked files to clone Grand Theft Auto 6" | Stolen: health data | via [BBC](https://www.bbc.co.uk/news/articles/c64gn8pe5eeqo?at_medium=RSS&at_campaign=rss)
+- 2026-11-28 | **REPORTED** | Ransomware \[T1486\] | **Booba** | Stolen: not disclosed | via [Security Affairs](https://securityaffairs.com/204166/cyber-crime/booba-ransomware-attack-on-water-plant-reveals-monitoring-blind-spot.html)
+- 2026-11-28 | **REPORTED** | Exploited public-facing app \[T1190\] | **DWP** | Stolen: financial data | via [The Guardian](https://www.theguardian.com/technology/2026/nov/28/dwp-cyber-incident-probably-attack-former-uk-chief-technology-officer-david-knott)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (1)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (6)</summary>
 
-- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Thomas More University of Applied Sciences** (BE, Education) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin), [ransomware.live](https://www.ransomware.live/id/VGhvbWFzIE1vcmUgVW5pdmVyc2l0eSBvZiBBcHBsaWVkIFNjaWVuY2VzQHFpbGlu)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - payload | **GAIA Group Srl** | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/payload)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **Konicom, Inc** (USA) | Stolen: databases/backups | via [RansomLook](https://www.ransomlook.io/group/pear), [TG RansomFeedNews](https://t.me/RansomFeedNews/17744)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **Marietta Dermatology Associates, PA** (USA) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pear), [TG RansomFeedNews](https://t.me/RansomFeedNews/17745)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **McGlynn & McGlynn** (USA) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pear), [TG RansomFeedNews](https://t.me/RansomFeedNews/17743)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - incransom | **Samlut & Company, P.A** (USA) | Stolen: not disclosed | via [TG RansomFeedNews](https://t.me/RansomFeedNews/17740)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Thomas More University of Applied Sciences** (BE, Education) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin), [ransomware.live](https://www.ransomware.live/id/VGhvbWFzIE1vcmUgVW5pdmVyc2l0eSBvZiBBcHBsaWVkIFNjaWVuY2VzQHFpbGlu), [TG RansomFeedNews](https://t.me/RansomFeedNews/17739)
 
 </details>
 
@@ -54,8 +61,8 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - iah647 | **blackstone-consulting** (US, Professional Services) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/iah647), [ransomware.live](https://www.ransomware.live/id/YmxhY2tzdG9uZS1jb25zdWx0aW5nQGlhaDY0Nzc=), [TG RansomFeedNews](https://t.me/RansomFeedNews/17731)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Brit Ltd / Brit Insurance** (GB, Financial Services) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom), [ransomware.live](https://www.ransomware.live/id/QnJpdCBMdGQgLyBCcml0IEluc3VyYW5jZSAoYnJpdGluc3VyYW5jZS5jb20pQGluY3JhbnNvbQ==), [TG RansomFeedNews](https://t.me/RansomFeedNews/17738)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - majinahanashi | **Chub Cay Resort & Marina** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/majinahanashi)
-- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Cinelandia S.p.A** (IT, Hospitality) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom), [ransomware.live](https://www.ransomware.live/id/Q2luZWxhbmRpYSBTLnAuQUBpbmNyYW5zb20=)
-- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - anubis | **Delco Trailers** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/anubis)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - inc ransom | **Cinelandia S.p.A** (IT, Hospitality) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/inc%20ransom), [ransomware.live](https://www.ransomware.live/id/Q2luZWxhbmRpYSBTLnAuQUBpbmNyYW5zb20=), [TG RansomFeedNews](https://t.me/RansomFeedNews/17742)
+- 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - anubis | **Delco Trailers** (USA) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/anubis), [TG RansomFeedNews](https://t.me/RansomFeedNews/17741)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - majinahanashi | **Diamond Technical Services** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/majinahanashi)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - bravox | **Elektro-Ruppen 🇨🇭** (CH, Energy & Utilities) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/bravox), [ransomware.live](https://www.ransomware.live/id/RWxla3Ryby1SdXBwZW5AYnJhdm94), [TG RansomFeedNews](https://t.me/RansomFeedNews/17714)
 - 2026-11-27 | CLAIMED | Exfiltration + extortion \[T1657\] - soul | **Ferrometalco** (CO, Manufacturing) | Stolen: employee/HR data | via [RansomLook](https://www.ransomlook.io/group/soul), [ransomware.live](https://www.ransomware.live/id/RmVycm9tZXRhbGNvIChGTUMpQFNvdWxHcm91cA==), [TG RansomFeedNews](https://t.me/RansomFeedNews/17734)
