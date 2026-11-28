@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-28 12:31 UTC** - last 14 days - 58 confirmed, 114 reported, 685 claimed
+Last run **2026-11-28 16:31 UTC** - last 14 days - 60 confirmed, 118 reported, 690 claimed
 
 | Status | Meaning |
 |---|---|
@@ -14,19 +14,30 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 
 ## 2026-11-28
 
+- 2026-11-28 | **CONFIRMED** | not disclosed | ? "Korea Post’s mobile service hacked, with personal data of at least 113,000 customers leaked" | Stolen: customer data, personal data (PII) (113,000 customers) | via [DataBreaches.net](https://databreaches.net/2026/11/28/korea-posts-mobile-service-hacked-with-personal-data-of-at-least-113000-customers-leaked/)
 - 2026-11-28 | **CONFIRMED** | not disclosed | ? "Pensions and benefits services still down after 'cyber incident'" | Stolen: not disclosed | via [BBC](https://www.bbc.co.uk/news/articles/cm1wrgqyq4d8o?at_medium=RSS&at_campaign=rss)
+- 2026-11-28 | **CONFIRMED** | Vishing/help-desk social engineering \[T1566.004\] + Phishing \[T1566\] | **Boston Scientific** | Stolen: personal data (PII), health data | via [DataBreaches.net](https://databreaches.net/2026/11/28/boston-scientific-data-breach-hackers-steal-personal-information-via-voice-phishing-attack/)
 - 2026-11-28 | **REPORTED** | not disclosed | ? "Cyber incident disrupting services for Pacific Blue Cross members" | Stolen: customer data, health data | via [DataBreaches.net](https://databreaches.net/2026/11/27/cyber-incident-disrupting-services-for-pacific-blue-cross-members/)
 - 2026-11-28 | **REPORTED** | not disclosed | ? "How gamers are using AI and leaked files to clone Grand Theft Auto 6" | Stolen: health data | via [BBC](https://www.bbc.co.uk/news/articles/c64gn8pe5eeqo?at_medium=RSS&at_campaign=rss)
-- 2026-11-28 | **REPORTED** | Ransomware \[T1486\] | **Booba** | Stolen: not disclosed | via [Security Affairs](https://securityaffairs.com/204166/cyber-crime/booba-ransomware-attack-on-water-plant-reveals-monitoring-blind-spot.html)
+- 2026-11-28 | **REPORTED** | not disclosed | ? "Q-Dir and DesktopOK Windows utilities compromised to push Python RAT" | Stolen: not disclosed | via [BleepingComputer](https://www.bleepingcomputer.com/news/security/q-dir-and-desktopok-windows-utilities-compromised-to-push-python-rat/)
+- 2026-11-28 | **REPORTED** | not disclosed | **App** | Stolen: personal data (PII), financial data | via [DataBreaches.net](https://databreaches.net/2026/11/28/hk-app-breach-may-expose-500000-construction-workers/)
+- 2026-11-28 | **REPORTED** | Ransomware \[T1486\] | **Booba** | Stolen: not disclosed | via [Security Affairs](https://securityaffairs.com/204166/cyber-crime/booba-ransomware-attack-on-water-plant-reveals-monitoring-blind-spot.html), [DataBreaches.net](https://databreaches.net/2026/11/28/booba-ransomware-attack-on-water-plant-reveals-monitoring-blind-spot/)
 - 2026-11-28 | **REPORTED** | Exploited public-facing app \[T1190\] | **DWP** | Stolen: financial data | via [The Guardian](https://www.theguardian.com/technology/2026/nov/28/dwp-cyber-incident-probably-attack-former-uk-chief-technology-officer-david-knott)
+- 2026-11-28 | **REPORTED** | not disclosed | **Hong Kong’s Octopus** | Stolen: customer data, financial data (30K customers) | via [DataBreaches.net](https://databreaches.net/2026/11/28/hong-kongs-octopus-cyberattack-exposes-data-of-nearly-30k-customers-and-merchants/)
+- 2026-11-28 | **REPORTED** | not disclosed | **Hong Kong’s SmartPLAY** | Stolen: personal data (PII) (90K users) | via [DataBreaches.net](https://databreaches.net/2026/11/28/hong-kongs-smartplay-data-breach-potentially-exposes-90k-users/)
 
-<details><summary>Claimed on leak sites / dark web / Telegram (6)</summary>
+<details><summary>Claimed on leak sites / dark web / Telegram (11)</summary>
 
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Chaparral Software** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/rhysida)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Decor-rest Furniture** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - hyflock | **Dirjen Imigrasi Hendarsam Marantoko membantah** | Stolen: financial data | via [RansomLook](https://www.ransomlook.io/group/hyflock)
 - 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - payload | **GAIA Group Srl** | Stolen: customer data | via [RansomLook](https://www.ransomlook.io/group/payload)
-- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **Konicom, Inc** (USA) | Stolen: databases/backups | via [RansomLook](https://www.ransomlook.io/group/pear), [TG RansomFeedNews](https://t.me/RansomFeedNews/17744)
-- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **Marietta Dermatology Associates, PA** (USA) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pear), [TG RansomFeedNews](https://t.me/RansomFeedNews/17745)
-- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **McGlynn & McGlynn** (USA) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pear), [TG RansomFeedNews](https://t.me/RansomFeedNews/17743)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **Konicom, Inc** (USA) | Stolen: databases/backups | via [RansomLook](https://www.ransomlook.io/group/pear), [TG RansomFeedNews](https://t.me/RansomFeedNews/17744), [ransomware.live](https://www.ransomware.live/id/S29uaWNvbSwgSW5jLkBwZWFy)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **Marietta Dermatology Associates, PA** (USA) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pear), [TG RansomFeedNews](https://t.me/RansomFeedNews/17745), [ransomware.live](https://www.ransomware.live/id/TWFyaWV0dGEgRGVybWF0b2xvZ3kgQXNzb2NpYXRlcywgUEFAcGVhcg==)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - pear | **McGlynn & McGlynn** (USA) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/pear), [TG RansomFeedNews](https://t.me/RansomFeedNews/17743), [ransomware.live](https://www.ransomware.live/id/TWNHbHlubiAmIE1jR2x5bm5AcGVhcg==)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Multotec** (ZA, Manufacturing) | Stolen: financial data, contracts/internal docs (175.9 GB) | via [ransomware.live](https://www.ransomware.live/id/TXVsdG90ZWNAcmh5c2lkYQ==), [RansomLook](https://www.ransomlook.io/group/rhysida)
 - 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - incransom | **Samlut & Company, P.A** (USA) | Stolen: not disclosed | via [TG RansomFeedNews](https://t.me/RansomFeedNews/17740)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - rhysida | **Servicios Integrales de Salud SiSalud** | Stolen: health data | via [RansomLook](https://www.ransomlook.io/group/rhysida)
 - 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Thomas More University of Applied Sciences** (BE, Education) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin), [ransomware.live](https://www.ransomware.live/id/VGhvbWFzIE1vcmUgVW5pdmVyc2l0eSBvZiBBcHBsaWVkIFNjaWVuY2VzQHFpbGlu), [TG RansomFeedNews](https://t.me/RansomFeedNews/17739)
 
 </details>
