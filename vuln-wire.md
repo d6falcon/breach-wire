@@ -2,7 +2,7 @@
 
 One line per vulnerability: **date | status | CVE | name | TTP | fix | sources**. Last 30 days.
 
-Last run **2026-11-27 21:30 UTC** - 54 exploited or zero-day, 57 critical or high
+Last run **2026-11-28 00:31 UTC** - 52 exploited or zero-day, 54 critical or high
 
 | Status | Meaning |
 |---|---|
@@ -12,7 +12,7 @@ Last run **2026-11-27 21:30 UTC** - 54 exploited or zero-day, 57 critical or hig
 
 EPSS is FIRST.org's probability of exploitation in the next 30 days. TTPs are MITRE ATT&CK Enterprise IDs inferred from the vulnerability type: triage hints, not attribution. Nicknames (e.g. Java4Shell) come from the sources. Fix versions are taken from the advisories; check the linked source before patching.
 
-## Exploited or zero-day (54)
+## Exploited or zero-day (52)
 
 - 2026-11-27 | **EXPLOITED** (KEV) | CVE-2026-120705 | OSGeo GeoServer, RCE | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; until then remove internet exposure (allow-list or VPN) and check for compromise; CISA KEV due 2026-11-30 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-120705), [Vendor advisory](https://geoserver.org/vulnerability/2026/11/23/cve-update.html)
 - 2026-11-27 | **EXPLOITED** (KEV) | CVE-2026-129243 | OSGeo GeoServer, RCE | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; until then remove internet exposure (allow-list or VPN) and check for compromise; CISA KEV due 2026-11-30 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-129243), [Vendor advisory](https://geoserver.org/vulnerability/2026/11/23/cve-update.html)
@@ -66,10 +66,8 @@ EPSS is FIRST.org's probability of exploitation in the next 30 days. TTPs are MI
 - 2026-10-29 | **EXPLOITED** (KEV, EPSS 74%) | CVE-2026-97229 | GitLab Community Edition and Enterprise Edition, RCE | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; until then remove internet exposure (allow-list or VPN) and check for compromise; CISA KEV due 2026-11-01 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-97229), [Vendor advisory](https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves)
 - 2026-10-29 | **EXPLOITED** (EPSS 45%) | CVE-2026-109618, CVE-2026-109619 | **PHP2Shell**: PHP, deserialisation | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; until then remove internet exposure (allow-list or VPN) and check for compromise | via [Palo Alto](https://security.paloaltonetworks.com/CVE-2026-109618), [Unit 42](https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/), [The Hacker News](https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html), [Tenable](https://www.tenable.com/blog/public-sector-exposure-management-php2shell), [SecurityWeek](https://www.securityweek.com/phpaftershell-vulnerability-revives-php2shells-attack-path/)
 - 2026-10-29 | **EXPLOITED** (KEV, EPSS 1%) | CVE-2026-76418 | Cisco Secure Firewall ASA Software and Cisco Secure FTD Software, DoS | Application or system exploitation (DoS) \[T1499.004\] | Fix: apply vendor patch; rate-limit or filter the service at the edge; CISA KEV due 2026-11-01 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-76418), [Vendor advisory](https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75)
-- 2026-10-28 | **EXPLOITED** (KEV, EPSS 3%) | CVE-2026-46300 | Linux Kernel | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; until then remove internet exposure (allow-list or VPN) and check for compromise; CISA KEV due 2026-10-31 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-46300), [Vendor advisory](https://git.kernel.org/stable/c/3599e6b3cc1ada96883d496a50a210d3afbb6987)
-- 2026-10-28 | **EXPLOITED** (KEV, EPSS 0.5%) | CVE-2026-41709 | Broadcom VMware ESX | Exploit public-facing application \[T1190\] | Fix: apply vendor patch; until then remove internet exposure (allow-list or VPN) and check for compromise; CISA KEV due 2026-11-11 | via [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-41709), [Vendor advisory](https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017)
 
-## Critical and high, not known exploited (57)
+## Critical and high, not known exploited (54)
 
 <details><summary>Show</summary>
 
@@ -127,8 +125,5 @@ EPSS is FIRST.org's probability of exploitation in the next 30 days. TTPs are MI
 - 2026-10-30 | CRITICAL (EPSS 2%) | CVE-2026-123807 | npm/signalk-server, npm/@signalk/resources-provider, path traversal | Exploit public-facing application \[T1190\] | Fix: upgrade signalk-server to 2.34.0; upgrade @signalk/resources-provider to 1.5.3 | via [GitHub Advisory](https://github.com/advisories/GHSA-4xm8-rg9h-jhq2)
 - 2026-10-30 | CRITICAL | GHSA-5xjx-3w67-w9x9 | actions/pypa/gh-action-pypi-publish | Exploit public-facing application \[T1190\] | Fix: upgrade pypa/gh-action-pypi-publish to 1.14.3 | via [GitHub Advisory](https://github.com/advisories/GHSA-5xjx-3w67-w9x9)
 - 2026-10-30 | CRITICAL | GHSA-hff9-5pqw-6w9f | go/github.com/imgproxy/imgproxy/v3, go/github.com/imgproxy/imgproxy/v2, RCE | Exploit public-facing application \[T1190\] | Fix: upgrade github.com/imgproxy/imgproxy/v3 to 4.0.16; upgrade github.com/imgproxy/imgproxy/v2 to 4.0.16 | via [GitHub Advisory](https://github.com/advisories/GHSA-hff9-5pqw-6w9f)
-- 2026-10-28 | CRITICAL (EPSS 0.8%) | CVE-2026-115893 | rust/wasmtime, RCE | Exploit public-facing application \[T1190\] | Fix: upgrade wasmtime to 36.0.19; upgrade wasmtime to 48.0.7 | via [GitHub Advisory](https://github.com/advisories/GHSA-mghf-wjfp-p5xm)
-- 2026-10-28 | CRITICAL (EPSS 0.5%) | CVE-2026-115905 | rust/zip, RCE | Exploitation for client execution \[T1203\] | Fix: upgrade zip to 9.0.5 | via [GitHub Advisory](https://github.com/advisories/GHSA-m665-v7pm-7grj)
-- 2026-10-28 | CRITICAL (EPSS 0.3%) | CVE-2026-117601 | pip/electrum | Exploit public-facing application \[T1190\] | Fix: upgrade electrum to 4.8.3 | via [GitHub Advisory](https://github.com/advisories/GHSA-6jp4-8v48-cc5v)
 
 </details>
