@@ -2,7 +2,7 @@
 
 One line per vulnerability: **date | status | CVE | name | TTP | fix | sources**. Last 30 days.
 
-Last run **2026-11-28 08:12 UTC** - 52 exploited or zero-day, 54 critical or high
+Last run **2026-11-28 08:31 UTC** - 52 exploited or zero-day, 54 critical or high
 
 | Status | Meaning |
 |---|---|
