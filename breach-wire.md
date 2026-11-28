@@ -2,7 +2,7 @@
 
 One line per incident: **date | status | TTP | company | what was stolen | sources**.
 
-Last run **2026-11-28 04:31 UTC** - last 14 days - 57 confirmed, 112 reported, 680 claimed
+Last run **2026-11-28 08:12 UTC** - last 14 days - 58 confirmed, 112 reported, 680 claimed
 
 | Status | Meaning |
 |---|---|
@@ -14,12 +14,13 @@ TTPs are MITRE ATT&CK Enterprise IDs inferred from headline and claim text: tria
 
 ## 2026-11-28
 
+- 2026-11-28 | **CONFIRMED** | not disclosed | ? "Pensions and benefits services still down after 'cyber incident'" | Stolen: not disclosed | via [BBC](https://www.bbc.co.uk/news/articles/cm1wrgqyq4d8o?at_medium=RSS&at_campaign=rss)
 - 2026-11-28 | **REPORTED** | not disclosed | ? "Cyber incident disrupting services for Pacific Blue Cross members" | Stolen: customer data, health data | via [DataBreaches.net](https://databreaches.net/2026/11/27/cyber-incident-disrupting-services-for-pacific-blue-cross-members/)
 - 2026-11-28 | **REPORTED** | not disclosed | ? "How gamers are using AI and leaked files to clone Grand Theft Auto 6" | Stolen: health data | via [BBC](https://www.bbc.co.uk/news/articles/c64gn8pe5eeqo?at_medium=RSS&at_campaign=rss)
 
 <details><summary>Claimed on leak sites / dark web / Telegram (1)</summary>
 
-- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Thomas More University of Applied Sciences** | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin)
+- 2026-11-28 | CLAIMED | Exfiltration + extortion \[T1657\] - qilin | **Thomas More University of Applied Sciences** (BE, Education) | Stolen: not disclosed | via [RansomLook](https://www.ransomlook.io/group/qilin), [ransomware.live](https://www.ransomware.live/id/VGhvbWFzIE1vcmUgVW5pdmVyc2l0eSBvZiBBcHBsaWVkIFNjaWVuY2VzQHFpbGlu)
 
 </details>
 
